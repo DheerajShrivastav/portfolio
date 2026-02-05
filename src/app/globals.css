@@ -2,32 +2,236 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* Premium Terminal Theme */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #0a0a0b;
+  color: #e6edf3;
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* Minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4AF626;
+}
+
+/* Selection */
+::selection {
+  background: rgba(74, 246, 38, 0.3);
+}
+
+/* ============================================
+   Glass Terminal Styles
+   ============================================ */
+
+.glass-card {
+  background: rgba(17, 17, 19, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: #4AF626;
+  box-shadow: 0 0 20px rgba(74, 246, 38, 0.15);
+}
+
+/* ============================================
+   Link & Interaction Styles
+   ============================================ */
+
+a {
+  color: #58a6ff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #79c0ff;
+}
+
+/* Tag/badge with glow hover */
+.tag {
+  display: inline-block;
+  padding: 0.125rem 0.5rem;
+  font-size: 0.75rem;
+  font-family: var(--font-mono), monospace;
+  background: #1a1a1d;
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  color: #8b949e;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.tag:hover {
+  border-color: #4AF626;
+  color: #4AF626;
+  box-shadow: 0 0 10px rgba(74, 246, 38, 0.2);
+}
+
+/* Nav link underline animation */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #4AF626;
+  transition: width 0.2s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Quick link arrow animation */
+.quick-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.quick-link::before {
+  content: "→";
+  transition: transform 0.2s ease;
+}
+
+.quick-link:hover::before {
+  transform: translateX(3px);
+}
+
+/* Logo hover */
+.logo-link:hover {
+  color: #4AF626 !important;
+}
+
+/* Section header cursor blink */
+.section-header::after {
+  content: "_";
+  animation: blink 1s step-end infinite;
+  color: #4AF626;
+}
+
+@keyframes blink {
+
+  0%,
+  50% {
+    opacity: 1;
   }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ============================================
+   Typewriter Effect
+   ============================================ */
+
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typewriter 1.5s steps(15) forwards;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+/* ============================================
+   Syntax Highlighting (JSON Style)
+   ============================================ */
+
+.syntax-key {
+  color: #58a6ff;
+}
+
+.syntax-string {
+  color: #4AF626;
+}
+
+.syntax-bracket {
+  color: #8b949e;
+}
+
+.syntax-colon {
+  color: #6e7681;
+}
+
+.syntax-comma {
+  color: #6e7681;
+}
+
+/* ============================================
+   KBar Command Palette Overrides
+   ============================================ */
+
+[data-kbar-search] {
+  background: #111113 !important;
+  border: 1px solid #30363d !important;
+  color: #e6edf3 !important;
+  font-family: var(--font-mono), monospace !important;
+}
+
+[data-kbar-results] {
+  background: #111113 !important;
+  border: 1px solid #30363d !important;
+}
+
+[data-kbar-result] {
+  color: #8b949e !important;
+  padding: 12px 16px !important;
+}
+
+[data-kbar-result][aria-selected="true"] {
+  background: #1a1a1d !important;
+  color: #4AF626 !important;
+}
+
+/* Focus states */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #4AF626;
+  outline-offset: 2px;
+  border-radius: 2px;
 }
