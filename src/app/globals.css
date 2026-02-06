@@ -2,7 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Premium Terminal Theme */
+:root {
+  --bg-primary: #0a0a0b;
+  --bg-secondary: #111113;
+  --bg-tertiary: #161618;
+  --border: #30363d;
+  --text-primary: #f0f6fc;
+  --text-secondary: #8b949e;
+  --text-muted: #6e7681;
+  --accent-green: #4AF626;
+  --accent-blue: #58a6ff;
+  --accent-purple: #bc8cff;
+  --accent-red: #ff7b72;
+  --accent-yellow: #d29922;
+}
 
 * {
   box-sizing: border-box;
@@ -15,10 +28,10 @@ html {
 }
 
 body {
-  background-color: #0a0a0b;
-  color: #e6edf3;
-  font-family: system-ui, -apple-system, sans-serif;
-  line-height: 1.7;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -28,21 +41,22 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0b;
+  background: var(--bg-primary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #30363d;
+  background: var(--border);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #4AF626;
+  background: var(--accent-green);
 }
 
 /* Selection */
 ::selection {
-  background: rgba(74, 246, 38, 0.3);
+  background: rgba(74, 246, 38, 0.2);
+  color: var(--accent-green);
 }
 
 /* ============================================
@@ -50,17 +64,18 @@ body {
    ============================================ */
 
 .glass-card {
-  background: rgba(17, 17, 19, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid #30363d;
-  border-radius: 8px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(17, 17, 19, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glass-card:hover {
-  border-color: #4AF626;
-  box-shadow: 0 0 20px rgba(74, 246, 38, 0.15);
+  border-color: rgba(74, 246, 38, 0.4);
+  background: rgba(17, 17, 19, 0.8);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
 }
 
 /* ============================================
@@ -68,81 +83,90 @@ body {
    ============================================ */
 
 a {
-  color: #58a6ff;
+  color: var(--accent-blue);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 a:hover {
   color: #79c0ff;
 }
 
-/* Tag/badge with glow hover */
+/* Tag/badge */
 .tag {
   display: inline-block;
-  padding: 0.125rem 0.5rem;
-  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 500;
   font-family: var(--font-mono), monospace;
-  background: #1a1a1d;
-  border: 1px solid #30363d;
-  border-radius: 4px;
-  color: #8b949e;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-secondary);
   transition: all 0.2s ease;
   cursor: default;
 }
 
 .tag:hover {
-  border-color: #4AF626;
-  color: #4AF626;
-  box-shadow: 0 0 10px rgba(74, 246, 38, 0.2);
+  border-color: var(--accent-green);
+  color: var(--accent-green);
+  transform: translateY(-1px);
 }
 
-/* Nav link underline animation */
+/* Nav link */
 .nav-link {
   position: relative;
+  font-weight: 500;
 }
 
 .nav-link::after {
   content: "";
   position: absolute;
-  bottom: -2px;
+  bottom: -4px;
   left: 0;
   width: 0;
-  height: 1px;
-  background: #4AF626;
-  transition: width 0.2s ease;
+  height: 2px;
+  background: var(--accent-green);
+  transition: width 0.3s ease;
+  border-radius: 2px;
 }
 
 .nav-link:hover::after {
   width: 100%;
 }
 
-/* Quick link arrow animation */
-.quick-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-}
-
-.quick-link::before {
-  content: "→";
-  transition: transform 0.2s ease;
-}
-
-.quick-link:hover::before {
-  transform: translateX(3px);
-}
-
 /* Logo hover */
-.logo-link:hover {
-  color: #4AF626 !important;
+.logo-link {
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
-/* Section header cursor blink */
-.section-header::after {
-  content: "_";
+.logo-link:hover {
+  color: var(--accent-green) !important;
+}
+
+/* Section headers */
+.section-header {
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-header::before {
+  content: ">";
+  color: var(--accent-green);
+  font-weight: bold;
+}
+
+/* ============================================
+   Utility Styles
+   ============================================ */
+
+.animate-blink {
   animation: blink 1s step-end infinite;
-  color: #4AF626;
 }
 
 @keyframes blink {
@@ -159,79 +183,50 @@ a:hover {
 }
 
 /* ============================================
-   Typewriter Effect
-   ============================================ */
-
-.typewriter {
-  overflow: hidden;
-  white-space: nowrap;
-  animation: typewriter 1.5s steps(15) forwards;
-}
-
-@keyframes typewriter {
-  from {
-    width: 0;
-  }
-
-  to {
-    width: 100%;
-  }
-}
-
-/* ============================================
-   Syntax Highlighting (JSON Style)
+   Syntax Highlighting
    ============================================ */
 
 .syntax-key {
-  color: #58a6ff;
+  color: var(--accent-blue);
 }
 
 .syntax-string {
-  color: #4AF626;
+  color: var(--accent-green);
 }
 
 .syntax-bracket {
-  color: #8b949e;
+  color: var(--text-muted);
 }
 
 .syntax-colon {
-  color: #6e7681;
+  color: var(--text-muted);
 }
 
 .syntax-comma {
-  color: #6e7681;
+  color: var(--text-muted);
 }
 
 /* ============================================
-   KBar Command Palette Overrides
+   KBar Overrides
    ============================================ */
 
 [data-kbar-search] {
-  background: #111113 !important;
-  border: 1px solid #30363d !important;
-  color: #e6edf3 !important;
-  font-family: var(--font-mono), monospace !important;
+  font-size: 1rem !important;
 }
 
 [data-kbar-results] {
-  background: #111113 !important;
-  border: 1px solid #30363d !important;
+  padding: 8px !important;
 }
 
 [data-kbar-result] {
-  color: #8b949e !important;
-  padding: 12px 16px !important;
-}
-
-[data-kbar-result][aria-selected="true"] {
-  background: #1a1a1d !important;
-  color: #4AF626 !important;
+  border-radius: 8px !important;
+  margin-bottom: 2px !important;
 }
 
 /* Focus states */
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid #4AF626;
+  outline: 2px solid var(--accent-green);
   outline-offset: 2px;
-  border-radius: 2px;
+  border-radius: 4px;
 }
