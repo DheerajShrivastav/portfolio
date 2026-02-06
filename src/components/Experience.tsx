@@ -12,31 +12,31 @@ interface Experience {
 
 const experiences: Experience[] = [
     {
-        role: "Open Source Contributor",
-        company: "Google Summer of Code",
-        period: "2024",
-        description: "Contributing to open-source projects, implementing features and fixing bugs in large-scale codebases.",
-        type: "work",
-    },
-    {
-        role: "Blockchain Developer",
-        company: "Freelance",
-        period: "2023 - Present",
-        description: "Building DeFi protocols, NFT platforms, and smart contracts on Ethereum and EVM-compatible chains.",
+        role: "Software Engineer Intern",
+        company: "Scalfull Technologies",
+        period: "2026 - Present",
+        description: "Building scalable backend systems using Node.js, NestJS, and PostgreSQL.",
         type: "work",
     },
     {
         role: "Backend Developer",
         company: "Freelance",
-        period: "2022 - 2023",
+        period: "2022 - 2025",
         description: "Developed scalable backend systems using Node.js, NestJS, and PostgreSQL.",
         type: "work",
     },
     {
-        role: "B.Tech Computer Science",
-        company: "University",
-        period: "2020 - 2024",
-        description: "Focus on distributed systems, blockchain technology, and software engineering.",
+        role: "B.Tech Computer Science and Engineering (AI & ML)",
+        company: "Deogiri Institute of Engineering and Management Studies, Chhatrapati Sambhajinagar",
+        period: "2023 - 2026",
+        description: "Focus on Artificial Intelligence and Machine Learning.",
+        type: "education",
+    },
+    {
+        role: "Diploma in Computer Science and Engineering",
+        company: "MGM's Polytechnic, Chhatrapati Sambhajinagar",
+        period: "2020 - 2023",
+        description: "Focus on CS fundamentals, Networking, and Database Management.",
         type: "education",
     },
 ];

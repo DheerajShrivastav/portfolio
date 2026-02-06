@@ -4,37 +4,38 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-const typewriterText = "Dheeraj";
 const initSequence = [
-    "system.init()",
-    "loading modules...",
-    "├── solidity.core",
-    "├── web3.protocols",
-    "├── backend.systems",
-    "└── ready.",
+    "> engineer.info()",
+    "",
+    "[NETWORK]",
+    "Deployments: 12 Mainnet/L2",
+    "Verified: 15+ Contracts",
+    "Avg Gas Optimization: 24%",
+    "",
+    "[BACKEND]",
+    "Architecture: Event-Driven",
+    "Integrations: SQL, Redis, GQL",
+    "P99 Latency: <150ms",
+    "",
+    "[SECURITY]",
+    "Audits: 3 Internal/Shadow",
+    "Test Coverage: 98% (Foundry)",
+    "Tools: Mythril, Slither",
 ];
 
 export default function Hero() {
-    const [displayedName, setDisplayedName] = useState("");
     const [showInit, setShowInit] = useState(false);
     const [initLines, setInitLines] = useState<string[]>([]);
     const [initComplete, setInitComplete] = useState(false);
 
-    // Typewriter effect for name
+    // Initial delay before showing content and terminal
     useEffect(() => {
-        let i = 0;
-        const interval = setInterval(() => {
-            if (i < typewriterText.length) {
-                setDisplayedName(typewriterText.slice(0, i + 1));
-                i++;
-            } else {
-                clearInterval(interval);
-                setShowInit(true);
-                // Show content almost immediately after name starts typing
-                setTimeout(() => setInitComplete(true), 500);
-            }
-        }, 50); // Faster typing
-        return () => clearInterval(interval);
+        const timer = setTimeout(() => {
+            setShowInit(true);
+            // Show main content almost immediately
+            setInitComplete(true);
+        }, 100);
+        return () => clearTimeout(timer);
     }, []);
 
     // System init sequence (secondary effect)
@@ -49,7 +50,7 @@ export default function Hero() {
             } else {
                 clearInterval(interval);
             }
-        }, 150);
+        }, 100); // Faster sequence for scannability
         return () => clearInterval(interval);
     }, [showInit]);
 
@@ -67,29 +68,39 @@ export default function Hero() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <p className="font-mono text-accent-green mb-4 flex items-center gap-2">
+                        <p className="font-mono text-accent-green mb-4 flex items-center gap-2 text-sm">
                             <span className="w-8 h-px bg-accent-green/30" />
-                            Hello, I am
+                            <span className="bg-accent-green/10 px-2 py-0.5 rounded border border-accent-green/20">AVAILABLE FOR Q1 2026 ENGAGEMENT</span>
                         </p>
-                        <h1 className="text-5xl md:text-7xl font-bold text-text-primary mb-4 tracking-tight">
-                            {displayedName}
-                            {displayedName.length < typewriterText.length && (
-                                <span className="animate-blink text-accent-green">_</span>
-                            )}
+                        <h1 className="text-4xl md:text-6xl font-bold text-text-primary mb-6 tracking-tight leading-[1.1] max-w-2xl">
+                            Engineering Secure <span className="text-accent-green">DeFi Infrastructure</span> & Scalable Backend Systems.
                         </h1>
-                        <h2 className="text-2xl md:text-3xl text-accent-blue font-semibold mb-6 flex items-center gap-3">
-                            Full Stack Developer
-                            <span className="text-text-muted/30 font-light">|</span>
-                            Blockchain Engineer
+                        <h2 className="text-xl md:text-2xl text-accent-blue font-semibold mb-6">
+                            Backend Engineer specializing in Distributed Systems & Smart Contract Security.
                         </h2>
 
-                        <div className="max-w-xl text-lg text-text-secondary leading-relaxed mb-8 space-y-4">
+                        {/* Credibility Metrics Bar */}
+                        <div className="flex flex-wrap gap-8 mb-10 border-y border-border/40 py-4">
+                            <div>
+                                <div className="text-2xl font-bold text-text-primary">15+</div>
+                                <div className="text-xs font-mono text-text-muted uppercase tracking-widest">Contracts Deployed</div>
+                            </div>
+                            <div>
+                                <div className="text-2xl font-bold text-text-primary">10+</div>
+                                <div className="text-xs font-mono text-text-muted uppercase tracking-widest">Systems Built</div>
+                            </div>
+                            <div>
+                                <div className="text-2xl font-bold text-text-primary">98%</div>
+                                <div className="text-xs font-mono text-text-muted uppercase tracking-widest">Test Coverage</div>
+                            </div>
+                        </div>
+
+                        <div className="max-w-xl text-lg text-text-secondary leading-relaxed mb-10 space-y-4">
                             <p>
-                                I specialize in building <span className="text-text-primary font-medium">scalable backend systems</span> and
-                                <span className="text-text-primary font-medium"> secure smart contracts</span> for the decentralized web.
+                                I build production-ready APIs with <span className="text-text-primary font-medium">NestJS/PostgreSQL</span> and gas-optimized, <span className="text-text-primary font-medium">Foundry-hardened</span> smart contracts.
                             </p>
                             <p>
-                                Currently focused on pushing the boundaries of DeFi protocols and creating seamless Web3 user experiences.
+                                Bridging the gap between <span className="text-accent-blue font-medium">high-performance backend architecture</span> and Web3 security-first development.
                             </p>
                         </div>
 
@@ -99,21 +110,23 @@ export default function Hero() {
                                 <Link
                                     href="https://github.com/dheeraj"
                                     target="_blank"
-                                    className="px-6 py-3 bg-accent-green text-bg-primary font-semibold rounded hover:bg-accent-green/90 transition-all hover:scale-105 active:scale-95"
+                                    className="px-8 py-4 bg-accent-green text-bg-primary font-bold rounded shadow-[0_0_25px_-5px_rgba(74,246,38,0.4)] hover:shadow-[0_0_35px_-5px_rgba(74,246,38,0.6)] transition-all hover:scale-105 active:scale-95 text-center"
                                 >
-                                    View GitHub
+                                    Review Proof of Work
                                 </Link>
                                 <Link
-                                    href="#projects"
-                                    className="px-6 py-3 border border-border text-text-primary font-semibold rounded hover:bg-bg-secondary transition-all"
+                                    href="/resume/Dheeraj_Full_Stack_dev.pdf"
+                                    target="_blank"
+                                    className="px-8 py-4 border border-border text-text-primary font-bold rounded hover:bg-bg-secondary transition-all text-center"
                                 >
-                                    My Work
+                                    View Technical Resume
                                 </Link>
                             </div>
 
-                            <div className="flex gap-4 text-sm font-mono text-text-muted">
-                                <Link href="mailto:dheeraj@example.com" className="hover:text-accent-green transition-colors">email</Link>
-                                <Link href="/resume/Dheeraj_Full_Stack_dev.pdf" target="_blank" className="hover:text-accent-blue transition-colors">resume.pdf</Link>
+                            <div className="flex gap-4 text-sm font-mono text-text-muted sm:ml-2">
+                                <Link href="mailto:dheeraj@example.com" className="hover:text-accent-green transition-colors border-b border-transparent hover:border-accent-green">email.send()</Link>
+                                <span className="opacity-20">|</span>
+                                <Link href="#projects" className="hover:text-accent-blue transition-colors border-b border-transparent hover:border-accent-blue">ls archive/</Link>
                             </div>
                         </div>
                     </motion.div>
@@ -143,17 +156,17 @@ export default function Hero() {
                             </p>
                             <div className="space-y-1">
                                 {initLines.filter((line) => typeof line === 'string').map((line, i) => {
-                                    const isTreeLine = line?.startsWith("├") || line?.startsWith("└");
-                                    const isReady = line === "ready.";
+                                    const isHeader = line.startsWith("[");
+                                    const isCommand = line.startsWith(">");
                                     return (
                                         <p
                                             key={i}
                                             className={
-                                                isTreeLine
-                                                    ? "text-accent-blue/70 pl-3"
-                                                    : isReady
-                                                        ? "text-accent-green pl-3"
-                                                        : "text-text-muted/60"
+                                                isHeader
+                                                    ? "text-accent-blue font-bold mt-3 mb-1"
+                                                    : isCommand
+                                                        ? "text-accent-green mb-2"
+                                                        : "text-text-muted/80 pl-2 border-l border-border/20 ml-1"
                                             }
                                         >
                                             {line}
