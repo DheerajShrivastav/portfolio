@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 const skills = {
     blockchain: ["Solidity", "Foundry", "Hardhat", "Ethers.js", "Viem", "Smart Contracts", "DeFi"],
@@ -9,7 +9,7 @@ const skills = {
     tools: ["Git", "Linux", "AWS", "Vercel", "CI/CD", "Bun"],
 };
 
-const containerVariants = {
+const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
         opacity: 1,
@@ -17,7 +17,7 @@ const containerVariants = {
     },
 };
 
-const lineVariants = {
+const lineVariants: Variants = {
     hidden: { opacity: 0, x: -10 },
     visible: {
         opacity: 1,
