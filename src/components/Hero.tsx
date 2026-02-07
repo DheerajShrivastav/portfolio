@@ -108,7 +108,7 @@ export default function Hero() {
                         <div className="flex flex-wrap gap-6 items-center">
                             <div className="flex gap-4">
                                 <Link
-                                    href="https://github.com/dheeraj"
+                                    href="https://github.com/DheerajShrivastav"
                                     target="_blank"
                                     className="px-8 py-4 bg-accent-green text-bg-primary font-bold rounded shadow-[0_0_25px_-5px_rgba(74,246,38,0.4)] hover:shadow-[0_0_35px_-5px_rgba(74,246,38,0.6)] transition-all hover:scale-105 active:scale-95 text-center"
                                 >
@@ -124,7 +124,7 @@ export default function Hero() {
                             </div>
 
                             <div className="flex gap-4 text-sm font-mono text-text-muted sm:ml-2">
-                                <Link href="mailto:dheeraj@example.com" className="hover:text-accent-green transition-colors border-b border-transparent hover:border-accent-green">email.send()</Link>
+                                <Link href="mailto:dheerajshrivastav08@gmail.com" className="hover:text-accent-green transition-colors border-b border-transparent hover:border-accent-green">email.send()</Link>
                                 <span className="opacity-20">|</span>
                                 <Link href="#projects" className="hover:text-accent-blue transition-colors border-b border-transparent hover:border-accent-blue">ls archive/</Link>
                             </div>
