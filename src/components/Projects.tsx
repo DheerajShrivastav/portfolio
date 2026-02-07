@@ -22,38 +22,40 @@ const TechnicalDeepDive = ({ challenge, solution, stack }: { challenge: string; 
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="mt-4 border border-accent-green/30 bg-accent-green/5 rounded-md p-3">
-            <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="text-xs font-mono text-accent-green hover:text-accent-green/80 flex items-center gap-2 w-full transition-colors"
-            >
-                <span>{isOpen ? "▼" : "▶"} SYSTEM_LOG: View Engineering Challenge</span>
-            </button>
+        <div className="mt-auto pt-4">
+            <div className="border border-accent-green/30 bg-accent-green/5 rounded-md p-3">
+                <button
+                    onClick={() => setIsOpen(!isOpen)}
+                    className="text-xs font-mono text-accent-green hover:text-accent-green/80 flex items-center gap-2 w-full transition-colors"
+                >
+                    <span>{isOpen ? "▼" : "▶"} SYSTEM_LOG: View Engineering Challenge</span>
+                </button>
 
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        className="overflow-hidden font-mono text-[11px] mt-3 space-y-3 border-t border-accent-green/20 pt-3"
-                    >
-                        <p className="leading-relaxed">
-                            <span className="text-red-400 font-bold">[ISSUE]:</span> {challenge}
-                        </p>
-                        <p className="leading-relaxed">
-                            <span className="text-blue-400 font-bold">[SOLVE]:</span> {solution}
-                        </p>
-                        <div className="flex flex-wrap gap-2 mt-2">
-                            {stack.map((s) => (
-                                <span key={s} className="bg-accent-green/20 text-accent-green px-1.5 py-0.5 rounded text-[10px]">
-                                    {s}
-                                </span>
-                            ))}
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+                <AnimatePresence>
+                    {isOpen && (
+                        <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            className="overflow-hidden font-mono text-[11px] mt-3 space-y-3 border-t border-accent-green/20 pt-3"
+                        >
+                            <p className="leading-relaxed">
+                                <span className="text-red-400 font-bold">[ISSUE]:</span> {challenge}
+                            </p>
+                            <p className="leading-relaxed">
+                                <span className="text-blue-400 font-bold">[SOLVE]:</span> {solution}
+                            </p>
+                            <div className="flex flex-wrap gap-2 mt-2">
+                                {stack.map((s) => (
+                                    <span key={s} className="bg-accent-green/20 text-accent-green px-1.5 py-0.5 rounded text-[10px]">
+                                        {s}
+                                    </span>
+                                ))}
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </div>
         </div>
     );
 };
@@ -149,92 +151,132 @@ export default function Projects() {
                     viewport={{ once: true, margin: "-100px" }}
                     className="grid grid-cols-1 md:grid-cols-2 gap-6"
                 >
-                    {projects.map((project) => (
-                        <motion.article
-                            key={project.name}
-                            variants={itemVariants}
-                            className={`glass-card p-8 group flex flex-col h-full hover:border-accent-green/30 transition-all duration-300 ${project.featured ? "md:col-span-2" : ""
-                                }`}
-                        >
-                            <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-6">
-                                <div>
-                                    <div className="flex items-center gap-3 mb-1">
-                                        <h3 className="text-2xl font-bold text-text-primary group-hover:text-accent-green transition-colors tracking-tight">
-                                            {project.name}
-                                        </h3>
-                                        <span className="px-2 py-0.5 rounded text-[10px] font-mono border border-accent-green/20 text-accent-green bg-accent-green/5">
-                                            {project.mainnetStatus}
-                                        </span>
+                    {projects.map((project) => {
+                        const projectLink = project.live || project.github;
+
+                        return (
+                            <motion.article
+                                key={project.name}
+                                variants={itemVariants}
+                                className={`glass-card p-8 group flex flex-col h-full hover:border-accent-green/30 transition-all duration-300 ${project.featured ? "md:col-span-2" : ""
+                                    }`}
+                            >
+                                <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8">
+                                    <div className="flex-1 min-w-0">
+                                        <div className="flex flex-wrap items-center gap-3 mb-2">
+                                            {projectLink ? (
+                                                <Link
+                                                    href={projectLink}
+                                                    target="_blank"
+                                                    className="hover:text-accent-green transition-colors min-w-0"
+                                                >
+                                                    <h3 className="text-2xl font-bold text-text-primary tracking-tight truncate">
+                                                        {project.name}
+                                                    </h3>
+                                                </Link>
+                                            ) : (
+                                                <h3 className="text-2xl font-bold text-text-primary tracking-tight">
+                                                    {project.name}
+                                                </h3>
+                                            )}
+                                            <span className="shrink-0 px-2 py-0.5 rounded text-[10px] font-mono border border-accent-green/20 text-accent-green bg-accent-green/5">
+                                                {project.mainnetStatus}
+                                            </span>
+                                        </div>
+                                        <div className="mb-3">
+                                            {projectLink ? (
+                                                <Link
+                                                    href={projectLink}
+                                                    target="_blank"
+                                                    className="text-accent-green/80 font-mono text-xs uppercase tracking-widest font-semibold hover:text-accent-green transition-colors block"
+                                                >
+                                                    {project.headline}
+                                                </Link>
+                                            ) : (
+                                                <p className="text-accent-green/80 font-mono text-xs uppercase tracking-widest font-semibold">
+                                                    {project.headline}
+                                                </p>
+                                            )}
+                                        </div>
+                                        <div className="flex items-center gap-2 text-text-muted text-[11px] font-mono">
+                                            <span className="w-1.5 h-1.5 rounded-full bg-accent-green animate-pulse" />
+                                            FOCUS: {project.engineeringFocus}
+                                        </div>
                                     </div>
-                                    <p className="text-accent-green/80 font-mono text-xs uppercase tracking-widest font-semibold mb-2">
-                                        {project.headline}
-                                    </p>
-                                    <div className="flex items-center gap-2 text-text-muted text-[11px] font-mono">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-accent-green animate-pulse" />
-                                        FOCUS: {project.engineeringFocus}
-                                    </div>
-                                </div>
-                                <div className="flex gap-4">
-                                    {project.github && (
-                                        <Link
-                                            href={project.github}
-                                            target="_blank"
-                                            className="text-text-muted hover:text-accent-blue transition-all hover:scale-110"
-                                            title="View Source Code"
-                                        >
-                                            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.041-1.416-4.041-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.841 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                                            </svg>
-                                        </Link>
-                                    )}
-                                    {project.live && (
-                                        <Link
-                                            href={project.live}
-                                            target="_blank"
-                                            className="text-text-muted hover:text-accent-green transition-all hover:scale-110"
-                                            title="Live Demo"
-                                        >
-                                            <svg
-                                                className="w-6 h-6"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                viewBox="0 0 24 24"
-                                                strokeWidth="2"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
+
+                                    <div className="flex md:flex-col items-center md:items-end gap-4 shrink-0">
+                                        {project.github && (
+                                            <Link
+                                                href={project.github}
+                                                target="_blank"
+                                                className="flex items-center gap-3 text-text-muted hover:text-accent-blue transition-all group/link relative"
+                                                title="View Source Code"
                                             >
-                                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                                <polyline points="15 3 21 3 21 9"></polyline>
-                                                <line x1="10" y1="14" x2="21" y2="3"></line>
-                                            </svg>
-                                        </Link>
+                                                <span className="text-[10px] font-mono uppercase tracking-wider opacity-0 pointer-events-none group-hover/link:opacity-100 transition-opacity absolute right-full mr-3 whitespace-nowrap hidden md:block">
+                                                    View Code
+                                                </span>
+                                                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.041-1.416-4.041-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.841 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                                </svg>
+                                            </Link>
+                                        )}
+                                        {project.live && (
+                                            <Link
+                                                href={project.live}
+                                                target="_blank"
+                                                className="flex items-center gap-3 text-text-muted hover:text-accent-green transition-all group/link relative"
+                                                title="Live Demo"
+                                            >
+                                                <span className="text-[10px] font-mono uppercase tracking-wider opacity-0 pointer-events-none group-hover/link:opacity-100 transition-opacity absolute right-full mr-3 whitespace-nowrap hidden md:block">
+                                                    View Demo
+                                                </span>
+                                                <svg
+                                                    className="w-6 h-6"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    viewBox="0 0 24 24"
+                                                    strokeWidth="2"
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                >
+                                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                                </svg>
+                                            </Link>
+                                        )}
+                                    </div>
+                                </div>
+
+                                <p className="text-text-secondary mb-10 leading-relaxed flex-grow">
+                                    {project.description}
+                                </p>
+
+                                <TechnicalDeepDive
+                                    challenge={project.challenge}
+                                    solution={project.solution}
+                                    stack={project.tech}
+                                />
+
+                                {/* Tech stack footer */}
+                                <div className="flex flex-wrap gap-2 mt-8 pt-5 border-t border-border/30">
+                                    {project.tech.slice(0, 5).map((t) => (
+                                        <span
+                                            key={t}
+                                            className="tag bg-accent-green/5 text-accent-green border-accent-green/20 opacity-40 group-hover:opacity-100 group-hover:bg-accent-green/10 transition-all duration-300"
+                                        >
+                                            {t}
+                                        </span>
+                                    ))}
+                                    {project.tech.length > 5 && (
+                                        <span className="text-[10px] text-text-muted font-mono mt-1 group-hover:text-text-secondary transition-colors">
+                                            +{project.tech.length - 5} more
+                                        </span>
                                     )}
                                 </div>
-                            </div>
-
-                            <p className="text-text-secondary mb-6 leading-relaxed flex-grow">
-                                {project.description}
-                            </p>
-
-                            <TechnicalDeepDive
-                                challenge={project.challenge}
-                                solution={project.solution}
-                                stack={project.tech}
-                            />
-
-                            {/* Tech stack footer */}
-                            <div className="flex flex-wrap gap-2 mt-6 pt-4 border-t border-border/30">
-                                {project.tech.slice(0, 4).map((t) => (
-                                    <span key={t} className="tag bg-accent-green/5 text-accent-green border-accent-green/20">
-                                        {t}
-                                    </span>
-                                ))}
-                                {project.tech.length > 4 && (
-                                    <span className="text-[10px] text-text-muted font-mono mt-1">+{project.tech.length - 4} more</span>
-                                )}
-                            </div>
-                        </motion.article>
-                    ))}
+                            </motion.article>
+                        );
+                    })}
                 </motion.div>
             </div>
         </section>
