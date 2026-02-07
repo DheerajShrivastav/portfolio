@@ -70,7 +70,7 @@ export default function Hero() {
                     >
                         <p className="font-mono text-accent-green mb-4 flex items-center gap-2 text-sm">
                             <span className="w-8 h-px bg-accent-green/30" />
-                            <span className="bg-accent-green/10 px-2 py-0.5 rounded border border-accent-green/20">AVAILABLE FOR Q1 2026 ENGAGEMENT</span>
+                            <span className="bg-accent-green/10 px-2 py-0.5 rounded border border-accent-green/20">Hi, I am Dheeraj Shrivastav</span>
                         </p>
                         <h1 className="text-4xl md:text-6xl font-bold text-text-primary mb-6 tracking-tight leading-[1.1] max-w-2xl">
                             Engineering Secure <span className="text-accent-green">DeFi Infrastructure</span> & Scalable Backend Systems.
@@ -97,7 +97,7 @@ export default function Hero() {
 
                         <div className="max-w-xl text-lg text-text-secondary leading-relaxed mb-10 space-y-4">
                             <p>
-                                I build production-ready APIs with <span className="text-text-primary font-medium">NestJS/PostgreSQL</span> and gas-optimized, <span className="text-text-primary font-medium">Foundry-hardened</span> smart contracts.
+                                I build production APIs with <span className="text-text-primary font-medium">NestJS/PostgreSQL</span> and gas-optimized, <span className="text-text-primary font-medium">Foundry-hardened</span> smart contracts.
                             </p>
                             <p>
                                 Bridging the gap between <span className="text-accent-blue font-medium">high-performance backend architecture</span> and Web3 security-first development.
