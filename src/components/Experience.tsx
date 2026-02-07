@@ -27,7 +27,7 @@ const experiences: Experience[] = [
     },
     {
         role: "B.Tech Computer Science and Engineering (AI & ML)",
-        company: "Deogiri Institute of Engineering and Management Studies, Chhatrapati Sambhajinagar",
+        company: "Deogiri Institute of Engineering and Management Studies",
         period: "2023 - 2026",
         description: "Focus on Artificial Intelligence and Machine Learning.",
         type: "education",

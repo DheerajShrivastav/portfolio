@@ -133,7 +133,6 @@ export default function Projects() {
     return (
         <section id="projects" className="py-24 border-t border-border/50 bg-bg-secondary/30">
             <div className="max-w-5xl mx-auto px-6">
-                {/* Section header */}
                 <div className="mb-16">
                     <h2 className="font-mono text-accent-green mb-2 section-header uppercase tracking-wider text-sm">
                         Engineering Projects
@@ -143,7 +142,6 @@ export default function Projects() {
                     </p>
                 </div>
 
-                {/* Project list with Bento-style layout */}
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"
@@ -258,7 +256,6 @@ export default function Projects() {
                                     stack={project.tech}
                                 />
 
-                                {/* Tech stack footer */}
                                 <div className="flex flex-wrap gap-2 mt-8 pt-5 border-t border-border/30">
                                     {project.tech.slice(0, 5).map((t) => (
                                         <span
