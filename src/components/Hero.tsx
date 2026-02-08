@@ -72,28 +72,13 @@ export default function Hero() {
                             <span className="w-8 h-px bg-accent-green/30" />
                             <span className="bg-accent-green/10 px-2 py-0.5 rounded border border-accent-green/20">Hi, I am Dheeraj Shrivastav</span>
                         </p>
-                        <h1 className="text-4xl md:text-6xl font-bold text-text-primary mb-6 tracking-tight leading-[1.1] max-w-2xl">
+                        {/* <h1 className="text-4xl md:text-6xl font-bold text-text-primary mb-6 tracking-tight leading-[1.1] max-w-2xl">
                             Engineering Secure <span className="text-accent-green">DeFi Infrastructure</span> & Scalable Backend Systems.
                         </h1>
                         <h2 className="text-xl md:text-2xl text-accent-blue font-semibold mb-6">
                             Backend Engineer specializing in Distributed Systems & Smart Contract Security.
-                        </h2>
+                        </h2> */}
 
-                        {/* Credibility Metrics Bar */}
-                        <div className="flex flex-wrap gap-8 mb-10 border-y border-border/40 py-4">
-                            <div>
-                                <div className="text-2xl font-bold text-text-primary">15+</div>
-                                <div className="text-xs font-mono text-text-muted uppercase tracking-widest">Contracts Deployed</div>
-                            </div>
-                            <div>
-                                <div className="text-2xl font-bold text-text-primary">10+</div>
-                                <div className="text-xs font-mono text-text-muted uppercase tracking-widest">Systems Built</div>
-                            </div>
-                            <div>
-                                <div className="text-2xl font-bold text-text-primary">98%</div>
-                                <div className="text-xs font-mono text-text-muted uppercase tracking-widest">Test Coverage</div>
-                            </div>
-                        </div>
 
                         <div className="max-w-xl text-lg text-text-secondary leading-relaxed mb-10 space-y-4">
                             <p>
@@ -110,14 +95,14 @@ export default function Hero() {
                                 <Link
                                     href="https://github.com/DheerajShrivastav"
                                     target="_blank"
-                                    className="px-8 py-4 bg-accent-green text-bg-primary font-bold rounded shadow-[0_0_25px_-5px_rgba(74,246,38,0.4)] hover:shadow-[0_0_35px_-5px_rgba(74,246,38,0.6)] transition-all hover:scale-105 active:scale-95 text-center"
+                                    className="px-6 py-3 bg-accent-green text-bg-primary font-bold rounded transition-all hover:scale-105 active:scale-95 text-center"
                                 >
                                     Review Proof of Work
                                 </Link>
                                 <Link
                                     href="https://drive.google.com/file/d/1j0IWlXTSg8yu6XtIO74U9Cqqt9O3qgMC/view?usp=sharing"
                                     target="_blank"
-                                    className="px-8 py-4 border border-border text-text-primary font-bold rounded hover:bg-bg-secondary transition-all text-center"
+                                    className="px-6 py-3 border border-border text-text-primary font-bold rounded hover:bg-bg-secondary transition-all text-center"
                                 >
                                     View Technical Resume
                                 </Link>

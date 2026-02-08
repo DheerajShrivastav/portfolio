@@ -142,6 +142,35 @@ export default function Projects() {
                     </p>
                 </div>
 
+                {/* Engineering Stats Bar */}
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-16"
+                >
+                    {[
+                        { label: "Systems Built", value: "10+", accent: "text-accent-blue", icon: "sys" },
+                        { label: "Contracts Deployed", value: "15+", accent: "text-accent-green", icon: "0x" },
+                        { label: "Test Coverage", value: "98%", accent: "text-accent-green", icon: "ok" }
+                    ].map((stat, i) => (
+                        <motion.div
+                            key={i}
+                            variants={itemVariants}
+                            className="glass-card p-6 flex flex-col items-center justify-center text-center group hover:border-accent-green/30 transition-all duration-300 relative overflow-hidden"
+                        >
+                            <div className="absolute top-0 right-0 p-2 opacity-5 font-mono text-xs uppercase tracking-widest">{stat.icon}</div>
+                            <div className={`text-3xl font-bold ${stat.accent} mb-1 tracking-tight group-hover:scale-110 transition-transform`}>
+                                {stat.value}
+                            </div>
+                            <div className="text-[10px] font-mono text-text-muted uppercase tracking-[0.2em]">
+                                {stat.label}
+                            </div>
+                        </motion.div>
+                    ))}
+                </motion.div>
+
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"
