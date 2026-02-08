@@ -8,19 +8,19 @@ const initSequence = [
     "> engineer.info()",
     "",
     "[NETWORK]",
-    "Deployments: 12 Mainnet/L2",
+    "Deployments: 12 L2",
     "Verified: 15+ Contracts",
     "Avg Gas Optimization: 24%",
     "",
     "[BACKEND]",
     "Architecture: Event-Driven",
     "Integrations: SQL, Redis, GQL",
-    "P99 Latency: <150ms",
+    "Latency: <150ms",
     "",
     "[SECURITY]",
     "Audits: 3 Internal/Shadow",
     "Test Coverage: 90+% (Foundry)",
-    "Tools: Mythril, Slither",
+
 ];
 
 export default function Hero() {
@@ -82,7 +82,7 @@ export default function Hero() {
 
                         <div className="max-w-xl text-lg text-text-secondary leading-relaxed mb-10 space-y-4">
                             <p>
-                                I build production APIs with <span className="text-text-primary font-medium">NestJS/PostgreSQL</span> and gas-optimized, <span className="text-text-primary font-medium">Foundry-hardened</span> smart contracts.
+                                I build production APIs with <span className="text-text-primary font-medium">NodeJS/PostgreSQL</span> and gas-optimized, smart contracts.
                             </p>
                             <p>
                                 Bridging the gap between <span className="text-accent-blue font-medium">high-performance backend architecture</span> and Web3 security-first development.
@@ -92,19 +92,13 @@ export default function Hero() {
                         {/* CTA Links */}
                         <div className="flex flex-wrap gap-6 items-center">
                             <div className="flex gap-4">
-                                <Link
-                                    href="https://github.com/DheerajShrivastav"
-                                    target="_blank"
-                                    className="px-6 py-3 bg-accent-green text-bg-primary font-bold rounded transition-all hover:scale-105 active:scale-95 text-center"
-                                >
-                                    Review Proof of Work
-                                </Link>
+
                                 <Link
                                     href="https://drive.google.com/file/d/1j0IWlXTSg8yu6XtIO74U9Cqqt9O3qgMC/view?usp=sharing"
                                     target="_blank"
                                     className="px-6 py-3 border border-border text-text-primary font-bold rounded hover:bg-bg-secondary transition-all text-center"
                                 >
-                                    View Technical Resume
+                                    View Resume
                                 </Link>
                             </div>
 
@@ -135,7 +129,7 @@ export default function Hero() {
                         </div>
                         <div className="p-5 font-mono text-[11px] leading-relaxed">
                             <p className="text-text-muted mb-2">
-                                <span className="text-accent-green">guest@portfolio</span>
+                                <span className="text-accent-green">dheeraj@portfolio</span>
                                 <span>:</span>
                                 <span className="text-accent-blue">~</span>
                                 <span>$ </span>
