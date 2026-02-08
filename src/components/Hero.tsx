@@ -115,7 +115,7 @@ export default function Hero() {
                                     Review Proof of Work
                                 </Link>
                                 <Link
-                                    href="/resume/Dheeraj_Full_Stack_dev.pdf"
+                                    href="https://drive.google.com/file/d/1j0IWlXTSg8yu6XtIO74U9Cqqt9O3qgMC/view?usp=sharing"
                                     target="_blank"
                                     className="px-8 py-4 border border-border text-text-primary font-bold rounded hover:bg-bg-secondary transition-all text-center"
                                 >
@@ -127,6 +127,8 @@ export default function Hero() {
                                 <Link href="mailto:dheerajshrivastav08@gmail.com" className="hover:text-accent-green transition-colors border-b border-transparent hover:border-accent-green">email.send()</Link>
                                 <span className="opacity-20">|</span>
                                 <Link href="#projects" className="hover:text-accent-blue transition-colors border-b border-transparent hover:border-accent-blue">ls archive/</Link>
+                                <span className="opacity-20">|</span>
+                                <Link href="https://cal.com/dheeraj-shrivastav/30min" target="_blank" className="hover:text-accent-green transition-colors border-b border-transparent hover:border-accent-green">schedule_call()</Link>
                             </div>
                         </div>
                     </motion.div>
