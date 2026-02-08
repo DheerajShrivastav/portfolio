@@ -19,7 +19,7 @@ const initSequence = [
     "",
     "[SECURITY]",
     "Audits: 3 Internal/Shadow",
-    "Test Coverage: 98% (Foundry)",
+    "Test Coverage: 90+% (Foundry)",
     "Tools: Mythril, Slither",
 ];
 
