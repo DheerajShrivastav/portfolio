@@ -15,7 +15,7 @@ const experiences: Experience[] = [
         role: "Software Engineer Intern",
         company: "Scalfull Technologies",
         period: "2026 - Present",
-        description: "Building scalable backend systems using Node.js, NestJS, and PostgreSQL.",
+        description: "Architecting scalable backend systems using Node.js, NestJS, and PostgreSQL. Standardized API documentation using Swagger/OpenAPI and achieved 90%+ test coverage on core microservices.",
         type: "work",
     },
     {
