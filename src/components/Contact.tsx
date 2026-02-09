@@ -30,7 +30,7 @@ export default function Contact() {
     };
 
     return (
-        <section id="contact" className="py-24 border-t border-border/50 bg-bg-secondary/30">
+        <section id="contact" className="py-16 md:py-24 border-t border-border/50 bg-bg-secondary/30">
             <div className="max-w-4xl mx-auto px-6">
                 {/* Section header */}
                 <h2 className="font-mono text-accent-green mb-8 section-header uppercase tracking-wider text-sm flex items-center gap-2">
@@ -41,9 +41,9 @@ export default function Contact() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className="glass-card p-8 border border-border/50"
+                    className="glass-card p-6 md:p-8 border border-border/50"
                 >
-                    <p className="text-text-secondary mb-6 text-lg">
+                    <p className="text-text-secondary mb-8 text-base md:text-lg">
                         Open to opportunities and interesting projects. Feel free to reach out.
                     </p>
 
@@ -55,14 +55,16 @@ export default function Contact() {
                                 variants={linkVariants}
                                 className="flex items-center gap-3 group"
                             >
-                                <span className="text-text-muted min-w-[80px]">{link.label}:</span>{" "}
-                                <Link
-                                    href={link.href}
-                                    target={link.label !== "email" ? "_blank" : undefined}
-                                    className="text-accent-blue hover:text-accent-green transition-colors"
-                                >
-                                    {link.value}
-                                </Link>
+                                <span className="text-text-muted min-w-[80px] shrink-0">{link.label}:</span>{" "}
+                                <div className="flex flex-wrap items-center gap-2 overflow-hidden">
+                                    <Link
+                                        href={link.href}
+                                        target={link.label !== "email" ? "_blank" : undefined}
+                                        className="text-accent-blue hover:text-accent-green transition-colors break-all"
+                                    >
+                                        {link.value}
+                                    </Link>
+                                </div>
 
                                 {link.label === "email" && (
                                     <div className="flex items-center gap-2">
@@ -106,7 +108,7 @@ export function Footer() {
                 <p className="font-mono text-sm text-text-muted">
                     © {new Date().getFullYear()} Dheeraj • Built with Next.js
                 </p>
-                <p className="font-mono text-xs text-text-muted mt-2">
+                <p className="hidden md:block font-mono text-xs text-text-muted mt-2">
                     Press <kbd className="px-1 bg-bg-tertiary border border-border rounded">⌘K</kbd> for quick navigation
                 </p>
             </div>

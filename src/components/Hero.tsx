@@ -90,24 +90,21 @@ export default function Hero() {
                         </div>
 
                         {/* CTA Links */}
-                        <div className="flex flex-wrap gap-6 items-center">
-                            <div className="flex gap-4">
+                        <div className="flex flex-col sm:flex-row flex-wrap gap-6 items-start sm:items-center">
+                            <Link
+                                href="https://drive.google.com/file/d/1j0IWlXTSg8yu6XtIO74U9Cqqt9O3qgMC/view?usp=sharing"
+                                target="_blank"
+                                className="px-6 py-3 border border-border text-text-primary font-bold rounded hover:bg-bg-secondary transition-all text-center w-full sm:w-auto"
+                            >
+                                View Resume
+                            </Link>
 
-                                <Link
-                                    href="https://drive.google.com/file/d/1j0IWlXTSg8yu6XtIO74U9Cqqt9O3qgMC/view?usp=sharing"
-                                    target="_blank"
-                                    className="px-6 py-3 border border-border text-text-primary font-bold rounded hover:bg-bg-secondary transition-all text-center"
-                                >
-                                    View Resume
-                                </Link>
-                            </div>
-
-                            <div className="flex gap-4 text-sm font-mono text-text-muted sm:ml-2">
-                                <Link href="mailto:dheerajshrivastav08@gmail.com" className="hover:text-accent-green transition-colors border-b border-transparent hover:border-accent-green">email.send()</Link>
-                                <span className="opacity-20">|</span>
-                                <Link href="#projects" className="hover:text-accent-blue transition-colors border-b border-transparent hover:border-accent-blue">ls archive/</Link>
-                                <span className="opacity-20">|</span>
-                                <Link href="https://cal.com/dheeraj-shrivastav/30min" target="_blank" className="hover:text-accent-green transition-colors border-b border-transparent hover:border-accent-green">schedule_call()</Link>
+                            <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm font-mono text-text-muted">
+                                <Link href="mailto:dheerajshrivastav08@gmail.com" className="hover:text-accent-green transition-colors border-b border-transparent hover:border-accent-green whitespace-nowrap">email.send()</Link>
+                                <span className="hidden sm:inline opacity-20">|</span>
+                                <Link href="#projects" className="hover:text-accent-blue transition-colors border-b border-transparent hover:border-accent-blue whitespace-nowrap">ls archive/</Link>
+                                <span className="hidden sm:inline opacity-20">|</span>
+                                <Link href="https://cal.com/dheeraj-shrivastav/30min" target="_blank" className="hover:text-accent-green transition-colors border-b border-transparent hover:border-accent-green whitespace-nowrap">schedule_call()</Link>
                             </div>
                         </div>
                     </motion.div>
