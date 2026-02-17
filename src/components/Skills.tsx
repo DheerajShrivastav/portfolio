@@ -4,9 +4,9 @@ import { motion, Variants } from "framer-motion";
 
 const skills = {
     blockchain: ["Solidity", "Foundry", "Hardhat", "Ethers.js", "Viem", "Smart Contracts", "DeFi"],
-    backend: ["Node.js", "NestJS", "Express", "GraphQL", "PostgreSQL", "Prisma", "Redis", "Docker"],
-    frontend: ["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML/CSS"],
-    tools: ["Git", "Linux", "AWS", "Vercel", "CI/CD", "Bun"],
+    backend: ["Node.js", "Bun", "NestJS", "Express", "GraphQL", "PostgreSQL", "Prisma", "Redis", "Docker"],
+    frontend: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+    tools: ["Git", "Linux", "AWS", "Vercel", "CI/CD"],
 };
 
 const containerVariants: Variants = {

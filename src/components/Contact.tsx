@@ -20,6 +20,7 @@ export default function Contact() {
         { label: "email", href: "mailto:dheerajshrivastav08@gmail.com", value: "dheerajshrivastav08@gmail.com" },
         { label: "github", href: "https://github.com/DheerajShrivastav", value: "github.com/DheerajShrivastav" },
         { label: "linkedin", href: "https://www.linkedin.com/in/dheerajshrivastav/", value: "linkedin.com/in/dheerajshrivastav/" },
+        { label: "X (Twitter)", href: "https://x.com/Dheeraj_08_", value: "@Dheeraj_08_" },
         { label: "Book a call", href: "https://cal.com/dheeraj-shrivastav/30min", value: "cal.com/dheeraj-shrivastav/30min" },
     ];
 

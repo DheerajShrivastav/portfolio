@@ -153,7 +153,7 @@ export default function Projects() {
                     {[
                         { label: "Systems Built", value: "10+", accent: "text-accent-blue", icon: "sys" },
                         { label: "Contracts Deployed", value: "15+", accent: "text-accent-green", icon: "0x" },
-                        { label: "Test Coverage", value: "98%", accent: "text-accent-green", icon: "ok" }
+                        { label: "Test Coverage", value: "90%+", accent: "text-accent-green", icon: "ok" }
                     ].map((stat, i) => (
                         <motion.div
                             key={i}
