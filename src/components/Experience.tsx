@@ -15,7 +15,7 @@ const experiences: Experience[] = [
         role: "Product Developer",
         company: "Seragen Biotherapeutics",
         period: "2026 - Present",
-        description: "Building and developing digital products and tools to support biotherapeutics research and operations.",
+        description: "Building digital products to support biotherapeutics operations. Built a WhatsApp chatbot that enables patients to take self-assessments through an automated doctor workflow powered by AI agents.",
         type: "work",
     },
     {
