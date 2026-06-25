@@ -12,9 +12,16 @@ interface Experience {
 
 const experiences: Experience[] = [
     {
+        role: "Product Developer",
+        company: "Seragen Biotherapeutics",
+        period: "2026 - Present",
+        description: "Building and developing digital products and tools to support biotherapeutics research and operations.",
+        type: "work",
+    },
+    {
         role: "Software Engineer Intern",
         company: "Scalfull Technologies",
-        period: "2026 - Present",
+        period: "Feb 2026 - May 2026",
         description: "Architecting scalable backend systems using Node.js, NestJS, and PostgreSQL. Standardized API documentation using Swagger/OpenAPI and achieved 90%+ test coverage on core microservices.",
         type: "work",
     },
