@@ -7,20 +7,21 @@ import { motion } from "framer-motion";
 const initSequence = [
     "> engineer.info()",
     "",
-    "[NETWORK]",
-    "Deployments: 12 L2",
-    "Verified: 15+ Contracts",
-    "Avg Gas Optimization: 24%",
+    "[IN PRODUCTION]",
+    "WhatsApp + AI voice patient agent",
+    "AI patient reports, doctor-reviewed",
+    "Tool suite -> one automated pipeline",
+    "Internal recommendation agents",
     "",
-    "[BACKEND]",
-    "Architecture: Event-Driven",
-    "Integrations: SQL, Redis, GQL",
-    "Latency: <150ms",
+    "[USED BY]",
+    "Patients, doctors, internal team",
     "",
-    "[SECURITY]",
-    "Audits: 3 Internal/Shadow",
-    "Test Coverage: 90+% (Foundry)",
-
+    "[BUILDING]",
+    "DappDrop: 240 unit + 26 invariant tests",
+    "",
+    "[STACK]",
+    "Backend: Node.js, NestJS, PostgreSQL",
+    "Web3: Solidity, Foundry, Hardhat",
 ];
 
 export default function Hero() {
@@ -77,34 +78,37 @@ export default function Hero() {
                   Hi, I am Dheeraj Shrivastav
                 </span>
               </p>
-              {/* <h1 className="text-4xl md:text-6xl font-bold text-text-primary mb-6 tracking-tight leading-[1.1] max-w-2xl">
-                            Engineering Secure <span className="text-accent-green">DeFi Infrastructure</span> & Scalable Backend Systems.
-                        </h1>
-                        <h2 className="text-xl md:text-2xl text-accent-blue font-semibold mb-6">
-                            Backend Engineer specializing in Distributed Systems & Smart Contract Security.
-                        </h2> */}
+              <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-6 tracking-tight leading-[1.1] max-w-2xl">
+                I ship{' '}
+                <span className="text-accent-green">production software</span>{' '}
+                that real people use.
+              </h1>
 
               <div className="max-w-xl text-lg text-text-secondary leading-relaxed mb-10 space-y-4">
                 <p>
-                  I build production APIs with{' '}
+                  Right now that means{' '}
                   <span className="text-text-primary font-medium">
-                    NodeJS/PostgreSQL
-                  </span>{' '}
-                  and gas-optimized, smart contracts.
+                    AI agents running in production
+                  </span>
+                  : a WhatsApp voice agent patients talk to, AI reports that
+                  doctors review before they go out, and internal agents a team
+                  uses instead of waiting on a senior.
                 </p>
                 <p>
-                  Bridging the gap between{' '}
+                  I also founded{' '}
                   <span className="text-accent-blue font-medium">
-                    high-performance backend architecture
-                  </span>{' '}
-                  and Web3 security-first development.
+                    DappDrop
+                  </span>
+                  , an on-chain rewards protocol I architect and ship with AI
+                  coding agents, gated by 260+ Foundry tests. Those tests
+                  caught a fund-drain bug before launch.
                 </p>
               </div>
 
               {/* CTA Links */}
               <div className="flex flex-col sm:flex-row flex-wrap gap-6 items-start sm:items-center">
                 <Link
-                  href="https://drive.google.com/file/d/1TAcXTIjPE_AjyccOUJvK74LDyvWRPNTB/view?usp=sharing"
+                  href="/resume/Dheeraj-Shrivastav-Resume.pdf"
                   target="_blank"
                   className="px-6 py-3 border border-border text-text-primary font-bold rounded hover:bg-bg-secondary transition-all text-center w-full sm:w-auto"
                 >

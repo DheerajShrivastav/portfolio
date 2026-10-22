@@ -3,17 +3,19 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { useKBar } from "kbar";
 
 const navLinks = [
     { name: "About", href: "#about" },
+    { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
     { name: "Open Source", href: "#opensource" },
-    { name: "Experience", href: "#experience" },
     { name: "Contact", href: "#contact" },
 ];
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { query } = useKBar();
 
     return (
         <motion.header
@@ -56,14 +58,8 @@ export default function Header() {
                     <div className="flex items-center gap-4">
                         {/* Cmd+K hint (Desktop only) */}
                         <button
-                            onClick={() => {
-                                // Trigger kbar
-                                const event = new KeyboardEvent("keydown", {
-                                    key: "k",
-                                    metaKey: true,
-                                });
-                                document.dispatchEvent(event);
-                            }}
+                            onClick={() => query.toggle()}
+                            aria-label="Open command palette"
                             className="hidden md:flex items-center gap-2 px-3 py-1.5 text-xs font-mono text-text-muted border border-border rounded hover:border-accent-green hover:text-accent-green transition-colors"
                         >
                             <span>⌘K</span>

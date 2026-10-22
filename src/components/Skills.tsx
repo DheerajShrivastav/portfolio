@@ -3,10 +3,12 @@
 import { motion, Variants } from "framer-motion";
 
 const skills = {
-    blockchain: ["Solidity", "Foundry", "Hardhat", "Ethers.js", "Viem", "Smart Contracts", "DeFi"],
-    backend: ["Node.js", "Bun", "NestJS", "Express", "GraphQL", "PostgreSQL", "Prisma", "Redis", "Docker"],
-    frontend: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
-    tools: ["Git", "Linux", "AWS", "Vercel", "CI/CD"],
+    languages: ["TypeScript", "JavaScript", "Python", "Solidity", "SQL"],
+    ai: ["Claude", "Gemini", "AWS Bedrock", "Groq", "AI Agents", "Voice Agents", "MCP", "WhatsApp Business API"],
+    backend: ["Node.js", "NestJS", "Express", "Bun", "REST", "Socket.io", "Prisma", "PostgreSQL", "Redis", "OAuth", "SIWE"],
+    web3: ["Foundry", "ethers.js", "viem", "EIP-712", "Merkle Proofs", "The Graph"],
+    frontend: ["React", "Next.js", "Tailwind CSS", "Phaser"],
+    infra: ["Docker", "GitHub Actions", "AWS (S3, CloudFront, Lambda, Bedrock)", "Linux", "Vercel"],
 };
 
 const containerVariants: Variants = {
@@ -28,7 +30,7 @@ const lineVariants: Variants = {
 
 export default function Skills() {
     return (
-        <section className="py-16 border-t border-border">
+        <section id="skills" className="py-16 border-t border-border">
             <div className="max-w-4xl mx-auto px-6">
                 {/* Section header */}
                 <h2 className="font-mono text-accent-green mb-8 section-header">

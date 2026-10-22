@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dheeraj Shrivastav - Resume</title>
+<!--
+  Single source of truth for the resume. Build with: ./resume/build.sh
+  Phone number is injected at build time (?phone=...) so it never lands in the public repo.
+-->
+<style>
+  @page { size: A4; margin: 10mm 12mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 9.5pt;
+    line-height: 1.32;
+    color: #111;
+  }
+  a { color: inherit; text-decoration: none; }
+  header { text-align: center; margin-bottom: 7pt; }
+  h1 { font-size: 18pt; font-weight: 700; letter-spacing: -0.2pt; }
+  .tagline { font-size: 10.5pt; margin-top: 1pt; }
+  .contact { margin-top: 3pt; font-size: 8.6pt; color: #333; }
+  .contact span + span::before { content: " | "; color: #999; }
+  h2 {
+    font-size: 10pt;
+    text-transform: uppercase;
+    letter-spacing: 0.8pt;
+    border-bottom: 0.8pt solid #111;
+    padding-bottom: 1.5pt;
+    margin: 7pt 0 3pt;
+  }
+  .summary { margin-bottom: 1pt; }
+  .entry { margin-bottom: 4pt; }
+  .row { display: flex; justify-content: space-between; gap: 8pt; }
+  .row b { font-weight: 700; }
+  .meta { white-space: nowrap; color: #333; }
+  .sub { font-style: italic; color: #333; }
+  ul { margin: 1.5pt 0 0 13pt; }
+  li { margin-bottom: 1.2pt; }
+  .skills div { margin-bottom: 1.5pt; }
+  .phone-only { display: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Dheeraj Shrivastav</h1>
+  <div class="tagline">Software Engineer | AI Agents, Backend Systems, Web3</div>
+  <div class="contact">
+    <span>Maharashtra, India</span>
+    <span><a href="mailto:dheerajshrivastav08@gmail.com">dheerajshrivastav08@gmail.com</a></span>
+    <span class="phone-only" id="phone"></span>
+    <span><a href="https://dheerajshrivastav.me">dheerajshrivastav.me</a></span>
+    <span><a href="https://github.com/DheerajShrivastav">github.com/DheerajShrivastav</a></span>
+    <span><a href="https://linkedin.com/in/dheerajshrivastav">linkedin.com/in/dheerajshrivastav</a></span>
+  </div>
+</header>
+
+<section>
+  <h2>Summary</h2>
+  <p class="summary">
+    Software engineer building AI agents and backend services in production. At work: patient-facing WhatsApp and voice AI
+    agents with doctor-in-the-loop review. Founder of DappDrop, an on-chain rewards protocol I architect and ship with AI coding agents,
+    gated by 260+ Foundry tests including invariant fuzzing. TypeScript/Node.js, PostgreSQL, Solidity.
+  </p>
+</section>
+
+<section>
+  <h2>Experience</h2>
+
+  <div class="entry">
+    <div class="row"><span><b>Product Developer</b>, Seragen Biotherapeutics</span><span class="meta">Jun 2026 - Present</span></div>
+    <div class="sub">Claude, Gemini, Node.js, TypeScript, WebSockets, WhatsApp Business API, Azure</div>
+    <ul>
+      <li>Built a WhatsApp patient assistant with an integrated AI voice agent that runs patient self-assessments end to end, reducing manual physician intervention by 65%.</li>
+      <li>Designed a doctor-in-the-loop flow: AI drafts personalized patient reports and doctors approve them before delivery.</li>
+      <li>Consolidated the team's separate tools into a single automated pipeline, removing manual hand-offs between steps.</li>
+      <li>Built internal AI agents that give staff on-demand recommendations, cutting routine escalations to seniors.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="row"><span><b>Software Engineer Intern</b>, Scalefull Technologies</span><span class="meta">Feb 2026 - May 2026</span></div>
+    <ul>
+      <li>Improved backend performance by ~25% with caching layers and REST API refactors (Node.js, TypeScript, NestJS).</li>
+      <li>Designed and migrated PostgreSQL schemas to speed up queries on high-concurrency read paths.</li>
+      <li>Raised test coverage on core microservices to ~90% and standardized API documentation with Swagger/OpenAPI.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="row"><span><b>Freelance Software Developer</b>, Self-employed</span><span class="meta">Oct 2023 - Sep 2025</span></div>
+    <ul>
+      <li>Built and deployed 10+ web applications for clients (React, Next.js, Node.js, PostgreSQL), actively used by 500+ users.</li>
+      <li>Roughly halved API response times with Redis caching and query optimization in Express/Prisma services.</li>
+      <li>Set up Docker-based CI/CD with GitHub Actions, replacing manual deploys.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Projects</h2>
+
+  <div class="entry">
+    <div class="row"><span><b><a href="https://dapp-drop.dheerajshrivastav.me">DappDrop</a></b>: Sybil-resistant on-chain rewards protocol (founder)</span><span class="meta">Jul 2025 - Present</span></div>
+    <div class="sub">Solidity, Foundry, EIP-712, Merkle proofs, Next.js, Prisma, PostgreSQL, The Graph. Pre-launch, on Sepolia testnet.</div>
+    <ul>
+      <li>Built with AI coding agents behind a verification gate I set up: invariant fuzzing, Slither/Aderyn, my review before deploy.</li>
+      <li>Designed the protocol and security model: escrowed rewards, Merkle settlement with a 24h dispute window, fallback settler.</li>
+      <li>Kept the core contract under the 24 KB EIP-170 limit by moving reward, NFT and fee logic into satellite modules.</li>
+      <li>240 unit + 26 invariant tests; an invariant caught a high-severity cross-campaign fund drain on the dev branch, pre-launch.</li>
+      <li>Off-chain: EIP-712 attestation signer, SIWE auth, The Graph subgraph with RPC fallback, keeper worker, gasless relayer (built).</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="row"><span><b><a href="https://github.com/DheerajShrivastav/aws-deploy-ai">AWS Deploy AI</a></b>: natural-language AWS deployments (solo)</span><span class="meta">2025</span></div>
+    <div class="sub">TypeScript, MCP, AWS Bedrock (Claude), S3, CloudFront, Lambda, GitHub OAuth, Next.js</div>
+    <ul>
+      <li>MCP server + web app that analyzes a GitHub repo with an LLM and deploys it to AWS from a plain-English request.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Open Source</h2>
+  <div class="entry">
+    <div class="row"><span><b>jam-nodes</b> (wespreadjam), external workflow-automation framework, 213 GitHub stars</span><span class="meta">Mar 2026</span></div>
+    <ul>
+      <li>5 merged: Dev.to integration (27 tests), WordPress integration, webhook trigger, sliding-window rate limiter, DataForSEO ops.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="skills">
+  <h2>Skills</h2>
+  <div><b>Languages:</b> TypeScript, JavaScript, Python, Solidity, SQL</div>
+  <div><b>AI:</b> Claude, Gemini, AWS Bedrock, Groq, AI and voice agents, MCP, WhatsApp Business API</div>
+  <div><b>Backend:</b> Node.js, NestJS, Express, Bun, REST, Socket.io, Prisma, PostgreSQL, Redis, OAuth, SIWE</div>
+  <div><b>Web3:</b> Foundry, ethers.js, viem, EIP-712, Merkle proofs, The Graph</div>
+  <div><b>Frontend:</b> React, Next.js, Tailwind CSS, Phaser</div>
+  <div><b>Infra:</b> Docker, GitHub Actions, AWS (S3, CloudFront, Lambda, Bedrock), Linux, Vercel</div>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div class="row"><span><b>B.Tech, Computer Science &amp; Engineering (AI &amp; ML)</b>, DIEMS, Maharashtra</span><span class="meta">2023 - 2026</span></div>
+  <div class="row"><span><b>Diploma, Computer Science &amp; Engineering</b>, MGM Polytechnic, Maharashtra</span><span class="meta">2020 - 2023</span></div>
+</section>
+
+<script>
+  const phone = new URLSearchParams(location.search).get("phone");
+  if (phone) {
+    const el = document.getElementById("phone");
+    el.textContent = phone;
+    el.classList.remove("phone-only");
+  }
+</script>
+</body>
+</html>

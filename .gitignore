@@ -34,3 +34,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# resume build with phone number (private)
+/resume/out/
+/resume/oct 26/

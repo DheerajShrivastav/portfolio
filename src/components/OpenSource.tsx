@@ -6,7 +6,7 @@ import { motion, Variants } from "framer-motion";
 interface Contribution {
     description: string;
     pr: string;
-    prNumber: string;
+    ref: string;
 }
 
 interface Project {
@@ -17,33 +17,34 @@ interface Project {
 
 const ossProjects: Project[] = [
     {
-        name: "spreadjam",
+        name: "jam-nodes",
         repo: "https://github.com/wespreadjam/jam-nodes",
         contributions: [
+            // #44 and #45 were merged by the maintainer as direct commits (authored to me), so link the commits, not the closed PRs
             {
-                description: "Added Dev.to integration (devtoCreateArticle, devtoUpdateArticle, devtoGetArticles)",
-                pr: "https://github.com/wespreadjam/jam-nodes/pull/44",
-                prNumber: "#44",
+                description: "Dev.to integration (create, update, and list articles), shipped with 27 tests",
+                pr: "https://github.com/wespreadjam/jam-nodes/commit/d5137d8",
+                ref: "commit d5137d8",
             },
             {
-                description: "Added WordPress integration with blog publishing support",
-                pr: "https://github.com/wespreadjam/jam-nodes/pull/45",
-                prNumber: "#45",
+                description: "WordPress integration with blog publishing support",
+                pr: "https://github.com/wespreadjam/jam-nodes/commit/6269fc7",
+                ref: "commit 6269fc7",
             },
             {
-                description: "Added webhookTriggerNode for receiving incoming HTTP webhooks",
+                description: "webhookTriggerNode for receiving incoming HTTP webhooks, with tests",
                 pr: "https://github.com/wespreadjam/jam-nodes/pull/48",
-                prNumber: "#48",
+                ref: "PR #48",
             },
             {
-                description: "Added Implementation of rateLimiterNode",
+                description: "rateLimiterNode with fixed-window and sliding-window strategies",
                 pr: "https://github.com/wespreadjam/jam-nodes/pull/49",
-                prNumber: "#49",
+                ref: "PR #49",
             },
             {
-                description: "Added DataForSEO Extended Operations",
+                description: "DataForSEO extended operations (backlinks, SERP, people-also-ask)",
                 pr: "https://github.com/wespreadjam/jam-nodes/pull/51",
-                prNumber: "#51",
+                ref: "PR #51",
             },
         ],
     },
@@ -77,7 +78,7 @@ export default function OpenSource() {
                         Open Source Contributions
                     </h2>
                     <p className="text-text-secondary text-lg max-w-2xl">
-                        Merged pull requests to production open-source projects.
+                        Merged contributions to open-source projects, with tests.
                     </p>
                 </div>
 
@@ -158,7 +159,7 @@ export default function OpenSource() {
                                                         <path d="M13 6h3a2 2 0 0 1 2 2v7" />
                                                         <line x1="6" y1="9" x2="6" y2="21" />
                                                     </svg>
-                                                    PR {contrib.prNumber}
+                                                    {contrib.ref}
                                                 </Link>
                                             </div>
                                         </motion.div>
@@ -175,10 +176,10 @@ export default function OpenSource() {
                                         <path d="M13 6h3a2 2 0 0 1 2 2v7" />
                                         <line x1="6" y1="9" x2="6" y2="21" />
                                     </svg>
-                                    {project.contributions.length} PRs merged
+                                    {project.contributions.length} contributions merged
                                 </span>
                                 <span className="text-border">|</span>
-                                <span className="uppercase tracking-wider">Active Contributor</span>
+                                <span className="uppercase tracking-wider">200+ ★ workflow framework</span>
                             </div>
                         </motion.div>
                     ))}

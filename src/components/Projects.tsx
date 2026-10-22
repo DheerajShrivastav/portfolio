@@ -12,7 +12,7 @@ interface Project {
     challenge: string;
     solution: string;
     tech: string[];
-    mainnetStatus: "LIVE" | "STABLE" | "BETA" | "ALPHA";
+    context: string;
     github?: string;
     live?: string;
     featured?: boolean;
@@ -28,7 +28,7 @@ const TechnicalDeepDive = ({ challenge, solution, stack }: { challenge: string; 
                     onClick={() => setIsOpen(!isOpen)}
                     className="text-xs font-mono text-accent-green hover:text-accent-green/80 flex items-center gap-2 w-full transition-colors"
                 >
-                    <span>{isOpen ? "▼" : "▶"} SYSTEM_LOG: View Engineering Challenge</span>
+                    <span>{isOpen ? "▼" : "▶"} The hardest problem and how I solved it</span>
                 </button>
 
                 <AnimatePresence>
@@ -62,50 +62,50 @@ const TechnicalDeepDive = ({ challenge, solution, stack }: { challenge: string; 
 
 const projects: Project[] = [
     {
-        name: "AWS Deploy AI",
-        headline: "Autonomous Infrastructure-as-Code Engine",
-        engineeringFocus: "LLM-orchestrated DevOps & IAM Security",
-        description: "An AI-native orchestration layer that converts natural language into production-grade AWS environments via MCP servers.",
-        challenge: "Preventing 'hallucinated' insecure IAM policies in auto-generated IaC.",
-        solution: "Built a validation middleware that scrubs generated Terraform against AWS Well-Architected benchmarks before deployment.",
-        tech: ["LLMs", "Node.js", "Python", "Docker", "Terraform", "AWS"],
-        mainnetStatus: "STABLE",
-        github: "https://github.com/DheerajShrivastav/aws-deploy-ai",
+        name: "DappDrop",
+        headline: "Sybil-Resistant On-Chain Rewards Protocol",
+        engineeringFocus: "Protocol Design, Invariant Testing & Off-Chain Infra",
+        description: "My own product, pre-launch on Sepolia testnet. Projects run reward campaigns, participants complete verified tasks, and escrowed ERC-20/721/1155 rewards settle via Merkle proofs. I set the architecture and security model and build it with AI coding agents, gated by 240 unit tests, 26 invariant tests, and Slither/Aderyn static analysis. I review every merge.",
+        challenge: "ERC-20 escrow is one shared token balance across campaigns. A late claim on a campaign whose leftovers had already been swept back to its host could be paid out of a different campaign's escrow.",
+        solution: "An escrow-solvency invariant test caught it before launch, not manual review. claimERC20 now reverts once a campaign is swept, with a regression test. The same suite fuzzes NFT inventory and EIP-712 attestation replay.",
+        tech: ["Solidity", "Foundry", "EIP-712", "Merkle Proofs", "Next.js", "PostgreSQL", "The Graph", "SIWE"],
+        context: "Founder · testnet",
+        live: "https://dapp-drop.dheerajshrivastav.me/",
+        github: "https://github.com/DheerajShrivastav/Dapp-Drop-Smart-Contract",
         featured: true,
     },
     {
-        name: "Latch",
-        headline: "Real-Time On-Chain State Machine",
-        engineeringFocus: "WebSocket Synchronization & Gas Optimization",
-        description: "A multiplayer game settled on-chain with sub-second perceived latency and complex smart contract logic.",
-        challenge: "Matching fast-paced gameplay with 2-second block times on L2.",
-        solution: "Implemented optimistic UI updates via WebSockets with a recursive SNARK-inspired batching system to settle multiple moves in a single transaction.",
-        tech: ["Solidity", "Hardhat", "WebSockets", "React", "Node.js"],
-        mainnetStatus: "LIVE",
-        live: "https://latch.netlify.app/",
-        github: "https://github.com/DheerajShrivastav/latch",
+        name: "AWS Deploy AI",
+        headline: "Natural-Language AWS Deployments",
+        engineeringFocus: "LLM Tooling via MCP & AWS Automation",
+        description: "An MCP server and Next.js app: connect a GitHub repo, describe what you want in plain English, and it gets deployed to AWS.",
+        challenge: "Turning a vague plain-English request into a concrete, working AWS deployment for an arbitrary repository.",
+        solution: "The MCP server exposes analyze_repository and deploy_from_github tools. AWS Bedrock (Claude) analyzes the repo and plans the deployment, then the server provisions S3 + CloudFront or Lambda and reports deployment status.",
+        tech: ["TypeScript", "MCP", "AWS Bedrock", "S3", "CloudFront", "Lambda", "Next.js"],
+        context: "Solo",
+        github: "https://github.com/DheerajShrivastav/aws-deploy-ai",
     },
     {
-        name: "Dapp Dropp",
-        headline: "Sybil-Resistant Airdrop Infrastructure",
-        engineeringFocus: "Cryptographic Attestation & Backend Scalability",
-        description: "A cross-chain SaaS platform for automated, verified token distribution with social and on-chain verification.",
-        challenge: "Verifying off-chain social actions (Twitter/Discord) without exposing central API vulnerabilities.",
-        solution: "Engineered a custom backend oracle using EIP-712 typed data signatures to ensure only cryptographically verified users can trigger the claim function.",
-        tech: ["Solidity", "Next.js", "Node.js", "PostgreSQL", "Web3.js"],
-        mainnetStatus: "LIVE",
-        live: "https://dapp-drop.vercel.app/",
-        github: "https://github.com/DheerajShrivastav/DappDrop-FrontEnd",
+        name: "Latch",
+        headline: "Real-Time Multiplayer Browser Game",
+        engineeringFocus: "Real-Time State Sync over Socket.io",
+        description: "A team game where players explore, chat, and fight in shared scenes. My part was the real-time multiplayer layer.",
+        challenge: "Keeping player movement, combat, and health consistent across every connected browser in real time.",
+        solution: "Clients emit movement to the server at fixed intervals over Socket.io; the server resolves attacks, tracks health, and broadcasts animation state to everyone in the scene.",
+        tech: ["Phaser 3", "Socket.io", "Express", "PostgreSQL"],
+        context: "Hackathon · team of 4",
+        live: "https://latch.netlify.app/",
+        github: "https://github.com/DheerajShrivastav/latch/commits?author=DheerajShrivastav",
     },
     {
         name: "Event Horizon",
-        headline: "AI-Powered Grant Platform",
-        engineeringFocus: "AI + Blockchain Fusion",
-        description: "Decentralized grant distribution on Base L2 with automated proposal evaluation and lifecycle management.",
-        challenge: "Reducing manual overhead in grant processing and ensuring fair proposal scoring.",
-        solution: "Integrated OpenAI API for automated proposal evaluation coupled with bulk crypto payout smart contracts for instantaneous distribution.",
-        tech: ["Solidity", "Base L2", "Node.js", "PostgreSQL", "OpenAI API"],
-        mainnetStatus: "BETA",
+        headline: "AI-Assisted Grant Platform",
+        engineeringFocus: "LLM Evaluation + On-Chain Payouts",
+        description: "Base hackathon project, team of 3; I wrote 32 of ~50 commits. Uses AI to score grant proposals and pays approved ones on-chain.",
+        challenge: "Reviewing many grant proposals consistently and paying the approved ones without manual back-and-forth.",
+        solution: "A Groq-hosted LLM scores proposals; a GrantDistribution contract with Foundry unit tests running in CI pays the approved ones.",
+        tech: ["Solidity", "Foundry", "Base", "Groq", "TypeScript", "PostgreSQL"],
+        context: "Hackathon · team of 3",
         github: "https://github.com/DheerajShrivastav/decentralized-grant-program-dapp",
     },
 ];
@@ -135,41 +135,12 @@ export default function Projects() {
             <div className="max-w-5xl mx-auto px-6">
                 <div className="mb-16">
                     <h2 className="font-mono text-accent-green mb-2 section-header uppercase tracking-wider text-sm">
-                        Engineering Projects
+                        Projects
                     </h2>
                     <p className="text-text-secondary text-lg max-w-2xl">
-                        Technical deep-dives into infrastructure, state machines, and cryptographic systems.
+                        Things I built outside work. Every claim here links to code you can read.
                     </p>
                 </div>
-
-                {/* Engineering Stats Bar */}
-                <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-16"
-                >
-                    {[
-                        { label: "Systems Built", value: "10+", accent: "text-accent-blue", icon: "sys" },
-                        { label: "Contracts Deployed", value: "15+", accent: "text-accent-green", icon: "0x" },
-                        { label: "Test Coverage", value: "90%+", accent: "text-accent-green", icon: "ok" }
-                    ].map((stat, i) => (
-                        <motion.div
-                            key={i}
-                            variants={itemVariants}
-                            className="glass-card p-6 flex flex-col items-center justify-center text-center group hover:border-accent-green/30 transition-all duration-300 relative overflow-hidden"
-                        >
-                            <div className="absolute top-0 right-0 p-2 opacity-5 font-mono text-xs uppercase tracking-widest">{stat.icon}</div>
-                            <div className={`text-3xl font-bold ${stat.accent} mb-1 tracking-tight group-hover:scale-110 transition-transform`}>
-                                {stat.value}
-                            </div>
-                            <div className="text-[10px] font-mono text-text-muted uppercase tracking-[0.2em]">
-                                {stat.label}
-                            </div>
-                        </motion.div>
-                    ))}
-                </motion.div>
 
                 <motion.div
                     variants={containerVariants}
@@ -207,7 +178,7 @@ export default function Projects() {
                                                 </h3>
                                             )}
                                             <span className="shrink-0 px-2 py-0.5 rounded text-[10px] font-mono border border-accent-green/20 text-accent-green bg-accent-green/5">
-                                                {project.mainnetStatus}
+                                                {project.context}
                                             </span>
                                         </div>
                                         <div className="mb-3">
@@ -289,7 +260,7 @@ export default function Projects() {
                                     {project.tech.slice(0, 5).map((t) => (
                                         <span
                                             key={t}
-                                            className="tag bg-accent-green/5 text-accent-green border-accent-green/20 opacity-40 group-hover:opacity-100 group-hover:bg-accent-green/10 transition-all duration-300"
+                                            className="tag bg-accent-green/5 text-accent-green border-accent-green/20 md:opacity-60 md:group-hover:opacity-100 group-hover:bg-accent-green/10 transition-all duration-300"
                                         >
                                             {t}
                                         </span>

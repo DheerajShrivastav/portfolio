@@ -35,6 +35,20 @@ const actions = [
         perform: () => (window.location.hash = "#experience"),
     },
     {
+        id: "opensource",
+        name: "Go to Open Source",
+        shortcut: ["g", "o"],
+        keywords: "open source contributions pull requests",
+        perform: () => (window.location.hash = "#opensource"),
+    },
+    {
+        id: "skills",
+        name: "Go to Skills",
+        shortcut: ["g", "s"],
+        keywords: "skills stack tech",
+        perform: () => (window.location.hash = "#skills"),
+    },
+    {
         id: "contact",
         name: "Go to Contact",
         shortcut: ["g", "c"],
@@ -46,14 +60,14 @@ const actions = [
         name: "Open GitHub",
         shortcut: ["o", "g"],
         keywords: "github code source",
-        perform: () => window.open("https://github.com/dheeraj", "_blank"),
+        perform: () => window.open("https://github.com/DheerajShrivastav", "_blank"),
     },
     {
         id: "resume",
         name: "Download Resume",
         shortcut: ["o", "r"],
         keywords: "resume cv download pdf",
-        perform: () => window.open("/resume/Dheeraj_Full_Stack_dev.pdf", "_blank"),
+        perform: () => window.open("/resume/Dheeraj-Shrivastav-Resume.pdf", "_blank"),
     },
 ];
 

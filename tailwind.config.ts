@@ -19,7 +19,7 @@ const config: Config = {
         text: {
           primary: "#e6edf3",
           secondary: "#8b949e",
-          muted: "#6e7681",
+          muted: "#7d8590",
         },
         accent: {
           green: "#4AF626",      // Terminal green
