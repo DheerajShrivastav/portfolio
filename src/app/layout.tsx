@@ -19,9 +19,6 @@ export const metadata: Metadata = {
   title: "Dheeraj Shrivastav | Software Engineer: AI Agents, Backend & Web3",
   description: "Software engineer shipping production AI agents and backend systems used by real patients, doctors, and teams. Node.js, NestJS, PostgreSQL, and Solidity smart contracts.",
   keywords: ["Software Engineer", "AI Agents", "Voice AI", "Backend Engineer", "Node.js", "NestJS", "PostgreSQL", "Solidity", "Web3", "Dheeraj Shrivastav"],
-  icons: {
-    icon: "/profilePic.jpg",
-  },
   openGraph: {
     title: "Dheeraj Shrivastav | Software Engineer: AI Agents, Backend & Web3",
     description: "Software engineer shipping production AI agents and backend systems.",
@@ -44,8 +41,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} ${jetbrains.variable}`}>
-        <CommandPalette>{children}</CommandPalette>
-        <ScrollToTop />
+        <CommandPalette>
+          {children}
+          <ScrollToTop />
+        </CommandPalette>
       </body>
     </html>
   );

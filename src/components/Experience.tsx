@@ -94,7 +94,7 @@ const itemVariants: Variants = {
 export default function Experience() {
     return (
         <section id="experience" className="py-24 border-t border-border/50">
-            <div className="max-w-4xl mx-auto px-6">
+            <div className="max-w-5xl mx-auto px-6">
                 {/* Section header */}
                 <div className="mb-12">
                     <h2 className="font-mono text-accent-green mb-2 section-header uppercase tracking-wider text-sm">

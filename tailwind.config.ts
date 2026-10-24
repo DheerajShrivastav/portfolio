@@ -71,9 +71,10 @@ const config: Config = {
           from: { opacity: "0" },
           to: { opacity: "1" },
         },
+        // Transform only: starting at opacity 0 would stop Chrome from counting the hero as LCP.
         slideUp: {
-          from: { opacity: "0", transform: "translateY(20px)" },
-          to: { opacity: "1", transform: "translateY(0)" },
+          from: { transform: "translateY(12px)" },
+          to: { transform: "translateY(0)" },
         },
       },
     },

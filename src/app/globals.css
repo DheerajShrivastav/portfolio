@@ -5,15 +5,15 @@
 :root {
   --bg-primary: #0a0a0b;
   --bg-secondary: #111113;
-  --bg-tertiary: #161618;
+  --bg-tertiary: #1a1a1d;
   --border: #30363d;
-  --text-primary: #f0f6fc;
+  --text-primary: #e6edf3;
   --text-secondary: #8b949e;
   --text-muted: #7d8590;
   --accent-green: #4AF626;
   --accent-blue: #58a6ff;
-  --accent-purple: #bc8cff;
-  --accent-red: #ff7b72;
+  --accent-purple: #a371f7;
+  --accent-red: #f85149;
   --accent-yellow: #d29922;
 }
 
@@ -23,14 +23,10 @@
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -96,7 +92,7 @@ a:hover {
 .tag {
   display: inline-block;
   padding: 0.2rem 0.6rem;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 500;
   font-family: var(--font-mono), monospace;
   background: var(--bg-secondary);
@@ -162,51 +158,6 @@ a:hover {
 }
 
 /* ============================================
-   Utility Styles
-   ============================================ */
-
-.animate-blink {
-  animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-
-  0%,
-  50% {
-    opacity: 1;
-  }
-
-  51%,
-  100% {
-    opacity: 0;
-  }
-}
-
-/* ============================================
-   Syntax Highlighting
-   ============================================ */
-
-.syntax-key {
-  color: var(--accent-blue);
-}
-
-.syntax-string {
-  color: var(--accent-green);
-}
-
-.syntax-bracket {
-  color: var(--text-muted);
-}
-
-.syntax-colon {
-  color: var(--text-muted);
-}
-
-.syntax-comma {
-  color: var(--text-muted);
-}
-
-/* ============================================
    KBar Overrides
    ============================================ */
 
@@ -229,4 +180,24 @@ button:focus-visible {
   outline: 2px solid var(--accent-green);
   outline-offset: 2px;
   border-radius: 4px;
+}
+
+/* Respect the OS "reduce motion" setting (framer-motion is handled by MotionConfig in CommandPalette) */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  .animate-pulse,
+  .animate-blink,
+  .animate-slide-up,
+  .animate-fade-in {
+    animation: none !important;
+  }
+
+  *,
+  ::before,
+  ::after {
+    transition-duration: 0.01ms !important;
+  }
 }

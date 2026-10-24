@@ -72,7 +72,7 @@ const itemVariants: Variants = {
 export default function OpenSource() {
     return (
         <section id="opensource" className="py-24 border-t border-border/50">
-            <div className="max-w-4xl mx-auto px-6">
+            <div className="max-w-5xl mx-auto px-6">
                 <div className="mb-12">
                     <h2 className="font-mono text-accent-green mb-2 section-header uppercase tracking-wider text-sm">
                         Open Source Contributions
@@ -124,7 +124,7 @@ export default function OpenSource() {
                                     <span className="w-2.5 h-2.5 rounded-full bg-red-500/60" />
                                     <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/60" />
                                     <span className="w-2.5 h-2.5 rounded-full bg-green-500/60" />
-                                    <span className="text-[10px] font-mono text-text-muted ml-2">
+                                    <span className="text-xs font-mono text-text-muted ml-2">
                                         git log --author=dheeraj --oneline
                                     </span>
                                 </div>
@@ -168,7 +168,7 @@ export default function OpenSource() {
                             </div>
 
                             {/* Stats footer */}
-                            <div className="mt-4 flex items-center gap-4 text-[11px] font-mono text-text-muted">
+                            <div className="mt-4 flex items-center gap-4 text-xs font-mono text-text-muted">
                                 <span className="flex items-center gap-1.5">
                                     <svg className="w-3.5 h-3.5 text-accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                         <circle cx="18" cy="18" r="3" />

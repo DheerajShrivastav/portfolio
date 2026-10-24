@@ -11,6 +11,7 @@ import {
     ActionImpl,
 } from "kbar";
 import { ReactNode } from "react";
+import { MotionConfig } from "framer-motion";
 
 const actions = [
     {
@@ -18,42 +19,42 @@ const actions = [
         name: "Go to About",
         shortcut: ["g", "a"],
         keywords: "about home intro",
-        perform: () => (window.location.hash = "#about"),
+        perform: () => (window.location.href = "/#about"),
     },
     {
         id: "projects",
         name: "Go to Projects",
         shortcut: ["g", "p"],
         keywords: "projects work portfolio",
-        perform: () => (window.location.hash = "#projects"),
+        perform: () => (window.location.href = "/#projects"),
     },
     {
         id: "experience",
         name: "Go to Experience",
         shortcut: ["g", "e"],
         keywords: "experience work history jobs",
-        perform: () => (window.location.hash = "#experience"),
+        perform: () => (window.location.href = "/#experience"),
     },
     {
         id: "opensource",
         name: "Go to Open Source",
         shortcut: ["g", "o"],
         keywords: "open source contributions pull requests",
-        perform: () => (window.location.hash = "#opensource"),
+        perform: () => (window.location.href = "/#opensource"),
     },
     {
         id: "skills",
         name: "Go to Skills",
         shortcut: ["g", "s"],
         keywords: "skills stack tech",
-        perform: () => (window.location.hash = "#skills"),
+        perform: () => (window.location.href = "/#skills"),
     },
     {
         id: "contact",
         name: "Go to Contact",
         shortcut: ["g", "c"],
         keywords: "contact email reach",
-        perform: () => (window.location.hash = "#contact"),
+        perform: () => (window.location.href = "/#contact"),
     },
     {
         id: "github",
@@ -109,25 +110,28 @@ function RenderResults() {
 
 export default function CommandPalette({ children }: { children: ReactNode }) {
     return (
-        <KBarProvider actions={actions}>
-            <KBarPortal>
-                <KBarPositioner className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm">
-                    <KBarAnimator className="w-full max-w-lg mx-auto mt-[20vh] overflow-hidden rounded-lg border border-border bg-bg-secondary shadow-2xl">
-                        {/* Search input styled like terminal */}
-                        <div className="flex items-center gap-2 px-4 py-3 border-b border-border">
-                            <span className="text-accent-green font-mono">$</span>
-                            <KBarSearch className="flex-1 bg-transparent border-none outline-none text-text-primary font-mono placeholder:text-text-muted" />
-                        </div>
-                        <RenderResults />
-                        {/* Hint footer */}
-                        <div className="px-4 py-2 border-t border-border text-xs text-text-muted font-mono">
-                            <span className="text-text-secondary">tip:</span> press{" "}
-                            <kbd className="px-1 bg-bg-primary border border-border rounded">esc</kbd> to close
-                        </div>
-                    </KBarAnimator>
-                </KBarPositioner>
-            </KBarPortal>
-            {children}
-        </KBarProvider>
+        // reducedMotion="user": framer-motion animations follow the OS "reduce motion" setting
+        <MotionConfig reducedMotion="user">
+            <KBarProvider actions={actions}>
+                <KBarPortal>
+                    <KBarPositioner className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm">
+                        <KBarAnimator className="w-full max-w-lg mx-auto mt-[20vh] overflow-hidden rounded-lg border border-border bg-bg-secondary shadow-2xl">
+                            {/* Search input styled like terminal */}
+                            <div className="flex items-center gap-2 px-4 py-3 border-b border-border">
+                                <span className="text-accent-green font-mono">$</span>
+                                <KBarSearch className="flex-1 bg-transparent border-none outline-none text-text-primary font-mono placeholder:text-text-muted" />
+                            </div>
+                            <RenderResults />
+                            {/* Hint footer */}
+                            <div className="px-4 py-2 border-t border-border text-xs text-text-muted font-mono">
+                                <span className="text-text-secondary">tip:</span> press{" "}
+                                <kbd className="px-1 bg-bg-primary border border-border rounded">esc</kbd> to close
+                            </div>
+                        </KBarAnimator>
+                    </KBarPositioner>
+                </KBarPortal>
+                {children}
+            </KBarProvider>
+        </MotionConfig>
     );
 }

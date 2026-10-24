@@ -8,22 +8,16 @@ export default function ScrollToTop() {
 
     // Show button when page is scrolled down
     useEffect(() => {
-        const toggleVisibility = () => {
-            if (window.pageYOffset > 300) {
-                setIsVisible(true);
-            } else {
-                setIsVisible(false);
-            }
-        };
+        const toggleVisibility = () => setIsVisible(window.scrollY > 300);
 
-        window.addEventListener("scroll", toggleVisibility);
+        window.addEventListener("scroll", toggleVisibility, { passive: true });
         return () => window.removeEventListener("scroll", toggleVisibility);
     }, []);
 
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
-            behavior: "smooth",
+            behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
         });
     };
 
@@ -35,7 +29,7 @@ export default function ScrollToTop() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.8 }}
                     onClick={scrollToTop}
-                    className="fixed bottom-8 right-8 z-50 flex items-center gap-2 px-4 py-2 bg-bg-secondary/80 backdrop-blur-md border border-border/50 rounded-md font-mono text-xs text-text-muted hover:text-accent-green hover:border-accent-green/50 transition-all duration-300 group shadow-lg shadow-black/20"
+                    className="fixed bottom-8 right-8 z-50 hidden md:flex items-center gap-2 px-4 py-2 bg-bg-secondary/80 backdrop-blur-md border border-border/50 rounded-md font-mono text-xs text-text-muted hover:text-accent-green hover:border-accent-green/50 transition-all duration-300 group shadow-lg shadow-black/20"
                     aria-label="Scroll to top"
                 >
                     <span className="text-accent-green animate-pulse">[_]</span>

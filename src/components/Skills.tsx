@@ -1,97 +1,25 @@
-"use client";
-
-import { motion, Variants } from "framer-motion";
-
-const skills = {
-    languages: ["TypeScript", "JavaScript", "Python", "Solidity", "SQL"],
-    ai: ["Claude", "Gemini", "AWS Bedrock", "Groq", "AI Agents", "Voice Agents", "MCP", "WhatsApp Business API"],
-    backend: ["Node.js", "NestJS", "Express", "Bun", "REST", "Socket.io", "Prisma", "PostgreSQL", "Redis", "OAuth", "SIWE"],
-    web3: ["Foundry", "ethers.js", "viem", "EIP-712", "Merkle Proofs", "The Graph"],
-    frontend: ["React", "Next.js", "Tailwind CSS", "Phaser"],
-    infra: ["Docker", "GitHub Actions", "AWS (S3, CloudFront, Lambda, Bedrock)", "Linux", "Vercel"],
-};
-
-const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: { staggerChildren: 0.05 },
-    },
-};
-
-const lineVariants: Variants = {
-    hidden: { opacity: 0, x: -10 },
-    visible: {
-        opacity: 1,
-        x: 0,
-        transition: { duration: 0.3 },
-    },
-};
+const skills: { label: string; items: string[] }[] = [
+    { label: "AI", items: ["Claude", "Gemini", "AWS Bedrock", "Groq", "AI agents", "Voice agents", "MCP", "WhatsApp Business API"] },
+    { label: "Backend", items: ["TypeScript", "Node.js", "NestJS", "Express", "Bun", "REST", "Socket.io", "Prisma", "PostgreSQL", "Redis", "OAuth", "SIWE"] },
+    { label: "Web3", items: ["Solidity", "Foundry", "ethers.js", "viem", "EIP-712", "Merkle proofs", "The Graph"] },
+    { label: "Frontend", items: ["React", "Next.js", "Tailwind CSS", "Phaser"] },
+    { label: "Infra", items: ["Docker", "GitHub Actions", "AWS (S3, CloudFront, Lambda, Bedrock)", "Azure", "Linux", "Vercel"] },
+];
 
 export default function Skills() {
     return (
         <section id="skills" className="py-16 border-t border-border">
-            <div className="max-w-4xl mx-auto px-6">
-                {/* Section header */}
-                <h2 className="font-mono text-accent-green mb-8 section-header">
-                    $ cat skills.json
-                </h2>
+            <div className="max-w-5xl mx-auto px-6">
+                <h2 className="font-mono text-accent-green mb-8 section-header">Skills</h2>
 
-                {/* JSON-styled skills display */}
-                <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-50px" }}
-                    className="glass-card p-6 font-mono text-sm"
-                >
-                    {/* Opening brace */}
-                    <motion.div variants={lineVariants}>
-                        <span className="syntax-bracket">{"{"}</span>
-                    </motion.div>
-
-                    {/* Skills object */}
-                    {Object.entries(skills).map(([category, items], catIndex) => (
-                        <div key={category} className="pl-4">
-                            <motion.div variants={lineVariants} className="flex flex-wrap items-start">
-                                {/* Key */}
-                                <span className="syntax-key">&quot;{category}&quot;</span>
-                                <span className="syntax-colon">: </span>
-                                <span className="syntax-bracket">[</span>
-                            </motion.div>
-
-                            {/* Values */}
-                            <div className="pl-4 flex flex-wrap gap-x-1">
-                                {items.map((skill, i) => (
-                                    <motion.span
-                                        key={skill}
-                                        variants={lineVariants}
-                                        className="group inline-flex items-center"
-                                    >
-                                        <span className="syntax-string group-hover:underline cursor-default">
-                                            &quot;{skill}&quot;
-                                        </span>
-                                        {i < items.length - 1 && (
-                                            <span className="syntax-comma">, </span>
-                                        )}
-                                    </motion.span>
-                                ))}
-                            </div>
-
-                            <motion.div variants={lineVariants}>
-                                <span className="syntax-bracket">]</span>
-                                {catIndex < Object.keys(skills).length - 1 && (
-                                    <span className="syntax-comma">,</span>
-                                )}
-                            </motion.div>
+                <dl className="glass-card p-6 grid grid-cols-1 sm:grid-cols-[7rem_1fr] gap-x-6 gap-y-4">
+                    {skills.map(({ label, items }) => (
+                        <div key={label} className="contents">
+                            <dt className="font-mono text-sm text-accent-blue sm:pt-0.5">{label}</dt>
+                            <dd className="text-text-secondary text-sm leading-relaxed">{items.join(" · ")}</dd>
                         </div>
                     ))}
-
-                    {/* Closing brace */}
-                    <motion.div variants={lineVariants}>
-                        <span className="syntax-bracket">{"}"}</span>
-                    </motion.div>
-                </motion.div>
+                </dl>
             </div>
         </section>
     );

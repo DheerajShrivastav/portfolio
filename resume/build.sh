@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
-# Renders resume/resume.html to PDF with headless Chrome.
-#   ./resume/build.sh                          -> public/resume/Dheeraj-Shrivastav-Resume.pdf (no phone, served on the site)
-#   PHONE="+91 ..." ./resume/build.sh          -> also resume/out/Dheeraj-Shrivastav-Resume.pdf (with phone, for applications; gitignored)
+# Renders resume/resume.html to PDF with headless Chrome, once per variant.
+#   ./resume/build.sh                   -> public/resume/*.pdf (no phone, served on the site)
+#   PHONE="+91 ..." ./resume/build.sh   -> also resume/out/*.pdf (with phone, for applications; gitignored)
+# Variants: ai (default; AI agents + backend first) and web3 (smart contracts first). Same facts, different order.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -14,11 +15,14 @@ render() {
   echo "wrote $2"
 }
 
-mkdir -p "$ROOT/public/resume"
-render "$SRC" "$ROOT/public/resume/Dheeraj-Shrivastav-Resume.pdf"
+name() { [[ "$1" == "ai" ]] && echo "Dheeraj-Shrivastav-Resume.pdf" || echo "Dheeraj-Shrivastav-Resume-Web3.pdf"; }
 
-if [[ -n "${PHONE:-}" ]]; then
-  mkdir -p "$ROOT/resume/out"
-  render "$SRC?phone=$(python3 -c 'import sys,urllib.parse;print(urllib.parse.quote(sys.argv[1]))' "$PHONE")" \
-    "$ROOT/resume/out/Dheeraj-Shrivastav-Resume.pdf"
-fi
+mkdir -p "$ROOT/public/resume"
+[[ -n "${PHONE:-}" ]] && mkdir -p "$ROOT/resume/out"
+for v in ai web3; do
+  render "$SRC?variant=$v" "$ROOT/public/resume/$(name $v)"
+  if [[ -n "${PHONE:-}" ]]; then
+    q=$(python3 -c 'import sys,urllib.parse;print(urllib.parse.quote(sys.argv[1]))' "$PHONE")
+    render "$SRC?variant=$v&phone=$q" "$ROOT/resume/out/$(name $v)"
+  fi
+done

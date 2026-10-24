@@ -40,13 +40,19 @@
   li { margin-bottom: 1.2pt; }
   .skills div { margin-bottom: 1.5pt; }
   .phone-only { display: none; }
+
+  /* Variants (?variant=ai | web3). Same facts, different emphasis and order. */
+  /* Section order for web3 is set by the script at the bottom (normal flow keeps margins collapsing). */
+  [data-v] { display: none !important; }
+  body.v-ai [data-v~="ai"], body.v-web3 [data-v~="web3"] { display: revert !important; }
 </style>
 </head>
 <body>
 
 <header>
   <h1>Dheeraj Shrivastav</h1>
-  <div class="tagline">Software Engineer | AI Agents, Backend Systems, Web3</div>
+  <div class="tagline" data-v="ai">Software Engineer | AI Agents, Backend Systems, Web3</div>
+  <div class="tagline" data-v="web3">Smart Contract &amp; Backend Engineer | Solidity, Foundry, TypeScript</div>
   <div class="contact">
     <span>Maharashtra, India</span>
     <span><a href="mailto:dheerajshrivastav08@gmail.com">dheerajshrivastav08@gmail.com</a></span>
@@ -57,16 +63,21 @@
   </div>
 </header>
 
-<section>
+<section id="s-summary">
   <h2>Summary</h2>
-  <p class="summary">
+  <p class="summary" data-v="ai">
     Software engineer building AI agents and backend services in production. At work: patient-facing WhatsApp and voice AI
     agents with doctor-in-the-loop review. Founder of DappDrop, an on-chain rewards protocol I architect and ship with AI coding agents,
     gated by 260+ Foundry tests including invariant fuzzing. TypeScript/Node.js, PostgreSQL, Solidity.
   </p>
+  <p class="summary" data-v="web3">
+    Smart contract and backend engineer. Founder of DappDrop, an on-chain rewards protocol (escrow, Merkle settlement, EIP-712
+    attestations) gated by 260+ Foundry tests; its invariant suite caught a high-severity fund drain before launch. Day job: shipping
+    production AI agents in TypeScript/Node.js.
+  </p>
 </section>
 
-<section>
+<section id="s-experience">
   <h2>Experience</h2>
 
   <div class="entry">
@@ -75,7 +86,7 @@
     <ul>
       <li>Built a WhatsApp patient assistant with an integrated AI voice agent that runs patient self-assessments end to end, reducing manual physician intervention by 65%.</li>
       <li>Designed a doctor-in-the-loop flow: AI drafts personalized patient reports and doctors approve them before delivery.</li>
-      <li>Consolidated the team's separate tools into a single automated pipeline, removing manual hand-offs between steps.</li>
+      <li data-v="ai">Consolidated the team's separate tools into a single automated pipeline, removing manual hand-offs between steps.</li>
       <li>Built internal AI agents that give staff on-demand recommendations, cutting routine escalations to seniors.</li>
     </ul>
   </div>
@@ -99,7 +110,7 @@
   </div>
 </section>
 
-<section>
+<section id="s-projects">
   <h2>Projects</h2>
 
   <div class="entry">
@@ -114,16 +125,24 @@
     </ul>
   </div>
 
-  <div class="entry">
+  <div class="entry" data-v="ai">
     <div class="row"><span><b><a href="https://github.com/DheerajShrivastav/aws-deploy-ai">AWS Deploy AI</a></b>: natural-language AWS deployments (solo)</span><span class="meta">2025</span></div>
     <div class="sub">TypeScript, MCP, AWS Bedrock (Claude), S3, CloudFront, Lambda, GitHub OAuth, Next.js</div>
     <ul>
       <li>MCP server + web app that analyzes a GitHub repo with an LLM and deploys it to AWS from a plain-English request.</li>
     </ul>
   </div>
+
+  <div class="entry" data-v="web3">
+    <div class="row"><span><b><a href="https://github.com/DheerajShrivastav/decentralized-grant-program-dapp">Event Horizon</a></b>: AI-assisted grants on Base (hackathon, team of 3)</span><span class="meta">Apr 2025</span></div>
+    <div class="sub">Solidity, Foundry, Base, Groq, TypeScript, PostgreSQL</div>
+    <ul>
+      <li>A Groq-hosted LLM scores grant proposals; a GrantDistribution contract with Foundry tests in CI pays approved ones.</li>
+    </ul>
+  </div>
 </section>
 
-<section>
+<section id="s-oss">
   <h2>Open Source</h2>
   <div class="entry">
     <div class="row"><span><b>jam-nodes</b> (wespreadjam), external workflow-automation framework, 213 GitHub stars</span><span class="meta">Mar 2026</span></div>
@@ -133,24 +152,34 @@
   </div>
 </section>
 
-<section class="skills">
+<section id="s-skills" class="skills">
   <h2>Skills</h2>
   <div><b>Languages:</b> TypeScript, JavaScript, Python, Solidity, SQL</div>
   <div><b>AI:</b> Claude, Gemini, AWS Bedrock, Groq, AI and voice agents, MCP, WhatsApp Business API</div>
   <div><b>Backend:</b> Node.js, NestJS, Express, Bun, REST, Socket.io, Prisma, PostgreSQL, Redis, OAuth, SIWE</div>
-  <div><b>Web3:</b> Foundry, ethers.js, viem, EIP-712, Merkle proofs, The Graph</div>
+  <div class="sk-web3"><b>Web3:</b> Foundry (unit, fuzz, invariant), Slither, Aderyn, ethers.js, viem, EIP-712, Merkle proofs, The Graph</div>
   <div><b>Frontend:</b> React, Next.js, Tailwind CSS, Phaser</div>
   <div><b>Infra:</b> Docker, GitHub Actions, AWS (S3, CloudFront, Lambda, Bedrock), Linux, Vercel</div>
 </section>
 
-<section>
+<section id="s-education">
   <h2>Education</h2>
   <div class="row"><span><b>B.Tech, Computer Science &amp; Engineering (AI &amp; ML)</b>, DIEMS, Maharashtra</span><span class="meta">2023 - 2026</span></div>
   <div class="row"><span><b>Diploma, Computer Science &amp; Engineering</b>, MGM Polytechnic, Maharashtra</span><span class="meta">2020 - 2023</span></div>
+  <div data-v="web3">Course: Cyfrin Updraft, Advanced Smart Contract Development with Foundry (2025)</div>
 </section>
 
 <script>
-  const phone = new URLSearchParams(location.search).get("phone");
+  const params = new URLSearchParams(location.search);
+  const web3 = params.get("variant") === "web3";
+  document.body.classList.add(web3 ? "v-web3" : "v-ai");
+  if (web3) {
+    // Projects before Experience, and the Web3 skills line first.
+    const $ = (s) => document.querySelector(s);
+    $("#s-experience").before($("#s-projects"));
+    $("#s-skills h2").after($("#s-skills .sk-web3"));
+  }
+  const phone = params.get("phone");
   if (phone) {
     const el = document.getElementById("phone");
     el.textContent = phone;
