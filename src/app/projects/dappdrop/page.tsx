@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import { Footer } from "@/components/Contact";
+import { Bullets, Decision, Facts, Section, TalkCta, ext } from "@/components/CaseStudy";
 
 export const metadata: Metadata = {
   title: "DappDrop case study | Dheeraj Shrivastav",
@@ -22,30 +23,6 @@ const facts = [
   { label: "Off-chain", value: "Next.js 15, Prisma, PostgreSQL, The Graph" },
   { label: "Tests", value: "240 unit + 26 invariant (default branch)" },
 ];
-
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <section className="mb-14">
-      <h2 className="font-mono text-accent-green mb-4 section-header uppercase tracking-wider text-sm">{title}</h2>
-      <div className="space-y-4 text-text-secondary leading-relaxed">{children}</div>
-    </section>
-  );
-}
-
-function Decision({ title, why, children }: { title: string; why: string; children: React.ReactNode }) {
-  return (
-    <div className="glass-card p-6">
-      <h3 className="text-lg font-bold text-text-primary mb-2">{title}</h3>
-      <p className="mb-3">{children}</p>
-      <p className="text-sm">
-        <span className="font-mono text-accent-blue">why: </span>
-        {why}
-      </p>
-    </div>
-  );
-}
-
-const ext = { target: "_blank", rel: "noopener noreferrer" } as const;
 
 export default function DappDropCaseStudy() {
   return (
@@ -74,14 +51,7 @@ export default function DappDropCaseStudy() {
           </div>
         </header>
 
-        <dl className="glass-card p-6 mb-14 grid grid-cols-1 sm:grid-cols-[8rem_1fr] gap-x-6 gap-y-2 text-sm">
-          {facts.map((f) => (
-            <div key={f.label} className="contents">
-              <dt className="font-mono text-text-muted">{f.label}</dt>
-              <dd className="text-text-primary">{f.value}</dd>
-            </div>
-          ))}
-        </dl>
+        <Facts items={facts} />
 
         <Section title="The problem">
           <p>
@@ -182,19 +152,14 @@ Web3Campaigns (core contract)
             I build DappDrop with AI coding agents, so the verification gate matters more than who typed the code. I set
             the architecture and security decisions, and nothing ships without passing the gate:
           </p>
-          <ul className="space-y-2">
-            {[
+          <Bullets
+            items={[
               "Foundry unit tests plus stateful-fuzz invariant suites for escrow solvency, NFT inventory and attestation replay.",
               "Negative controls: deliberately breaking a fix to prove the invariant actually fails without it.",
               "Slither and Aderyn static analysis, with every finding and its status recorded in the security findings log.",
               "Honest claims: no external audit has been done, so nothing on the site says \"audited\".",
-            ].map((item) => (
-              <li key={item} className="flex gap-3">
-                <span className="text-accent-green font-mono shrink-0">&gt;</span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
+            ]}
+          />
         </Section>
 
         <Section title="Status and what's next">
@@ -205,13 +170,7 @@ Web3Campaigns (core contract)
           </p>
         </Section>
 
-        <div className="glass-card p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <p className="text-text-primary">Want to go deeper on any of these decisions?</p>
-          <div className="flex gap-4 font-mono text-sm">
-            <a href="mailto:dheerajshrivastav08@gmail.com">email me</a>
-            <a href="https://cal.com/dheeraj-shrivastav/30min" {...ext}>book a call</a>
-          </div>
-        </div>
+        <TalkCta />
       </main>
       <Footer />
     </>

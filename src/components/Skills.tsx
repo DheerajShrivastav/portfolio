@@ -1,5 +1,5 @@
 const skills: { label: string; items: string[] }[] = [
-    { label: "AI", items: ["Claude", "Gemini", "AWS Bedrock", "Groq", "AI agents", "Voice agents", "MCP", "WhatsApp Business API"] },
+    { label: "AI", items: ["Gemini Live (native audio)", "Claude", "AWS Bedrock", "Groq", "Voice agents", "AI agents", "Guardrails", "MCP"] },
     { label: "Backend", items: ["TypeScript", "Node.js", "NestJS", "Express", "Bun", "REST", "Socket.io", "Prisma", "PostgreSQL", "Redis", "OAuth", "SIWE"] },
     { label: "Web3", items: ["Solidity", "Foundry", "ethers.js", "viem", "EIP-712", "Merkle proofs", "The Graph"] },
     { label: "Frontend", items: ["React", "Next.js", "Tailwind CSS", "Phaser"] },

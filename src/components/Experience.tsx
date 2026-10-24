@@ -25,12 +25,12 @@ const experiences: Experience[] = [
         period: "Jun 2026 - Present",
         summary: "Building AI-powered products for patient care and internal operations.",
         highlights: [
-            "Built a WhatsApp patient assistant with an integrated AI voice agent that runs patient self-assessments end to end, reducing manual physician intervention by 65%.",
+            "Built a real-time voice AI agent on Gemini Live that talks with patients and doctors in any supported language, with strict guardrails over a curated dataset; it reduced manual physician intervention by 65%.",
             "Designed a doctor-in-the-loop flow: AI drafts personalized patient reports and doctors approve them before delivery.",
             "Consolidated the team's separate tools into a single automated pipeline, removing manual hand-offs between steps.",
             "Built internal AI agents that give staff on-demand recommendations, cutting routine escalations to seniors.",
         ],
-        stack: ["Claude", "Gemini", "Node.js", "TypeScript", "WebSockets", "WhatsApp Business API", "Azure"],
+        stack: ["Gemini Live", "Claude", "Node.js", "TypeScript", "WebSockets", "Azure"],
         current: true,
     },
     {

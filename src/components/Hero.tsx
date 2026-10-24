@@ -7,7 +7,7 @@ const initSequence = [
     "> engineer.info()",
     "",
     "[IN PRODUCTION]",
-    "WhatsApp + AI voice patient agent",
+    "Real-time voice agent (Gemini Live)",
     "AI patient reports, doctor-reviewed",
     "Tool suite -> one automated pipeline",
     "Internal recommendation agents",
@@ -75,9 +75,13 @@ export default function Hero() {
 
               <div className="max-w-xl text-lg text-text-secondary leading-relaxed mb-8 space-y-4">
                 <p>
-                  A WhatsApp voice agent patients talk to, AI reports that
-                  doctors review before they go out, and internal agents a team
-                  uses instead of waiting on a senior. Built on{' '}
+                  A{' '}
+                  <Link href="/projects/voice-agent" className="text-text-primary font-medium hover:underline">
+                    real-time voice agent
+                  </Link>{' '}
+                  that patients and doctors talk to in any language, AI reports
+                  that doctors review before they go out, and internal agents a
+                  team uses instead of waiting on a senior. Built on{' '}
                   <span className="text-text-primary font-medium">
                     TypeScript/Node.js backends
                   </span>

@@ -19,14 +19,15 @@ interface Project {
 
 const projects: Project[] = [
     {
-        name: "Patient AI Agent",
-        headline: "WhatsApp + voice agent for patient self-assessments",
-        description: "A WhatsApp assistant with an integrated AI voice agent that runs patient self-assessments end to end, then drafts a personalized report for a doctor to approve.",
-        challenge: "Cut the manual work physicians do on self-assessments without letting unreviewed AI output reach patients.",
-        solution: "The agent runs the conversation over WhatsApp and voice and drafts the report; a doctor approves it before delivery. Manual physician intervention dropped 65%.",
-        tech: ["Claude", "Gemini", "Node.js", "TypeScript", "WebSockets", "WhatsApp Business API", "Azure"],
+        name: "Real-Time Voice Agent",
+        headline: "Voice AI agent for patients and doctors, on Gemini Live",
+        description: "Holds live voice conversations with patients and doctors and helps with their daily workflow: self-assessments, answers from a curated dataset, and personalized reports that doctors approve. Works in any language Gemini Live supports, switching mid-conversation.",
+        challenge: "A voice agent feels broken if it pauses, and in healthcare a fluent made-up answer is worse than none.",
+        solution: "Native speech-to-speech on Gemini Live (no separate STT/TTS hops) for live conversation, strict rules that keep answers inside a curated dataset, and a token-efficient harness. Manual physician intervention dropped 65%.",
+        tech: ["Gemini Live", "Node.js", "TypeScript", "WebSockets", "Azure"],
         context: "At work · in production · private code",
         featured: true,
+        caseStudy: "/projects/voice-agent",
     },
     {
         name: "DappDrop",
@@ -196,7 +197,7 @@ export default function Projects() {
                                     href={project.caseStudy}
                                     className="self-start mb-5 font-mono text-sm text-accent-green hover:underline"
                                 >
-                                    Read the case study: architecture, bugs caught, trade-offs →
+                                    Read the case study: architecture and trade-offs →
                                 </Link>
                             )}
 
