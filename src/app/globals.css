@@ -2,202 +2,88 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Values that inline styles or non-Tailwind surfaces need; keep in sync with tailwind.config.ts */
 :root {
-  --bg-primary: #0a0a0b;
-  --bg-secondary: #111113;
-  --bg-tertiary: #1a1a1d;
-  --border: #30363d;
-  --text-primary: #e6edf3;
-  --text-secondary: #8b949e;
-  --text-muted: #7d8590;
-  --accent-green: #4AF626;
-  --accent-blue: #58a6ff;
-  --accent-purple: #a371f7;
-  --accent-red: #f85149;
-  --accent-yellow: #d29922;
+  --paper: #f6f6f3;
+  --ink: #0d0d0d;
+  --ink-3: #66665f;
+  --cobalt: #1f3bff;
+  --cobalt-soft: #dde2ff;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* Minimal scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--bg-primary);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--border);
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-green);
-}
-
-/* Selection */
-::selection {
-  background: rgba(74, 246, 38, 0.2);
-  color: var(--accent-green);
-}
-
-/* ============================================
-   Glass Terminal Styles
-   ============================================ */
-
-.glass-card {
-  background: rgba(17, 17, 19, 0.6);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.glass-card:hover {
-  border-color: rgba(74, 246, 38, 0.4);
-  background: rgba(17, 17, 19, 0.8);
-  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
-}
-
-/* ============================================
-   Link & Interaction Styles
-   ============================================ */
-
-a {
-  color: var(--accent-blue);
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-a:hover {
-  color: #79c0ff;
-}
-
-/* Tag/badge */
-.tag {
-  display: inline-block;
-  padding: 0.2rem 0.6rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  font-family: var(--font-mono), monospace;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  color: var(--text-secondary);
-  transition: all 0.2s ease;
-  cursor: default;
-}
-
-.tag:hover {
-  border-color: var(--accent-green);
-  color: var(--accent-green);
-  transform: translateY(-1px);
-}
-
-/* Nav link */
-.nav-link {
-  position: relative;
-  font-weight: 500;
-}
-
-.nav-link::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--accent-green);
-  transition: width 0.3s ease;
-  border-radius: 2px;
-}
-
-.nav-link:hover::after {
-  width: 100%;
-}
-
-/* Logo hover */
-.logo-link {
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-.logo-link:hover {
-  color: var(--accent-green) !important;
-}
-
-/* Section headers */
-.section-header {
-  font-size: 1.25rem;
-  letter-spacing: 0.05em;
-  text-transform: lowercase;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.section-header::before {
-  content: ">";
-  color: var(--accent-green);
-  font-weight: bold;
-}
-
-/* ============================================
-   KBar Overrides
-   ============================================ */
-
-[data-kbar-search] {
-  font-size: 1rem !important;
-}
-
-[data-kbar-results] {
-  padding: 8px !important;
-}
-
-[data-kbar-result] {
-  border-radius: 8px !important;
-  margin-bottom: 2px !important;
-}
-
-/* Focus states */
-a:focus-visible,
-button:focus-visible {
-  outline: 2px solid var(--accent-green);
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-
-/* Respect the OS "reduce motion" setting (framer-motion is handled by MotionConfig in CommandPalette) */
-@media (prefers-reduced-motion: reduce) {
+@layer base {
   html {
-    scroll-behavior: auto !important;
+    background: var(--paper);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    scrollbar-color: var(--ink) var(--paper);
+    scrollbar-width: thin;
   }
 
-  .animate-pulse,
-  .animate-blink,
-  .animate-slide-up,
-  .animate-fade-in {
-    animation: none !important;
+  body {
+    @apply bg-paper font-sans text-ink;
+    font-feature-settings: "ss01" on;
+    caret-color: var(--cobalt);
   }
 
+  ::selection {
+    background: var(--cobalt);
+    color: #fff;
+  }
+
+  /* Inside the cobalt field, selection flips so it stays visible */
+  .on-cobalt ::selection {
+    background: #fff;
+    color: var(--cobalt);
+  }
+
+  a {
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1px;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--cobalt);
+    outline-offset: 3px;
+  }
+
+  .on-cobalt :focus-visible {
+    outline-color: #fff;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* KBar overrides */
+  [data-kbar-search] {
+    font-size: 1rem !important;
+  }
+}
+
+/* Respect the OS "reduce motion" setting */
+@media (prefers-reduced-motion: reduce) {
   *,
   ::before,
   ::after {
     transition-duration: 0.01ms !important;
+    animation: none !important;
+  }
+
+  html {
+    scroll-behavior: auto !important;
   }
 }

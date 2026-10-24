@@ -1,0 +1,44 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/zine.html"
+        ],
+        "createdAt": "2026-10-24T20:00:35.156Z",
+        "reason": "Claude: decision-round sketch depicting the hand-drawn zine catalog world, whose own grammar is cream paper; not shipping UI"
+      },
+      {
+        "rule": "overused-font",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/zine.html"
+        ],
+        "createdAt": "2026-10-24T20:00:35.169Z",
+        "reason": "Claude: decision-round sketch; body face is a placeholder for the zine world, not shipping UI"
+      },
+      {
+        "rule": "overused-font",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/canon.html"
+        ],
+        "createdAt": "2026-10-24T20:00:35.181Z",
+        "reason": "Claude: canon card sketch deliberately depicts the category-standard look, not shipping UI"
+      },
+      {
+        "rule": "overused-font",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/r1-pick.html"
+        ],
+        "createdAt": "2026-10-24T20:07:58.142Z",
+        "reason": "Claude: decision-round sketch; Arial is a placeholder for the datasheet world's face, not shipping UI"
+      }
+    ]
+  }
+}

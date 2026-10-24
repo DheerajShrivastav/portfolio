@@ -1,17 +1,13 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Schibsted_Grotesk } from "next/font/google";
 import "./globals.css";
 import CommandPalette from "@/components/CommandPalette";
-import ScrollToTop from "@/components/ScrollToTop";
 
-const inter = Inter({
+// One grotesk for the whole site, at extreme size contrast (Swiss poster system).
+const grotesk = Schibsted_Grotesk({
   subsets: ["latin"],
-  variable: "--font-inter",
-});
-
-const jetbrains = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
+  variable: "--font-sans",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -40,11 +36,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} ${jetbrains.variable}`}>
-        <CommandPalette>
-          {children}
-          <ScrollToTop />
-        </CommandPalette>
+      <body className={grotesk.variable}>
+        <CommandPalette>{children}</CommandPalette>
       </body>
     </html>
   );

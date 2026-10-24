@@ -1,81 +1,37 @@
 import type { Config } from "tailwindcss";
 
+// Swiss poster system: paper, ink, one cobalt field. Cobalt is reserved for the claim and for things you can act on.
 const config: Config = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
-        // Premium terminal palette
-        bg: {
-          primary: "#0a0a0b",
-          secondary: "#111113",
-          tertiary: "#1a1a1d",
-          glass: "rgba(17, 17, 19, 0.7)",
+        paper: "#f6f6f3",
+        ink: {
+          DEFAULT: "#0d0d0d",
+          2: "#3d3d3a", // secondary text on paper (10:1)
+          3: "#66665f", // tertiary text on paper (5.3:1)
         },
-        text: {
-          primary: "#e6edf3",
-          secondary: "#8b949e",
-          muted: "#7d8590",
-        },
-        accent: {
-          green: "#4AF626",      // Terminal green
-          blue: "#58a6ff",       // Web3 blue
-          purple: "#a371f7",
-          yellow: "#d29922",
-          red: "#f85149",
-          cyan: "#56d4dd",
-        },
-        syntax: {
-          key: "#58a6ff",        // JSON keys
-          string: "#4AF626",     // JSON strings
-          bracket: "#8b949e",    // Brackets
-          colon: "#6e7681",      // Punctuation
-        },
-        border: {
-          DEFAULT: "#30363d",
-          glow: "#4AF626",
+        cobalt: {
+          DEFAULT: "#1f3bff",
+          deep: "#1730d6", // pressed / hover on cobalt
+          soft: "#dde2ff", // secondary text on cobalt (5.2:1)
         },
       },
       fontFamily: {
-        mono: ["var(--font-mono)", "JetBrains Mono", "Fira Code", "monospace"],
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        sans: ["var(--font-sans)", "Helvetica Neue", "Arial", "sans-serif"],
       },
-      boxShadow: {
-        glow: "0 0 20px rgba(74, 246, 38, 0.3)",
-        "glow-sm": "0 0 10px rgba(74, 246, 38, 0.2)",
-        "glow-blue": "0 0 20px rgba(88, 166, 255, 0.3)",
+      fontSize: {
+        // display steps for the poster scale; body stays at the 1rem / 1.125rem defaults
+        "display-xl": ["clamp(2.75rem, min(1.4rem + 4.6vw, 9.5vh), 5.25rem)", { lineHeight: "0.96", letterSpacing: "-0.04em" }],
+        "display-lg": ["clamp(2.25rem, 1.5rem + 2.8vw, 3.75rem)", { lineHeight: "1", letterSpacing: "-0.035em" }],
+        "display-md": ["clamp(1.75rem, 1.35rem + 1.4vw, 2.5rem)", { lineHeight: "1.05", letterSpacing: "-0.03em" }],
       },
-      backdropBlur: {
-        glass: "12px",
-      },
-      animation: {
-        "blink": "blink 1s step-end infinite",
-        "typewriter": "typewriter 2s steps(20) forwards",
-        "fade-in": "fadeIn 0.4s ease-out forwards",
-        "slide-up": "slideUp 0.5s ease-out forwards",
-      },
-      keyframes: {
-        blink: {
-          "0%, 50%": { opacity: "1" },
-          "51%, 100%": { opacity: "0" },
-        },
-        typewriter: {
-          from: { width: "0" },
-          to: { width: "100%" },
-        },
-        fadeIn: {
-          from: { opacity: "0" },
-          to: { opacity: "1" },
-        },
-        // Transform only: starting at opacity 0 would stop Chrome from counting the hero as LCP.
-        slideUp: {
-          from: { transform: "translateY(12px)" },
-          to: { transform: "translateY(0)" },
-        },
+      maxWidth: {
+        page: "90rem",
       },
     },
   },

@@ -8,68 +8,22 @@ import {
     KBarSearch,
     KBarResults,
     useMatches,
-    ActionImpl,
 } from "kbar";
 import { ReactNode } from "react";
-import { MotionConfig } from "framer-motion";
+
+const go = (href: string) => () => (window.location.href = href);
 
 const actions = [
-    {
-        id: "about",
-        name: "Go to About",
-        shortcut: ["g", "a"],
-        keywords: "about home intro",
-        perform: () => (window.location.href = "/#about"),
-    },
-    {
-        id: "projects",
-        name: "Go to Projects",
-        shortcut: ["g", "p"],
-        keywords: "projects work portfolio",
-        perform: () => (window.location.href = "/#projects"),
-    },
-    {
-        id: "experience",
-        name: "Go to Experience",
-        shortcut: ["g", "e"],
-        keywords: "experience work history jobs",
-        perform: () => (window.location.href = "/#experience"),
-    },
-    {
-        id: "opensource",
-        name: "Go to Open Source",
-        shortcut: ["g", "o"],
-        keywords: "open source contributions pull requests",
-        perform: () => (window.location.href = "/#opensource"),
-    },
-    {
-        id: "skills",
-        name: "Go to Skills",
-        shortcut: ["g", "s"],
-        keywords: "skills stack tech",
-        perform: () => (window.location.href = "/#skills"),
-    },
-    {
-        id: "contact",
-        name: "Go to Contact",
-        shortcut: ["g", "c"],
-        keywords: "contact email reach",
-        perform: () => (window.location.href = "/#contact"),
-    },
-    {
-        id: "github",
-        name: "Open GitHub",
-        shortcut: ["o", "g"],
-        keywords: "github code source",
-        perform: () => window.open("https://github.com/DheerajShrivastav", "_blank"),
-    },
-    {
-        id: "resume",
-        name: "Download Resume",
-        shortcut: ["o", "r"],
-        keywords: "resume cv download pdf",
-        perform: () => window.open("/resume/Dheeraj-Shrivastav-Resume.pdf", "_blank"),
-    },
+    { id: "about", name: "Go to the top", shortcut: ["g", "a"], keywords: "about home intro", perform: go("/#about") },
+    { id: "work", name: "Go to Work", shortcut: ["g", "w"], keywords: "projects work portfolio", perform: go("/#work") },
+    { id: "voice", name: "Case study: real-time voice agent", shortcut: ["g", "v"], keywords: "voice agent gemini case study", perform: go("/projects/voice-agent") },
+    { id: "dappdrop", name: "Case study: DappDrop", shortcut: ["g", "d"], keywords: "dappdrop protocol solidity case study", perform: go("/projects/dappdrop") },
+    { id: "experience", name: "Go to Experience", shortcut: ["g", "e"], keywords: "experience history jobs", perform: go("/#experience") },
+    { id: "opensource", name: "Go to Open source", shortcut: ["g", "o"], keywords: "open source contributions pull requests", perform: go("/#work-03") },
+    { id: "skills", name: "Go to Skills", shortcut: ["g", "s"], keywords: "skills stack tech", perform: go("/#skills") },
+    { id: "contact", name: "Go to Contact", shortcut: ["g", "c"], keywords: "contact email reach call", perform: go("/#contact") },
+    { id: "github", name: "Open GitHub", shortcut: ["o", "g"], keywords: "github code source", perform: () => window.open("https://github.com/DheerajShrivastav", "_blank") },
+    { id: "resume", name: "Open resume (PDF)", shortcut: ["o", "r"], keywords: "resume cv download pdf", perform: () => window.open("/resume/Dheeraj-Shrivastav-Resume.pdf", "_blank") },
 ];
 
 function RenderResults() {
@@ -80,27 +34,24 @@ function RenderResults() {
             items={results}
             onRender={({ item, active }) =>
                 typeof item === "string" ? (
-                    <div className="px-4 py-2 text-xs text-text-muted uppercase tracking-wider">
-                        {item}
-                    </div>
+                    <div className="px-5 py-2 text-[13px] font-bold text-ink-3">{item}</div>
                 ) : (
                     <div
-                        className={`px-4 py-3 flex items-center justify-between cursor-pointer transition-colors ${active ? "bg-bg-tertiary text-accent-green" : "text-text-secondary"
-                            }`}
+                        className={`px-5 py-3 flex items-center justify-between cursor-pointer ${active ? "bg-cobalt text-white" : "text-ink"}`}
                     >
-                        <span className="font-mono text-sm">{item.name}</span>
-                        {item.shortcut?.length && (
-                            <div className="flex gap-1">
+                        <span className="text-[15px] font-medium">{item.name}</span>
+                        {item.shortcut?.length ? (
+                            <span className="flex gap-1">
                                 {item.shortcut.map((key) => (
                                     <kbd
                                         key={key}
-                                        className="px-1.5 py-0.5 text-xs bg-bg-primary border border-border rounded font-mono"
+                                        className={`min-w-6 text-center px-1.5 text-[13px] font-sans border ${active ? "border-white/60" : "border-ink/30"}`}
                                     >
                                         {key}
                                     </kbd>
                                 ))}
-                            </div>
-                        )}
+                            </span>
+                        ) : null}
                     </div>
                 )
             }
@@ -110,28 +61,24 @@ function RenderResults() {
 
 export default function CommandPalette({ children }: { children: ReactNode }) {
     return (
-        // reducedMotion="user": framer-motion animations follow the OS "reduce motion" setting
-        <MotionConfig reducedMotion="user">
-            <KBarProvider actions={actions}>
-                <KBarPortal>
-                    <KBarPositioner className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm">
-                        <KBarAnimator className="w-full max-w-lg mx-auto mt-[20vh] overflow-hidden rounded-lg border border-border bg-bg-secondary shadow-2xl">
-                            {/* Search input styled like terminal */}
-                            <div className="flex items-center gap-2 px-4 py-3 border-b border-border">
-                                <span className="text-accent-green font-mono">$</span>
-                                <KBarSearch className="flex-1 bg-transparent border-none outline-none text-text-primary font-mono placeholder:text-text-muted" />
-                            </div>
+        <KBarProvider actions={actions}>
+            <KBarPortal>
+                <KBarPositioner className="fixed inset-0 z-50 bg-ink/40">
+                    <KBarAnimator className="w-full max-w-lg mx-auto mt-[18vh] bg-paper border-2 border-ink">
+                        <KBarSearch
+                            defaultPlaceholder="Jump to a section or case study"
+                            className="w-full px-5 py-4 bg-transparent border-b-2 border-ink text-ink outline-none placeholder:text-ink-3"
+                        />
+                        <div className="py-2">
                             <RenderResults />
-                            {/* Hint footer */}
-                            <div className="px-4 py-2 border-t border-border text-xs text-text-muted font-mono">
-                                <span className="text-text-secondary">tip:</span> press{" "}
-                                <kbd className="px-1 bg-bg-primary border border-border rounded">esc</kbd> to close
-                            </div>
-                        </KBarAnimator>
-                    </KBarPositioner>
-                </KBarPortal>
-                {children}
-            </KBarProvider>
-        </MotionConfig>
+                        </div>
+                        <p className="px-5 py-2 border-t border-ink/20 text-[13px] text-ink-3">
+                            <kbd className="font-sans font-medium text-ink border border-ink/30 px-1">esc</kbd> to close
+                        </p>
+                    </KBarAnimator>
+                </KBarPositioner>
+            </KBarPortal>
+            {children}
+        </KBarProvider>
     );
 }

@@ -1,0 +1,338 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-25T00:00:00Z",
+  "title": "Design System: Dheeraj Shrivastav",
+  "extensions": {
+    "colorMeta": {
+      "cobalt": {
+        "role": "primary",
+        "displayName": "Poster Cobalt",
+        "canonical": "oklch(50.0% 0.281 266.3)",
+        "tonalRamp": [
+          "oklch(15% 0.2 266)",
+          "oklch(26% 0.2 266)",
+          "oklch(37% 0.2 266)",
+          "oklch(48% 0.2 266)",
+          "oklch(59% 0.2 266)",
+          "oklch(70% 0.2 266)",
+          "oklch(82% 0.2 266)",
+          "oklch(95% 0.2 266)"
+        ]
+      },
+      "cobalt-deep": {
+        "role": "primary",
+        "displayName": "Pressed Cobalt",
+        "canonical": "oklch(43.7% 0.246 266.2)",
+        "tonalRamp": [
+          "oklch(15% 0.2 266)",
+          "oklch(26% 0.2 266)",
+          "oklch(37% 0.2 266)",
+          "oklch(48% 0.2 266)",
+          "oklch(59% 0.2 266)",
+          "oklch(70% 0.2 266)",
+          "oklch(82% 0.2 266)",
+          "oklch(95% 0.2 266)"
+        ]
+      },
+      "cobalt-soft": {
+        "role": "primary",
+        "displayName": "Cobalt Mist",
+        "canonical": "oklch(91.8% 0.040 277.8)",
+        "tonalRamp": [
+          "oklch(15% 0.04 278)",
+          "oklch(26% 0.04 278)",
+          "oklch(37% 0.04 278)",
+          "oklch(48% 0.04 278)",
+          "oklch(59% 0.04 278)",
+          "oklch(70% 0.04 278)",
+          "oklch(82% 0.04 278)",
+          "oklch(95% 0.04 278)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Poster Paper",
+        "canonical": "oklch(97.2% 0.004 106.5)",
+        "tonalRamp": [
+          "oklch(15% 0.004 106)",
+          "oklch(26% 0.004 106)",
+          "oklch(37% 0.004 106)",
+          "oklch(48% 0.004 106)",
+          "oklch(59% 0.004 106)",
+          "oklch(70% 0.004 106)",
+          "oklch(82% 0.004 106)",
+          "oklch(95% 0.004 106)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Print Ink",
+        "canonical": "oklch(15.9% 0 0)",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(26% 0 0)",
+          "oklch(37% 0 0)",
+          "oklch(48% 0 0)",
+          "oklch(59% 0 0)",
+          "oklch(70% 0 0)",
+          "oklch(82% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Grey Ink",
+        "canonical": "oklch(35.9% 0.005 106.7)",
+        "tonalRamp": [
+          "oklch(15% 0.005 107)",
+          "oklch(26% 0.005 107)",
+          "oklch(37% 0.005 107)",
+          "oklch(48% 0.005 107)",
+          "oklch(59% 0.005 107)",
+          "oklch(70% 0.005 107)",
+          "oklch(82% 0.005 107)",
+          "oklch(95% 0.005 107)"
+        ]
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Faint Ink",
+        "canonical": "oklch(50.8% 0.011 106.8)",
+        "tonalRamp": [
+          "oklch(15% 0.011 107)",
+          "oklch(26% 0.011 107)",
+          "oklch(37% 0.011 107)",
+          "oklch(48% 0.011 107)",
+          "oklch(59% 0.011 107)",
+          "oklch(70% 0.011 107)",
+          "oklch(82% 0.011 107)",
+          "oklch(95% 0.011 107)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "canonical": "oklch(100% 0 0)",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(26% 0 0)",
+          "oklch(37% 0 0)",
+          "oklch(48% 0 0)",
+          "oklch(59% 0 0)",
+          "oklch(70% 0 0)",
+          "oklch(82% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display-xl": {
+        "displayName": "Display XL",
+        "purpose": "The hero claim and case-study index numbers; one per page."
+      },
+      "display-lg": {
+        "displayName": "Display LG",
+        "purpose": "Section titles, the contact claim, case-study titles, work-row numbers (at 900)."
+      },
+      "display-md": {
+        "displayName": "Display MD",
+        "purpose": "Work item names, role titles, case-study call-to-action headline."
+      },
+      "index-number": {
+        "displayName": "Index Number",
+        "purpose": "Tabular 900 numbers in the hero's Selected work index."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Decisions and findings in case studies."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Section intros and descriptions, 52-62ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text, 65-70ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Nav, meta, stack lists, definition terms, footer; sentence case."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "fill-transition",
+        "value": "150ms cubic-bezier(0.4, 0, 0.2, 1)",
+        "purpose": "Color/background transitions on cobalt fills, buttons and links (Tailwind transition-colors default)."
+      },
+      {
+        "name": "arrow-nudge",
+        "value": "translateX(4px), 150ms",
+        "purpose": "Arrow advance on index rows and the case-study button on hover/focus."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "transition-duration: 0.01ms; animation: none",
+        "purpose": "prefers-reduced-motion removes all transitions and smooth scroll."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "page-max",
+        "value": "90rem"
+      }
+    ],
+    "focus": {
+      "value": "outline: 2px solid #1f3bff; outline-offset: 3px",
+      "onCobalt": "outline-color: #ffffff"
+    },
+    "selection": {
+      "default": "background #1f3bff, color #ffffff",
+      "onCobalt": "background #ffffff, color #1f3bff"
+    }
+  },
+  "components": [
+    {
+      "name": "Cobalt Field Actions",
+      "kind": "button",
+      "refersTo": "button-on-cobalt-primary",
+      "description": "The paired actions inside a cobalt field: a white primary and a white-outline secondary.",
+      "html": "<div class=\"ds-field-actions\"><a class=\"ds-btn-white\" href=\"#\">Resume (PDF) <svg width=\"16\" height=\"16\" viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"square\" aria-hidden=\"true\"><path d=\"M6 14L14 6M7 6h7v7\"/></svg></a><a class=\"ds-btn-outline\" href=\"#\">Book a 30-min call</a></div>",
+      "css": ".ds-field-actions { display: flex; gap: 12px; flex-wrap: wrap; background: #1f3bff; padding: 24px; font-family: 'Schibsted Grotesk', 'Helvetica Neue', Arial, sans-serif; } .ds-btn-white, .ds-btn-outline { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 17px; text-decoration: none; border-radius: 0; transition: background-color 150ms, color 150ms; } .ds-btn-white { background: #fff; color: #1f3bff; padding: 16px 24px; } .ds-btn-white:hover { background: #dde2ff; } .ds-btn-outline { border: 2px solid #fff; color: #fff; padding: 14px 24px; } .ds-btn-outline:hover { background: #fff; color: #1f3bff; } .ds-btn-white:focus-visible, .ds-btn-outline:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }"
+    },
+    {
+      "name": "Cobalt Button on Paper",
+      "kind": "button",
+      "refersTo": "button-cobalt",
+      "description": "The primary action on paper (Read the case study); the arrow advances on hover.",
+      "html": "<a class=\"ds-btn-cobalt\" href=\"#\">Read the case study <svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"square\" aria-hidden=\"true\"><path d=\"M3 10h13M11 5l5 5-5 5\"/></svg></a>",
+      "css": ".ds-btn-cobalt { display: inline-flex; align-items: center; gap: 8px; background: #1f3bff; color: #fff; font-family: 'Schibsted Grotesk', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 17px; padding: 12px 20px; text-decoration: none; border-radius: 0; transition: background-color 150ms; } .ds-btn-cobalt svg { transition: transform 150ms; } .ds-btn-cobalt:hover { background: #1730d6; } .ds-btn-cobalt:hover svg { transform: translateX(4px); } .ds-btn-cobalt:focus-visible { outline: 2px solid var(--cobalt, #1f3bff); outline-offset: 3px; }"
+    },
+    {
+      "name": "Text Link",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Inline and external links on paper: ink text, faint ink underline that goes solid on hover.",
+      "html": "<a class=\"ds-link\" href=\"#\">GitHub <svg width=\"16\" height=\"16\" viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"square\" aria-hidden=\"true\"><path d=\"M6 14L14 6M7 6h7v7\"/></svg></a>",
+      "css": ".ds-link { display: inline-flex; align-items: center; gap: 4px; font-family: 'Schibsted Grotesk', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 17px; color: #0d0d0d; text-decoration: underline; text-decoration-color: rgba(13,13,13,0.3); text-decoration-thickness: 1px; text-underline-offset: 0.2em; transition: text-decoration-color 150ms; } .ds-link:hover { text-decoration-color: #0d0d0d; } .ds-link:focus-visible { outline: 2px solid var(--cobalt, #1f3bff); outline-offset: 3px; }"
+    },
+    {
+      "name": "Index Row",
+      "kind": "custom",
+      "refersTo": "index-row",
+      "description": "Signature: a numbered whole-row link that inverts to cobalt with its arrow advancing on hover and focus.",
+      "html": "<div class=\"ds-index\"><h2 class=\"ds-index-head\">Selected work</h2><ol class=\"ds-index-list\"><li><a class=\"ds-index-row\" href=\"#\"><span class=\"ds-index-no\">01</span><span><span class=\"ds-index-name\">Real-time voice agent</span><span class=\"ds-index-meta\">Gemini Live · in production · case study</span></span><svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"square\" aria-hidden=\"true\"><path d=\"M3 10h13M11 5l5 5-5 5\"/></svg></a></li><li><a class=\"ds-index-row\" href=\"#\"><span class=\"ds-index-no\">02</span><span><span class=\"ds-index-name\">DappDrop</span><span class=\"ds-index-meta\">Founder · case study</span></span><svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"square\" aria-hidden=\"true\"><path d=\"M3 10h13M11 5l5 5-5 5\"/></svg></a></li></ol></div>",
+      "css": ".ds-index { font-family: 'Schibsted Grotesk', 'Helvetica Neue', Arial, sans-serif; color: #0d0d0d; background: #f6f6f3; padding: 16px; max-width: 420px; } .ds-index-head { font-size: 15px; font-weight: 700; margin: 0; padding-bottom: 12px; border-bottom: 2px solid #0d0d0d; } .ds-index-list { list-style: none; margin: 0; padding: 0; } .ds-index-list li { border-bottom: 1px solid #0d0d0d; } .ds-index-row { display: grid; grid-template-columns: 3.5rem 1fr auto; align-items: start; column-gap: 12px; padding: 20px 8px; color: #0d0d0d; text-decoration: none; transition: background-color 150ms, color 150ms; } .ds-index-no { font-size: 2.5rem; font-weight: 900; line-height: 1; letter-spacing: -0.05em; font-variant-numeric: tabular-nums; } .ds-index-name { display: block; font-size: 1.4rem; font-weight: 700; line-height: 1.25; letter-spacing: -0.02em; } .ds-index-meta { display: block; margin-top: 4px; font-size: 15px; color: #3d3d3a; } .ds-index-row svg { margin-top: 8px; transition: transform 150ms; } .ds-index-row:hover, .ds-index-row:focus-visible { background: #1f3bff; color: #fff; outline: 2px solid var(--cobalt, #1f3bff); outline-offset: 3px; } .ds-index-row:hover .ds-index-meta, .ds-index-row:focus-visible .ds-index-meta { color: #dde2ff; } .ds-index-row:hover svg, .ds-index-row:focus-visible svg { transform: translateX(4px); }"
+    },
+    {
+      "name": "Cobalt Field",
+      "kind": "card",
+      "refersTo": "cobalt-field",
+      "description": "The poster's one colored plane: display claim, cobalt-soft support text and actions.",
+      "html": "<section class=\"ds-field\"><h2 class=\"ds-field-claim\">I build AI agents that run in production.</h2><p class=\"ds-field-body\">A real-time voice agent that patients and doctors talk to in any language.</p></section>",
+      "css": ".ds-field { background: #1f3bff; color: #fff; padding: 56px 48px; font-family: 'Schibsted Grotesk', 'Helvetica Neue', Arial, sans-serif; border-radius: 0; } .ds-field-claim { margin: 0; max-width: 13ch; font-size: clamp(2.75rem, 1.4rem + 4.6vw, 5.25rem); font-weight: 800; line-height: 0.96; letter-spacing: -0.04em; text-wrap: balance; } .ds-field-body { margin: 32px 0 0; max-width: 60ch; font-size: 18px; line-height: 1.625; color: #dde2ff; } .ds-field ::selection { background: #fff; color: #1f3bff; }"
+    },
+    {
+      "name": "Header",
+      "kind": "nav",
+      "refersTo": "header",
+      "description": "Sticky paper header on the 12-column grid over a 2px ink rule; Resume is the bold underlined action.",
+      "html": "<header class=\"ds-header\"><a class=\"ds-header-name\" href=\"#\">Dheeraj Shrivastav</a><nav class=\"ds-header-nav\"><a href=\"#\">Work</a><a href=\"#\">Experience</a><a href=\"#\">Open source</a><a href=\"#\">Contact</a></nav><div class=\"ds-header-actions\"><button class=\"ds-kbd-btn\">⌘K</button><a class=\"ds-header-resume\" href=\"#\">Resume <svg width=\"16\" height=\"16\" viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"square\" aria-hidden=\"true\"><path d=\"M6 14L14 6M7 6h7v7\"/></svg></a></div></header>",
+      "css": ".ds-header { display: grid; grid-template-columns: 4fr 6fr 2fr; align-items: center; column-gap: 24px; height: 72px; padding: 0 48px; background: #f6f6f3; border-bottom: 2px solid #0d0d0d; font-family: 'Schibsted Grotesk', 'Helvetica Neue', Arial, sans-serif; color: #0d0d0d; } .ds-header a { color: #0d0d0d; text-decoration: none; } .ds-header-name { font-weight: 700; font-size: 17px; letter-spacing: -0.01em; } .ds-header-nav { display: flex; gap: 32px; font-size: 15px; } .ds-header-nav a:hover { text-decoration: underline; text-underline-offset: 0.2em; } .ds-header-actions { display: flex; justify-content: flex-end; align-items: center; gap: 20px; } .ds-kbd-btn { height: 28px; padding: 0 8px; font: 500 13px 'Schibsted Grotesk', 'Helvetica Neue', Arial, sans-serif; color: #66665f; background: none; border: 1px solid rgba(102,102,95,0.6); border-radius: 0; cursor: pointer; transition: color 150ms, border-color 150ms; } .ds-kbd-btn:hover { color: #0d0d0d; border-color: #0d0d0d; } .ds-header-resume { display: inline-flex; align-items: center; gap: 4px; font-weight: 700; font-size: 15px; padding-bottom: 2px; border-bottom: 2px solid #0d0d0d; transition: color 150ms, border-color 150ms; } .ds-header-resume:hover { color: #1f3bff !important; border-color: #1f3bff; } .ds-header a:focus-visible, .ds-kbd-btn:focus-visible { outline: 2px solid var(--cobalt, #1f3bff); outline-offset: 3px; }"
+    },
+    {
+      "name": "Section Head",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Section opener: 2px ink rule, display title in columns 1-4, ink-2 intro from column 6.",
+      "html": "<div class=\"ds-section-head\"><h2>Work</h2><p>What I&#39;ve built. Work projects are private; everything else links to code you can read.</p></div>",
+      "css": ".ds-section-head { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; border-top: 2px solid #0d0d0d; padding-top: 24px; font-family: 'Schibsted Grotesk', 'Helvetica Neue', Arial, sans-serif; color: #0d0d0d; background: #f6f6f3; } .ds-section-head h2 { grid-column: 1 / span 4; margin: 0; font-size: clamp(2.25rem, 1.5rem + 2.8vw, 3.75rem); font-weight: 800; line-height: 1; letter-spacing: -0.035em; } .ds-section-head p { grid-column: 6 / span 6; margin: 0; padding-top: 12px; max-width: 52ch; font-size: 18px; line-height: 1.625; color: #3d3d3a; }"
+    },
+    {
+      "name": "Finding",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Case-study finding: 2px top rule, bold title, severity trailing as ink-3 words.",
+      "html": "<div class=\"ds-finding\"><h3>Any wallet could complete social tasks <span>Critical, fixed before launch</span></h3><p>The tests caught a fund-drain path before deployment.</p></div>",
+      "css": ".ds-finding { border-top: 2px solid #0d0d0d; padding-top: 20px; font-family: 'Schibsted Grotesk', 'Helvetica Neue', Arial, sans-serif; color: #3d3d3a; background: #f6f6f3; max-width: 68ch; } .ds-finding h3 { margin: 0; font-size: 1.375rem; font-weight: 700; line-height: 1.375; letter-spacing: -0.02em; color: #0d0d0d; } .ds-finding h3 span { margin-left: 12px; font-size: 15px; font-weight: 500; letter-spacing: normal; color: #66665f; } .ds-finding p { margin: 12px 0 0; font-size: 17px; line-height: 1.625; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Swiss Conference Poster",
+    "overview": "The site is set like a printed Swiss poster: a paper ground, black ink, and one saturated cobalt field that carries the claim. A single grotesk works at extreme size contrast, from 84px extrabold claims down to 15px meta lines, and every element sits on a 12-column grid. Hierarchy comes from size, weight and rules, never from decoration.\n\nDensity is low and deliberate. Each section has one focal element and leaves part of the grid empty; claims sit beside their evidence, indexed with stable numbers (01, 02, 03) that hold across the home page and the case studies. Motion is near absent: content is always visible, and only cobalt fills and arrow nudges transition.\n\nThe world rejects the dark-terminal developer portfolio and the centred headline over a row of rounded cards.",
+    "keyCharacteristics": [
+      "Paper, ink, and one cobalt field; cobalt only on the claim and on things you can act on.",
+      "One grotesk (Schibsted Grotesk) at extreme size contrast; no second face for labels.",
+      "2px ink rules separate sections; 1px ink rules separate rows.",
+      "Square corners everywhere; flat, no shadows on the page.",
+      "Numbered index rows with stable numbers; a row inverts to cobalt on hover and focus."
+    ],
+    "rules": [
+      {
+        "name": "The One Field Rule",
+        "body": "Cobalt is reserved for the claim field and for things you can act on. If an element is cobalt, it is either the poster's headline field or it responds to a click.",
+        "section": "colors"
+      },
+      {
+        "name": "The Flip Rule",
+        "body": "Inside a cobalt field (`.on-cobalt`), selection inverts to white on cobalt and the focus ring turns white, so both stay visible.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ink Tint Rule",
+        "body": "Faint row dividers are ink at reduced opacity (ink/20, ink/15); never introduce a new grey for lines.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Grotesk Rule",
+        "body": "Every role uses Schibsted Grotesk, including keyboard hints (`kbd` is set in the sans). Monospace appears only for literal code identifiers inside prose.",
+        "section": "typography"
+      },
+      {
+        "name": "The Contrast-By-Size Rule",
+        "body": "Hierarchy jumps between display and label; there are no small uppercase tracked labels above headings. Meta goes after the title in ink-3, as words.",
+        "section": "typography"
+      },
+      {
+        "name": "Tabular Numbers",
+        "body": "Index numbers, periods and PR numbers use tabular figures (`.tabular`).",
+        "section": "typography"
+      },
+      {
+        "name": "The Rule-Not-Shadow Rule",
+        "body": "Separation is a drawn line or a flat field, never a shadow.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep cobalt to the claim field and actionable elements (The One Field Rule).",
+      "Do open every section with a 2px ink rule and divide its rows with 1px ink rules.",
+      "Do place work on the 12-column grid with the number or date in columns 1 to 3 and leave the right edge empty.",
+      "Do keep index numbers stable and tabular across pages.",
+      "Do put meta (status, severity, stack) after the title as ink-3 words.",
+      "Do limit motion to cobalt fills and the 4px arrow nudge, and let reduced motion remove them.",
+      "Do flip selection and focus to white inside `.on-cobalt` fields."
+    ],
+    "donts": [
+      "Don't round corners; every shape is square (0px).",
+      "Don't use shadows, glows, blurs or gradients on page surfaces.",
+      "Don't add a second typeface; monospace is for literal code identifiers inside prose only, never labels.",
+      "Don't put small uppercase tracked labels (eyebrows) above headings.",
+      "Don't fade or slide content in on scroll; content is always visible.",
+      "Don't set text lighter than ink-3 on paper or lighter than cobalt-soft on cobalt."
+    ]
+  }
+}

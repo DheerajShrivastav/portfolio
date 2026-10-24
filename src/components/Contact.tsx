@@ -1,107 +1,55 @@
-"use client";
-
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-
-const EMAIL = "dheerajshrivastav08@gmail.com";
-const CALL = "https://cal.com/dheeraj-shrivastav/30min";
-
-const profiles = [
-    { label: "GitHub", href: "https://github.com/DheerajShrivastav" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/dheerajshrivastav/" },
-    { label: "X", href: "https://x.com/Dheeraj_08_" },
-];
+import { CALL_URL, EMAIL, profiles } from "@/content/site";
+import { ArrowUpRight } from "@/components/icons";
+import CopyEmail from "@/components/CopyEmail";
 
 export default function Contact() {
-    const [copied, setCopied] = useState(false);
-
-    const handleCopy = () => {
-        navigator.clipboard
-            .writeText(EMAIL)
-            .then(() => {
-                setCopied(true);
-                setTimeout(() => setCopied(false), 2000);
-            })
-            .catch(() => {
-                // Clipboard can be blocked (permissions, insecure context); the mailto link still works.
-            });
-    };
-
     return (
-        <section id="contact" className="py-16 md:py-24 border-t border-border/50 bg-bg-secondary/30">
-            <div className="max-w-5xl mx-auto px-6">
-                <h2 className="font-mono text-accent-green mb-8 section-header">Contact</h2>
+        <section id="contact" className="max-w-page mx-auto px-5 md:px-12 pb-16">
+            <div className="on-cobalt bg-cobalt text-white px-6 py-12 md:px-12 md:py-16 grid grid-cols-1 lg:grid-cols-12 gap-x-6 gap-y-10">
+                <h2 className="lg:col-span-7 text-display-lg font-extrabold max-w-[16ch]">
+                    Hiring for an AI agent or backend role? Let&apos;s talk.
+                </h2>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3 }}
-                    className="glass-card p-6 md:p-8"
-                >
-                    <p className="text-text-primary text-xl md:text-2xl font-semibold mb-2">
-                        Hiring for an AI agent or backend role? Let&apos;s talk.
-                    </p>
-                    <p className="text-text-secondary mb-6">
+                <div className="lg:col-span-5 flex flex-col justify-end">
+                    <p className="text-lg text-cobalt-soft leading-relaxed max-w-[40ch]">
                         A 30-minute call is the fastest way to see if I&apos;m a fit. Email works too.
                     </p>
-
-                    <div className="flex flex-col sm:flex-row gap-3 mb-6">
+                    <div className="mt-6 flex flex-col sm:flex-row gap-3">
                         <a
-                            href={CALL}
+                            href={CALL_URL}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-6 py-3 bg-accent-green text-bg-primary font-semibold rounded hover:bg-accent-green/90 hover:text-bg-primary transition-colors text-center"
+                            className="inline-flex items-center justify-center bg-white text-cobalt font-bold text-[17px] px-6 py-4 no-underline hover:bg-cobalt-soft transition-colors"
                         >
                             Book a 30-min call
                         </a>
                         <a
                             href={`mailto:${EMAIL}`}
-                            className="px-6 py-3 border border-border text-text-primary font-semibold rounded hover:border-accent-green hover:text-accent-green transition-colors text-center"
+                            className="inline-flex items-center justify-center border-2 border-white text-white font-bold text-[17px] px-6 py-[14px] no-underline hover:bg-white hover:text-cobalt transition-colors"
                         >
                             Email me
                         </a>
                     </div>
-
-                    <div className="flex flex-wrap items-center gap-3 text-sm mb-4">
-                        <span className="font-mono text-text-secondary break-words">{EMAIL}</span>
-                        <button
-                            onClick={handleCopy}
-                            aria-label="Copy email address"
-                            className="px-2 py-1 rounded border border-border text-text-secondary hover:text-accent-green hover:border-accent-green transition-colors text-xs font-mono"
-                        >
-                            copy
-                        </button>
-                        <AnimatePresence>
-                            {copied && (
-                                <motion.span
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
-                                    role="status"
-                                    className="text-xs font-mono text-accent-green"
-                                >
-                                    copied
-                                </motion.span>
-                            )}
-                        </AnimatePresence>
-                    </div>
-
-                    <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+                    <p className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-1 text-[15px]">
+                        <span className="text-cobalt-soft break-all">{EMAIL}</span>
+                        <CopyEmail email={EMAIL} />
+                    </p>
+                    <ul className="mt-6 pt-6 border-t border-white/40 flex flex-wrap gap-x-6 gap-y-2 text-[15px]">
                         {profiles.map((p) => (
                             <li key={p.label}>
                                 <a
                                     href={p.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-text-secondary hover:text-accent-green"
+                                    className="inline-flex items-center gap-1 text-white no-underline hover:underline"
                                 >
-                                    {p.label} ↗
+                                    {p.label}
+                                    <ArrowUpRight />
                                 </a>
                             </li>
                         ))}
                     </ul>
-                </motion.div>
+                </div>
             </div>
         </section>
     );
@@ -109,13 +57,11 @@ export default function Contact() {
 
 export function Footer() {
     return (
-        <footer className="py-8 border-t border-border">
-            <div className="max-w-5xl mx-auto px-6 text-center">
-                <p className="font-mono text-sm text-text-muted">
-                    © {new Date().getFullYear()} Dheeraj Shrivastav · Built with Next.js
-                </p>
-                <p className="hidden md:block font-mono text-xs text-text-muted mt-2">
-                    Press <kbd className="px-1 bg-bg-tertiary border border-border rounded">⌘K</kbd> for quick navigation
+        <footer className="max-w-page mx-auto px-5 md:px-12 pb-10">
+            <div className="border-t-2 border-ink pt-5 flex flex-col sm:flex-row sm:justify-between gap-2 text-[15px] text-ink-2">
+                <p>© {new Date().getFullYear()} Dheeraj Shrivastav</p>
+                <p className="hidden md:block">
+                    Press <kbd className="font-sans font-medium text-ink border border-ink-3/60 px-1.5">⌘K</kbd> to jump anywhere
                 </p>
             </div>
         </footer>

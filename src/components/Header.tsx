@@ -2,14 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
 import { useKBar } from "kbar";
+import { RESUME_URL } from "@/content/site";
+import { ArrowUpRight, MenuIcon } from "@/components/icons";
 
 const navLinks = [
-    { name: "About", href: "/#about" },
+    { name: "Work", href: "/#work" },
     { name: "Experience", href: "/#experience" },
-    { name: "Projects", href: "/#projects" },
-    { name: "Open Source", href: "/#opensource" },
+    { name: "Open source", href: "/#work-03" },
     { name: "Contact", href: "/#contact" },
 ];
 
@@ -18,107 +18,74 @@ export default function Header() {
     const { query } = useKBar();
 
     return (
-        <header
-            className="sticky top-0 z-40 bg-bg-primary/90 backdrop-blur-sm border-b border-border"
-        >
-            <nav className="max-w-5xl mx-auto px-6 py-4">
-                <div className="flex items-center justify-between">
-                    {/* Logo */}
-                    <Link
-                        href="/"
-                        className="font-mono text-accent-green logo-link hover:no-underline"
-                        onClick={() => setIsMenuOpen(false)}
+        <header className="sticky top-0 z-40 bg-paper border-b-2 border-ink">
+            <nav className="max-w-page mx-auto px-5 md:px-12 h-16 md:h-[72px] grid grid-cols-[1fr_auto] md:grid-cols-12 items-center gap-x-6">
+                <Link
+                    href="/"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="md:col-span-4 font-bold text-[17px] tracking-[-0.01em] text-ink no-underline"
+                >
+                    Dheeraj Shrivastav
+                </Link>
+
+                <ul className="hidden md:flex md:col-span-6 items-center gap-8">
+                    {navLinks.map((link) => (
+                        <li key={link.name}>
+                            <Link href={link.href} className="text-[15px] text-ink no-underline hover:underline">
+                                {link.name}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+
+                <div className="md:col-span-2 flex items-center justify-end gap-5">
+                    <button
+                        onClick={() => query.toggle()}
+                        className="hidden lg:inline-flex items-center h-7 px-2 text-[13px] font-medium text-ink-3 border border-ink-3/60 hover:text-ink hover:border-ink transition-colors"
                     >
-                        ~/dheeraj
-                    </Link>
+                        {/* accessible name starts with the visible text, as WCAG 2.5.3 expects */}
+                        <span>⌘K</span>
+                        <span className="sr-only">open command palette</span>
+                    </button>
 
-                    {/* Desktop Navigation */}
-                    <ul className="hidden md:flex items-center gap-6">
-                        {navLinks.map((link) => (
-                            <li key={link.name}>
-                                <Link
-                                    href={link.href}
-                                    className="nav-link text-sm text-text-secondary hover:text-text-primary hover:no-underline"
-                                >
-                                    {link.name}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
+                    {/* Plain <a>: next/link would prefetch the PDF as a route and 404 */}
+                    <a
+                        href={RESUME_URL}
+                        target="_blank"
+                        rel="noopener"
+                        className="inline-flex items-center gap-1 font-bold text-[15px] text-ink no-underline border-b-2 border-ink pb-0.5 hover:text-cobalt hover:border-cobalt transition-colors"
+                    >
+                        Resume
+                        <ArrowUpRight className="w-4 h-4" />
+                    </a>
 
-                    {/* Action Buttons */}
-                    <div className="flex items-center gap-3">
-                        {/* Cmd+K hint (large screens only; also hinted in the footer) */}
-                        <button
-                            onClick={() => query.toggle()}
-                            className="hidden lg:flex items-center gap-2 px-3 py-1.5 text-xs font-mono text-text-muted border border-border rounded hover:border-accent-green hover:text-accent-green transition-colors"
-                        >
-                            {/* accessible name starts with the visible text, as WCAG 2.5.3 expects */}
-                            <span>⌘K</span>
-                            <span className="sr-only">open command palette</span>
-                        </button>
-
-                        {/* Plain <a>: next/link would prefetch the PDF as a route and 404 */}
-                        <a
-                            href="/resume/Dheeraj-Shrivastav-Resume.pdf"
-                            target="_blank"
-                            rel="noopener"
-                            className="px-3 py-1.5 text-sm font-semibold rounded border border-accent-green/40 text-accent-green hover:bg-accent-green/10 hover:text-accent-green transition-colors"
-                        >
-                            Resume
-                        </a>
-
-                        {/* Mobile Menu Toggle */}
-                        <button
-                            onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            className="flex md:hidden text-text-muted hover:text-accent-green transition-colors"
-                            aria-label="Toggle menu"
-                            aria-expanded={isMenuOpen}
-                        >
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                {isMenuOpen ? (
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                                ) : (
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-                                )}
-                            </svg>
-                        </button>
-                    </div>
+                    <button
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        className="md:hidden -mr-1 p-1 text-ink"
+                        aria-label="Menu"
+                        aria-expanded={isMenuOpen}
+                        aria-controls="mobile-nav"
+                    >
+                        <MenuIcon open={isMenuOpen} />
+                    </button>
                 </div>
-
-                {/* Mobile Navigation Dropdown */}
-                <AnimatePresence>
-                    {isMenuOpen && (
-                        <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: "auto" }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.3, ease: "easeInOut" }}
-                            className="md:hidden overflow-hidden"
-                        >
-                            <ul className="flex flex-col gap-4 pt-6 pb-4">
-                                {navLinks.map((link, i) => (
-                                    <motion.li
-                                        key={link.name}
-                                        initial={{ opacity: 0, x: -10 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        transition={{ delay: 0.05 * i }}
-                                    >
-                                        <Link
-                                            href={link.href}
-                                            onClick={() => setIsMenuOpen(false)}
-                                            className="block text-text-secondary hover:text-accent-green font-mono text-sm py-2"
-                                        >
-                                            <span className="text-accent-green mr-2 opacity-50">&gt;</span>
-                                            {link.name}
-                                        </Link>
-                                    </motion.li>
-                                ))}
-                            </ul>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
             </nav>
+
+            {isMenuOpen && (
+                <ul id="mobile-nav" className="md:hidden border-t border-ink px-5 pb-2">
+                    {navLinks.map((link) => (
+                        <li key={link.name} className="border-b border-ink/20 last:border-b-0">
+                            <Link
+                                href={link.href}
+                                onClick={() => setIsMenuOpen(false)}
+                                className="block py-4 text-xl font-bold tracking-[-0.02em] text-ink no-underline"
+                            >
+                                {link.name}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            )}
         </header>
     );
 }

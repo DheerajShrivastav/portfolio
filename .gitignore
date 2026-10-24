@@ -38,3 +38,11 @@ next-env.d.ts
 # resume build with phone number (private)
 /resume/out/
 /resume/oct 26/
+
+# impeccable design tooling (local mocks, review captures)
+/.impeccable/mocks/
+/.impeccable/review/
+/.impeccable/build/
+/.impeccable/hook.cache.json
+/.impeccable/config.local.json
+/.impeccable/questions/

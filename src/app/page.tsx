@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Projects from "@/components/Projects";
-import OpenSource from "@/components/OpenSource";
+import Work from "@/components/Work";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import Contact, { Footer } from "@/components/Contact";
@@ -37,9 +36,8 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <Work />
         <Experience />
-        <Projects />
-        <OpenSource />
         <Skills />
         <Contact />
       </main>

@@ -1,187 +1,118 @@
-"use client";
-
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { CALL_URL, EMAIL, RESUME_URL, profiles, work } from "@/content/site";
+import { ArrowRight, ArrowUpRight } from "@/components/icons";
 
-const initSequence = [
-    "> engineer.info()",
-    "",
-    "[IN PRODUCTION]",
-    "Real-time voice agent (Gemini Live)",
-    "AI patient reports, doctor-reviewed",
-    "Tool suite -> one automated pipeline",
-    "Internal recommendation agents",
-    "",
-    "[USED BY]",
-    "Patients, doctors, internal team",
-    "",
-    "[BUILDING]",
-    "DappDrop: 240 unit + 26 invariant tests",
-    "",
-    "[STACK]",
-    "Backend: Node.js, NestJS, PostgreSQL",
-    "Web3: Solidity, Foundry, EIP-712",
-];
+// The index beside the claim: the first three work items, each a link to its evidence.
+const indexed = work.slice(0, 3).map((item) => ({
+    ...item,
+    href: item.caseStudy ?? `/#work-${item.no}`,
+    meta: {
+        "01": "Gemini Live · in production · case study",
+        "02": "Founder · 240 unit + 26 invariant tests · case study",
+        "03": "5 merged open-source contributions",
+    }[item.no],
+}));
 
 export default function Hero() {
-    // How many log lines are revealed. Every line is rendered from the start (just invisible),
-    // so the terminal card never changes size while it "types".
-    const [revealed, setRevealed] = useState(0);
-
-    useEffect(() => {
-        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        const terminalVisible = window.matchMedia("(min-width: 1024px)").matches;
-        if (reduceMotion || !terminalVisible) {
-            setRevealed(initSequence.length);
-            return;
-        }
-        const interval = setInterval(() => {
-            setRevealed((n) => {
-                if (n >= initSequence.length) {
-                    clearInterval(interval);
-                    return n;
-                }
-                return n + 1;
-            });
-        }, 100);
-        return () => clearInterval(interval);
-    }, []);
-
-    const done = revealed >= initSequence.length;
-
     return (
-      <section
-        id="about"
-        className="py-16 md:py-20 lg:min-h-[90vh] flex items-center relative overflow-hidden"
-      >
-        {/* Background elements for depth */}
-        <div className="absolute top-1/4 -right-20 w-96 h-96 bg-accent-green/5 blur-[120px] rounded-full pointer-events-none" />
-        <div className="absolute bottom-1/4 -left-20 w-96 h-96 bg-accent-blue/5 blur-[120px] rounded-full pointer-events-none" />
+        <section id="about" className="max-w-page mx-auto px-5 md:px-12 pt-6 md:pt-8 pb-16 lg:pb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-6 gap-y-10 lg:min-h-[calc(100svh-72px-5rem)]">
+                {/* The cobalt field: the claim and the two actions */}
+                <div className="on-cobalt lg:col-span-8 bg-cobalt text-white px-6 py-10 md:px-12 md:py-14 lg:py-10 flex flex-col justify-between gap-12 lg:gap-8">
+                    <h1 className="text-display-xl font-extrabold max-w-[13ch]">
+                        I build AI agents that run in production.
+                    </h1>
 
-        <div className="max-w-5xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
-          {/* Main Content: CSS animation, so it's visible before (and without) JavaScript */}
-          <div className="lg:col-span-3 z-10 animate-slide-up">
-              <p className="font-mono text-accent-green mb-4 flex items-center gap-2 text-sm">
-                <span className="w-8 h-px bg-accent-green/30" />
-                <span className="bg-accent-green/10 px-2 py-0.5 rounded border border-accent-green/20">
-                  Dheeraj Shrivastav · Software Engineer
-                </span>
-              </p>
-              <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-6 tracking-tight leading-[1.1] max-w-2xl">
-                I build{' '}
-                <span className="text-accent-green">AI agents</span> that run
-                in production.
-              </h1>
+                    <div>
+                        <div className="max-w-[60ch] space-y-4 text-lg md:[@media(min-height:860px)]:text-xl leading-relaxed text-cobalt-soft">
+                            <p>
+                                A{" "}
+                                <Link href="/projects/voice-agent" className="text-white font-medium underline decoration-white/50 hover:decoration-white">
+                                    real-time voice agent
+                                </Link>{" "}
+                                that patients and doctors talk to in any language, AI reports that doctors review before they go out,
+                                and internal agents a team uses instead of waiting on a senior. Built on{" "}
+                                <span className="text-white font-medium">TypeScript/Node.js backends</span>.
+                            </p>
+                            <p>
+                                I also founded{" "}
+                                <Link href="/projects/dappdrop" className="text-white font-medium underline decoration-white/50 hover:decoration-white">
+                                    DappDrop
+                                </Link>
+                                , an on-chain rewards protocol whose tests caught a fund-drain bug before launch.
+                            </p>
+                        </div>
 
-              <div className="max-w-xl text-lg text-text-secondary leading-relaxed mb-8 space-y-4">
-                <p>
-                  A{' '}
-                  <Link href="/projects/voice-agent" className="text-text-primary font-medium hover:underline">
-                    real-time voice agent
-                  </Link>{' '}
-                  that patients and doctors talk to in any language, AI reports
-                  that doctors review before they go out, and internal agents a
-                  team uses instead of waiting on a senior. Built on{' '}
-                  <span className="text-text-primary font-medium">
-                    TypeScript/Node.js backends
-                  </span>
-                  .
-                </p>
-                <p>
-                  I also founded{' '}
-                  <Link href="/projects/dappdrop" className="text-accent-blue font-medium hover:underline">
-                    DappDrop
-                  </Link>
-                  , an on-chain rewards protocol whose tests caught a fund-drain
-                  bug before launch.
-                </p>
-              </div>
+                        <div className="mt-8 lg:mt-6 flex flex-col sm:flex-row gap-3">
+                            <a
+                                href={RESUME_URL}
+                                target="_blank"
+                                rel="noopener"
+                                className="inline-flex items-center justify-center gap-2 bg-white text-cobalt font-bold text-[17px] px-6 py-4 no-underline hover:bg-cobalt-soft transition-colors"
+                            >
+                                Resume (PDF)
+                                <ArrowUpRight />
+                            </a>
+                            <a
+                                href={CALL_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center justify-center gap-2 border-2 border-white text-white font-bold text-[17px] px-6 py-[14px] no-underline hover:bg-white hover:text-cobalt transition-colors"
+                            >
+                                Book a 30-min call
+                            </a>
+                        </div>
 
-              {/* CTAs. Plain <a> for the PDF: next/link would try to prefetch it as a route (404). */}
-              <div className="flex flex-col sm:flex-row gap-3 mb-5">
-                <a
-                  href="/resume/Dheeraj-Shrivastav-Resume.pdf"
-                  target="_blank"
-                  rel="noopener"
-                  className="px-6 py-3 bg-accent-green text-bg-primary font-semibold rounded hover:bg-accent-green/90 hover:text-bg-primary transition-colors text-center"
-                >
-                  Resume (PDF)
-                </a>
-                <a
-                  href="https://cal.com/dheeraj-shrivastav/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-6 py-3 border border-border text-text-primary font-semibold rounded hover:border-accent-green hover:text-accent-green transition-colors text-center"
-                >
-                  Book a 30-min call
-                </a>
-              </div>
-              <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-text-secondary mb-6">
-                <a href="mailto:dheerajshrivastav08@gmail.com" className="text-text-secondary hover:text-accent-green">Email</a>
-                <a href="https://github.com/DheerajShrivastav" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-accent-green">GitHub</a>
-                <a href="https://www.linkedin.com/in/dheerajshrivastav/" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-accent-green">LinkedIn</a>
-              </div>
-              <p className="text-sm text-text-muted">
-                Open to AI agent and backend engineering roles · based in India
-              </p>
-          </div>
-
-          {/* Decorative Terminal (Secondary Hierarchy) */}
-          <div className="lg:col-span-2 hidden lg:block" aria-hidden="true">
-            <div className="glass-card shadow-2xl relative group animate-fade-in">
-              <div className="flex items-center gap-1.5 px-4 py-3 border-b border-border bg-bg-tertiary/50">
-                <div className="w-2.5 h-2.5 rounded-full bg-accent-red/20 group-hover:bg-accent-red transition-colors" />
-                <div className="w-2.5 h-2.5 rounded-full bg-accent-yellow/20 group-hover:bg-accent-yellow transition-colors" />
-                <div className="w-2.5 h-2.5 rounded-full bg-accent-green/20 group-hover:bg-accent-green transition-colors" />
-                <span className="ml-2 text-xs text-text-muted font-mono uppercase tracking-widest">
-                  session.log
-                </span>
-              </div>
-              <div className="p-5 font-mono text-xs leading-relaxed">
-                <p className="text-text-muted mb-2">
-                  <span className="text-accent-green">dheeraj@portfolio</span>
-                  <span>:</span>
-                  <span className="text-accent-blue">~</span>
-                  <span>$ </span>
-                  <span className="text-text-secondary">system.info()</span>
-                </p>
-                <div className="space-y-1">
-                  {initSequence.map((line, i) => {
-                      const isHeader = line.startsWith('[')
-                      const isCommand = line.startsWith('>')
-                      return (
-                        <p
-                          key={i}
-                          className={`${i < revealed ? '' : 'invisible'} ${
-                            isHeader
-                              ? 'text-accent-blue font-bold mt-3 mb-1'
-                              : isCommand
-                                ? 'text-accent-green mb-2'
-                                : 'text-text-muted pl-2 border-l border-border/20 ml-1'
-                          }`}
-                        >
-                          {line || ' '}
-                        </p>
-                      )
-                    })}
+                        <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-[15px]">
+                            <li>
+                                <a href={`mailto:${EMAIL}`} className="text-white underline decoration-white/40 hover:decoration-white">
+                                    Email
+                                </a>
+                            </li>
+                            {profiles.slice(0, 2).map((p) => (
+                                <li key={p.label}>
+                                    <a href={p.href} target="_blank" rel="noopener noreferrer" className="text-white underline decoration-white/40 hover:decoration-white">
+                                        {p.label}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
 
-                <div className={`mt-4 pt-4 border-t border-border/50 ${done ? '' : 'invisible'}`}>
-                  <p className="text-text-muted">
-                    <span className="text-accent-green">$</span> cat status.txt
-                    {!done && <span className="animate-blink text-accent-green"> _</span>}
-                  </p>
-                  <p className="text-accent-blue mt-1">
-                    Open for new opportunities
-                  </p>
-                  <p className="text-text-muted mt-4 italic">
-                    {'// End of log'}
-                  </p>
+                {/* The index: work beside the claim, each row a link to its evidence */}
+                <div className="lg:col-span-4 flex flex-col">
+                    <h2 className="text-[15px] font-bold pb-3 border-b-2 border-ink">Selected work</h2>
+                    <ol>
+                        {indexed.map((item) => (
+                            <li key={item.no} className="border-b border-ink">
+                                <Link
+                                    href={item.href}
+                                    className="group grid grid-cols-[3.5rem_1fr_auto] items-start gap-x-3 py-5 px-2 -mx-2 text-ink no-underline transition-colors hover:bg-cobalt hover:text-white focus-visible:bg-cobalt focus-visible:text-white"
+                                >
+                                    <span className="tabular text-[2.5rem] font-black leading-none tracking-[-0.05em]">{item.no}</span>
+                                    <span>
+                                        <span className="block text-[1.4rem] font-bold leading-tight tracking-[-0.02em]">{item.name}</span>
+                                        <span className="block mt-1 text-[15px] text-ink-2 group-hover:text-cobalt-soft group-focus-visible:text-cobalt-soft">
+                                            {item.meta}
+                                        </span>
+                                    </span>
+                                    <ArrowRight className="w-5 h-5 mt-2 transition-transform group-hover:translate-x-1 group-focus-visible:translate-x-1" />
+                                </Link>
+                            </li>
+                        ))}
+                    </ol>
+
+                    <dl className="mt-auto pt-10 grid grid-cols-[6.5rem_1fr] gap-y-2 text-[15px]">
+                        <dt className="text-ink-3">Role</dt>
+                        <dd>Software Engineer</dd>
+                        <dt className="text-ink-3">Based in</dt>
+                        <dd>Maharashtra, India</dd>
+                        <dt className="text-ink-3">Looking for</dt>
+                        <dd className="font-bold">AI agent and backend engineering roles</dd>
+                    </dl>
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </section>
-    )
+        </section>
+    );
 }
