@@ -58,13 +58,15 @@ export default function Header() {
                             <span className="sr-only">open command palette</span>
                         </button>
 
-                        <Link
+                        {/* Plain <a>: next/link would prefetch the PDF as a route and 404 */}
+                        <a
                             href="/resume/Dheeraj-Shrivastav-Resume.pdf"
                             target="_blank"
+                            rel="noopener"
                             className="px-3 py-1.5 text-sm font-semibold rounded border border-accent-green/40 text-accent-green hover:bg-accent-green/10 hover:text-accent-green transition-colors"
                         >
                             Resume
-                        </Link>
+                        </a>
 
                         {/* Mobile Menu Toggle */}
                         <button
