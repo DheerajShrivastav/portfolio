@@ -7,7 +7,7 @@ const indexed = work.slice(0, 3).map((item) => ({
     ...item,
     href: item.caseStudy ?? `/#work-${item.no}`,
     meta: {
-        "01": "Gemini Live · in production · case study",
+        "01": "In production · 65% less physician work",
         "02": "Founder · 240 unit + 26 invariant tests · case study",
         "03": "5 merged open-source contributions",
     }[item.no],
@@ -19,23 +19,22 @@ export default function Hero() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-6 gap-y-10 lg:min-h-[calc(100svh-72px-5rem)]">
                 {/* The cobalt field: the claim and the two actions */}
                 <div className="on-cobalt lg:col-span-8 bg-cobalt text-white px-6 py-10 md:px-12 md:py-14 lg:py-10 flex flex-col justify-between gap-12 lg:gap-8">
-                    <h1 className="text-display-xl font-extrabold max-w-[13ch]">
-                        I build AI agents that run in production.
+                    <h1 className="text-display-xl font-extrabold max-w-[14ch]">
+                        I ship software real people use every day.
                     </h1>
 
                     <div>
                         <div className="max-w-[60ch] space-y-4 text-lg md:[@media(min-height:860px)]:text-xl leading-relaxed text-cobalt-soft">
+                            <p className="text-white font-medium">
+                                I own features from spec to production, and stay on them after launch.
+                            </p>
                             <p>
-                                A{" "}
+                                In my current role I&apos;ve shipped a{" "}
                                 <Link href="/projects/voice-agent" className="text-white font-medium underline decoration-white/50 hover:decoration-white">
                                     real-time voice agent
                                 </Link>{" "}
-                                that patients and doctors talk to in any language, AI reports that doctors review before they go out,
-                                and internal agents a team uses instead of waiting on a senior. Built on{" "}
-                                <span className="text-white font-medium">TypeScript/Node.js backends</span>.
-                            </p>
-                            <p>
-                                I also founded{" "}
+                                for patients and doctors that cut manual physician intervention by 65%, one automated pipeline in place
+                                of a team&apos;s separate tools, and internal agents staff use instead of waiting on a senior. I also founded{" "}
                                 <Link href="/projects/dappdrop" className="text-white font-medium underline decoration-white/50 hover:decoration-white">
                                     DappDrop
                                 </Link>
@@ -109,7 +108,7 @@ export default function Hero() {
                         <dt className="text-ink-3">Based in</dt>
                         <dd>Maharashtra, India</dd>
                         <dt className="text-ink-3">Looking for</dt>
-                        <dd className="font-bold">AI agent and backend engineering roles</dd>
+                        <dd className="font-bold">Roles where I own features end to end</dd>
                     </dl>
                 </div>
             </div>

@@ -18,7 +18,7 @@ const personJsonLd = {
   jobTitle: "Software Engineer",
   url: "https://dheerajshrivastav.me",
   address: { "@type": "PostalAddress", addressRegion: "Maharashtra", addressCountry: "IN" },
-  knowsAbout: ["AI agents", "Voice agents", "Backend engineering", "Node.js", "TypeScript", "PostgreSQL", "Solidity", "Smart contracts"],
+  knowsAbout: ["Product engineering", "AI agents", "Voice agents", "Backend engineering", "Node.js", "TypeScript", "PostgreSQL", "Solidity", "Smart contracts"],
   sameAs: [
     "https://github.com/DheerajShrivastav",
     "https://www.linkedin.com/in/dheerajshrivastav/",
