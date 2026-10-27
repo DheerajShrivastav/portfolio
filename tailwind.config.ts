@@ -2,6 +2,8 @@ import type { Config } from "tailwindcss";
 
 // Swiss poster system: paper, ink, one cobalt field. Cobalt is reserved for the claim and for things you can act on.
 const config: Config = {
+  // hover: styles only apply on devices that can hover, so taps never leave a sticky state
+  future: { hoverOnlyWhenSupported: true },
   content: [
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",

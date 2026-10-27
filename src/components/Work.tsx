@@ -77,7 +77,7 @@ export default function Work() {
                                     {item.caseStudy && (
                                         <Link
                                             href={item.caseStudy}
-                                            className="group inline-flex items-center gap-2 bg-cobalt text-white font-bold px-5 py-3 no-underline hover:bg-cobalt-deep transition-colors"
+                                            className="group inline-flex items-center gap-2 bg-cobalt text-white font-bold px-5 py-3 no-underline hover:bg-cobalt-deep transition-[color,background-color,border-color,transform] duration-150 active:duration-75 motion-safe:active:translate-y-px"
                                         >
                                             Read the case study
                                             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
@@ -89,7 +89,7 @@ export default function Work() {
                                             href={l.href}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-1 font-medium text-ink underline decoration-ink/30 hover:decoration-ink"
+                                            className="group inline-flex items-center gap-1 font-medium text-ink underline decoration-ink/30 hover:decoration-ink"
                                         >
                                             {l.label}
                                             <ArrowUpRight />
@@ -129,7 +129,7 @@ export default function Work() {
                                             href={l.href}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-1 font-medium text-ink underline decoration-ink/30 hover:decoration-ink"
+                                            className="group inline-flex items-center gap-1 font-medium text-ink underline decoration-ink/30 hover:decoration-ink"
                                         >
                                             {l.label}
                                             <ArrowUpRight />

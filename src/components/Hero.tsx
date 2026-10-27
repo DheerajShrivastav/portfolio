@@ -48,7 +48,7 @@ export default function Hero() {
                                 href={RESUME_URL}
                                 target="_blank"
                                 rel="noopener"
-                                className="inline-flex items-center justify-center gap-2 bg-white text-cobalt font-bold text-[17px] px-6 py-4 no-underline hover:bg-cobalt-soft transition-colors"
+                                className="group inline-flex items-center justify-center gap-2 bg-white text-cobalt font-bold text-[17px] px-6 py-4 no-underline hover:bg-cobalt-soft transition-[color,background-color,border-color,transform] duration-150 active:duration-75 motion-safe:active:translate-y-px"
                             >
                                 Resume (PDF)
                                 <ArrowUpRight />
@@ -57,7 +57,7 @@ export default function Hero() {
                                 href={CALL_URL}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center justify-center gap-2 border-2 border-white text-white font-bold text-[17px] px-6 py-[14px] no-underline hover:bg-white hover:text-cobalt transition-colors"
+                                className="inline-flex items-center justify-center gap-2 border-2 border-white text-white font-bold text-[17px] px-6 py-[14px] no-underline hover:bg-white hover:text-cobalt transition-[color,background-color,border-color,transform] duration-150 active:duration-75 motion-safe:active:translate-y-px"
                             >
                                 Book a 30-min call
                             </a>
@@ -88,12 +88,12 @@ export default function Hero() {
                             <li key={item.no} className="border-b border-ink">
                                 <Link
                                     href={item.href}
-                                    className="group grid grid-cols-[3.5rem_1fr_auto] items-start gap-x-3 py-5 -ml-2 pl-2 pr-2 text-ink no-underline transition-colors hover:bg-cobalt hover:text-white focus-visible:bg-cobalt focus-visible:text-white focus-visible:outline-white focus-visible:-outline-offset-4"
+                                    className="index-row group relative isolate grid grid-cols-[3.5rem_1fr_auto] items-start gap-x-3 py-5 -ml-2 pl-2 pr-2 text-ink no-underline hover:text-white focus-visible:text-white focus-visible:outline-white focus-visible:-outline-offset-4"
                                 >
                                     <span className="tabular text-[2.5rem] font-black leading-none tracking-[-0.05em]">{item.no}</span>
                                     <span>
                                         <span className="block text-[1.4rem] font-bold leading-tight tracking-[-0.02em]">{item.name}</span>
-                                        <span className="block mt-1 text-[15px] text-ink-2 [text-wrap:balance] group-hover:text-cobalt-soft group-focus-visible:text-cobalt-soft">
+                                        <span className="block mt-1 text-[15px] text-ink-2 [text-wrap:balance] transition-colors group-hover:text-cobalt-soft group-focus-visible:text-cobalt-soft">
                                             {item.meta}
                                         </span>
                                     </span>

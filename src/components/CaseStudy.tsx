@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import { Footer } from "@/components/Contact";
 import { ArrowLeft, ArrowUpRight } from "@/components/icons";
 import { CALL_URL, EMAIL } from "@/content/site";
+import FlowDraw from "@/components/FlowDraw";
 
 // Building blocks for the /projects/* case studies, in the same Swiss poster system as the home page.
 
@@ -16,7 +17,7 @@ export function CaseStudyShell({ children }: { children: ReactNode }) {
         <>
             <Header />
             <main id="main" className={`${pagePad} pt-8 md:pt-12`}>
-                <Link href="/#work" className="inline-flex items-center gap-2 text-[15px] font-medium text-ink no-underline hover:underline">
+                <Link href="/#work" className="group inline-flex items-center gap-2 text-[15px] font-medium text-ink no-underline hover:underline">
                     <ArrowLeft className="w-4 h-4" />
                     Back to work
                 </Link>
@@ -51,7 +52,7 @@ export function CaseHeader({
                     <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
                         {links.map((l) => (
                             <li key={l.href}>
-                                <a href={l.href} {...ext} className="inline-flex items-center gap-1 font-medium text-ink underline decoration-ink/30 hover:decoration-ink">
+                                <a href={l.href} {...ext} className="group inline-flex items-center gap-1 font-medium text-ink underline decoration-ink/30 hover:decoration-ink">
                                     {l.label}
                                     <ArrowUpRight />
                                 </a>
@@ -138,9 +139,9 @@ export interface FlowNode {
 // Architecture as a real nested list with drawn connectors (replaces ASCII art).
 export function Flow({ nodes, caption }: { nodes: FlowNode[]; caption: string }) {
     const render = (list: FlowNode[], depth: number): ReactNode => (
-        <ul className={depth === 0 ? "space-y-6" : "mt-3 ml-3 pl-5 border-l-2 border-ink space-y-3"}>
+        <ul className={depth === 0 ? "space-y-6" : "flow-spine relative mt-3 ml-3 pl-5 space-y-3 before:absolute before:inset-y-0 before:left-0 before:w-[2px] before:bg-ink before:origin-top"}>
             {list.map((n) => (
-                <li key={n.label} className={depth === 0 ? "" : "relative before:absolute before:-left-5 before:top-[0.8em] before:w-4 before:h-[2px] before:bg-ink"}>
+                <li key={n.label} className={depth === 0 ? "" : "flow-tick relative before:absolute before:-left-5 before:top-[0.8em] before:w-4 before:h-[2px] before:bg-ink before:origin-left"}>
                     <span className={depth === 0 ? "inline-block bg-ink text-paper font-bold px-3 py-1.5" : "font-bold text-ink"}>
                         {n.label}
                     </span>
@@ -153,7 +154,7 @@ export function Flow({ nodes, caption }: { nodes: FlowNode[]; caption: string })
 
     return (
         <figure className="border-2 border-ink p-5 md:p-7">
-            {render(nodes, 0)}
+            <FlowDraw>{render(nodes, 0)}</FlowDraw>
             <figcaption className="mt-6 pt-4 border-t border-ink/20 text-[15px] text-ink-3">{caption}</figcaption>
         </figure>
     );
@@ -167,13 +168,13 @@ export function TalkCta() {
                 <a
                     href={CALL_URL}
                     {...ext}
-                    className="inline-flex items-center justify-center bg-white text-cobalt font-bold px-6 py-4 no-underline hover:bg-cobalt-soft transition-colors"
+                    className="inline-flex items-center justify-center bg-white text-cobalt font-bold px-6 py-4 no-underline hover:bg-cobalt-soft transition-[color,background-color,border-color,transform] duration-150 active:duration-75 motion-safe:active:translate-y-px"
                 >
                     Book a 30-min call
                 </a>
                 <a
                     href={`mailto:${EMAIL}`}
-                    className="inline-flex items-center justify-center border-2 border-white text-white font-bold px-6 py-[14px] no-underline hover:bg-white hover:text-cobalt transition-colors"
+                    className="inline-flex items-center justify-center border-2 border-white text-white font-bold px-6 py-[14px] no-underline hover:bg-white hover:text-cobalt transition-[color,background-color,border-color,transform] duration-150 active:duration-75 motion-safe:active:translate-y-px"
                 >
                     Email me
                 </a>

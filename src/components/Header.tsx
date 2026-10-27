@@ -17,6 +17,21 @@ export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { query } = useKBar();
     const menuButton = useRef<HTMLButtonElement>(null);
+    const [current, setCurrent] = useState<string | null>(null);
+
+    // Mark the nav link for the section being read (home page only; other pages have none of these ids).
+    useEffect(() => {
+        const sections = ["about", "work", "experience", "skills", "contact"]
+            .map((id) => document.getElementById(id))
+            .filter((el): el is HTMLElement => el !== null);
+        if (!sections.length) return;
+        const io = new IntersectionObserver(
+            (entries) => entries.forEach((e) => e.isIntersecting && setCurrent(e.target.id)),
+            { rootMargin: "-45% 0px -50% 0px" },
+        );
+        sections.forEach((el) => io.observe(el));
+        return () => io.disconnect();
+    }, []);
 
     // Escape closes the mobile menu and returns focus to its toggle.
     useEffect(() => {
@@ -44,7 +59,11 @@ export default function Header() {
                 <ul className="hidden md:flex md:col-span-6 items-center gap-5 lg:gap-8">
                     {navLinks.map((link) => (
                         <li key={link.name}>
-                            <Link href={link.href} className="whitespace-nowrap text-[15px] text-ink no-underline hover:underline">
+                            <Link
+                                href={link.href}
+                                aria-current={link.href === `/#${current}` ? "location" : undefined}
+                                className="nav-link relative whitespace-nowrap text-[15px] text-ink no-underline"
+                            >
                                 {link.name}
                             </Link>
                         </li>
@@ -66,7 +85,7 @@ export default function Header() {
                         href={RESUME_URL}
                         target="_blank"
                         rel="noopener"
-                        className="inline-flex items-center gap-1 font-bold text-[15px] text-ink no-underline border-b-2 border-ink pb-0.5 hover:text-cobalt hover:border-cobalt transition-colors"
+                        className="group inline-flex items-center gap-1 font-bold text-[15px] text-ink no-underline border-b-2 border-ink pb-0.5 hover:text-cobalt hover:border-cobalt transition-colors"
                     >
                         Resume
                         <ArrowUpRight className="w-4 h-4" />
@@ -87,8 +106,8 @@ export default function Header() {
 
             {isMenuOpen && (
                 <ul id="mobile-nav" className="md:hidden border-t border-ink px-5 pb-2">
-                    {navLinks.map((link) => (
-                        <li key={link.name} className="border-b border-ink/20 last:border-b-0">
+                    {navLinks.map((link, i) => (
+                        <li key={link.name} style={{ "--i": i } as React.CSSProperties} className="border-b border-ink/20 last:border-b-0">
                             <Link
                                 href={link.href}
                                 onClick={() => setIsMenuOpen(false)}

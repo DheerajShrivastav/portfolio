@@ -61,21 +61,24 @@ function RenderResults() {
 
 export default function CommandPalette({ children }: { children: ReactNode }) {
     return (
-        <KBarProvider actions={actions}>
+        <KBarProvider actions={actions} options={{ animations: { enterMs: 0, exitMs: 0 } }}>
             <KBarPortal>
-                <KBarPositioner className="fixed inset-0 z-50 bg-ink/40">
-                    <KBarAnimator className="w-full max-w-lg mx-auto mt-[18vh] bg-paper border-2 border-ink">
-                        <KBarSearch
-                            defaultPlaceholder="Jump to a section or case study"
-                            aria-label="Jump to a section or case study"
-                            className="w-full px-5 py-4 bg-transparent border-b-2 border-ink text-ink outline-none placeholder:text-ink-3"
-                        />
-                        <div className="py-2">
-                            <RenderResults />
+                <KBarPositioner className="kbar-scrim fixed inset-0 z-50 bg-ink/40">
+                    {/* kbar's own animation overshoots and ignores reduced motion; it is switched off and the panel drops in with CSS */}
+                    <KBarAnimator className="w-full max-w-lg mx-auto mt-[18vh]" style={{ opacity: 1, transform: "none" }}>
+                        <div className="kbar-panel bg-paper border-2 border-ink">
+                            <KBarSearch
+                                defaultPlaceholder="Jump to a section or case study"
+                                aria-label="Jump to a section or case study"
+                                className="w-full px-5 py-4 bg-transparent border-b-2 border-ink text-ink outline-none placeholder:text-ink-3"
+                            />
+                            <div className="py-2">
+                                <RenderResults />
+                            </div>
+                            <p className="px-5 py-2 border-t border-ink/20 text-[13px] text-ink-3">
+                                <kbd className="font-sans font-medium text-ink border border-ink/30 px-1">esc</kbd> to close
+                            </p>
                         </div>
-                        <p className="px-5 py-2 border-t border-ink/20 text-[13px] text-ink-3">
-                            <kbd className="font-sans font-medium text-ink border border-ink/30 px-1">esc</kbd> to close
-                        </p>
                     </KBarAnimator>
                 </KBarPositioner>
             </KBarPortal>

@@ -19,13 +19,13 @@ export default function Contact() {
                             href={CALL_URL}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center bg-white text-cobalt font-bold text-[17px] px-6 py-4 no-underline hover:bg-cobalt-soft transition-colors"
+                            className="inline-flex items-center justify-center bg-white text-cobalt font-bold text-[17px] px-6 py-4 no-underline hover:bg-cobalt-soft transition-[color,background-color,border-color,transform] duration-150 active:duration-75 motion-safe:active:translate-y-px"
                         >
                             Book a 30-min call
                         </a>
                         <a
                             href={`mailto:${EMAIL}`}
-                            className="inline-flex items-center justify-center border-2 border-white text-white font-bold text-[17px] px-6 py-[14px] no-underline hover:bg-white hover:text-cobalt transition-colors"
+                            className="inline-flex items-center justify-center border-2 border-white text-white font-bold text-[17px] px-6 py-[14px] no-underline hover:bg-white hover:text-cobalt transition-[color,background-color,border-color,transform] duration-150 active:duration-75 motion-safe:active:translate-y-px"
                         >
                             Email me
                         </a>
@@ -41,7 +41,7 @@ export default function Contact() {
                                     href={p.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-1 text-white no-underline hover:underline"
+                                    className="group inline-flex items-center gap-1 text-white no-underline hover:underline"
                                 >
                                     {p.label}
                                     <ArrowUpRight />

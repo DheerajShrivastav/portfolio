@@ -17,7 +17,7 @@ export default function NotFound() {
                         </p>
                         <Link
                             href="/"
-                            className="mt-8 inline-flex items-center gap-2 bg-cobalt text-white font-bold px-6 py-4 no-underline hover:bg-cobalt-deep transition-colors"
+                            className="group mt-8 inline-flex items-center gap-2 bg-cobalt text-white font-bold px-6 py-4 no-underline hover:bg-cobalt-deep transition-[color,background-color,border-color,transform] duration-150 active:duration-75 motion-safe:active:translate-y-px"
                         >
                             <ArrowLeft className="w-4 h-4" />
                             Back to the home page
