@@ -8,8 +8,8 @@ import { ArrowUpRight, MenuIcon } from "@/components/icons";
 
 const navLinks = [
     { name: "Work", href: "/#work" },
+    { name: "About", href: "/#how-i-work" },
     { name: "Experience", href: "/#experience" },
-    { name: "Open source", href: "/#work-03" },
     { name: "Contact", href: "/#contact" },
 ];
 
@@ -21,7 +21,7 @@ export default function Header() {
 
     // Mark the nav link for the section being read (home page only; other pages have none of these ids).
     useEffect(() => {
-        const sections = ["about", "work", "experience", "skills", "contact"]
+        const sections = ["about", "work", "how-i-work", "experience", "skills", "contact"]
             .map((id) => document.getElementById(id))
             .filter((el): el is HTMLElement => el !== null);
         if (!sections.length) return;

@@ -12,7 +12,7 @@ export default function Contact() {
 
                 <div className="lg:col-span-5 flex flex-col justify-end">
                     <p className="text-lg text-cobalt-soft leading-relaxed max-w-[40ch]">
-                        A 30-minute call is the fastest way to see if I&apos;m a fit. Email works too.
+                        I&apos;ll be at Devcon 8 in Mumbai, 3–6 Nov, looking for my next engineering role and builders to compare notes with. Book 30 minutes or find me there. A good intro is two lines: who you are, and the problem you&apos;d want me to own.
                     </p>
                     <div className="mt-6 flex flex-col sm:flex-row gap-3">
                         <a

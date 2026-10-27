@@ -18,6 +18,7 @@ const actions = [
     { id: "work", name: "Go to Work", shortcut: ["g", "w"], keywords: "projects work portfolio", perform: go("/#work") },
     { id: "voice", name: "Case study: real-time voice agent", shortcut: ["g", "v"], keywords: "voice agent gemini case study", perform: go("/projects/voice-agent") },
     { id: "dappdrop", name: "Case study: DappDrop", shortcut: ["g", "d"], keywords: "dappdrop protocol solidity case study", perform: go("/projects/dappdrop") },
+    { id: "how", name: "Go to About", shortcut: ["g", "b"], keywords: "about how i work devcon", perform: go("/#how-i-work") },
     { id: "experience", name: "Go to Experience", shortcut: ["g", "e"], keywords: "experience history jobs", perform: go("/#experience") },
     { id: "opensource", name: "Go to Open source", shortcut: ["g", "o"], keywords: "open source contributions pull requests", perform: go("/#work-03") },
     { id: "skills", name: "Go to Skills", shortcut: ["g", "s"], keywords: "skills stack tech", perform: go("/#skills") },

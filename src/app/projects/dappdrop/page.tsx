@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bullets, CaseHeader, CaseStudyShell, Decision, Facts, Finding, Flow, Section, TalkCta } from "@/components/CaseStudy";
+import { Bullets, CaseHeader, CaseStudyShell, Decision, Facts, Finding, Flow, Screens, Section, TalkCta } from "@/components/CaseStudy";
 
 const title = "DappDrop case study | Dheeraj Shrivastav";
 const description =
@@ -45,6 +45,30 @@ export default function DappDropCaseStudy() {
       />
 
       <Facts items={facts} />
+
+      <Section title="The live app">
+        <p>
+          The app is in public beta on Sepolia testnet. These are screens from it as it runs today; you can{" "}
+          <a href={LIVE} target="_blank" rel="noopener noreferrer" className="text-ink underline decoration-ink/30 hover:decoration-ink">
+            open it yourself
+          </a>
+          .
+        </p>
+        <Screens
+          items={[
+            {
+              src: "/projects/dappdrop/landing.jpg",
+              alt: "DappDrop landing page: the headline \"Don't promise rewards. Lock them in.\" beside a rendered escrow vault, with a Public beta · Sepolia testnet badge.",
+              caption: "Landing page. The testnet status sits above the headline, not in the small print.",
+            },
+            {
+              src: "/projects/dappdrop/security.jpg",
+              alt: "DappDrop security page headed \"Check our work.\", stating it is not audited by a third party yet, with a status line and a diagram of host wallet, escrow contract and participant wallets.",
+              caption: "Security page. It says plainly that the contracts aren't audited, and shows who can move the reward.",
+            },
+          ]}
+        />
+      </Section>
 
       <Section title="The problem">
         <p>

@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import { Footer } from "@/components/Contact";
@@ -127,6 +128,27 @@ export function Bullets({ items }: { items: string[] }) {
                 </li>
             ))}
         </ul>
+    );
+}
+
+// Real screens of the shipped product, captioned with what they show. Below the fold, so lazy-loaded.
+export function Screens({ items }: { items: { src: string; alt: string; caption: string }[] }) {
+    return (
+        <div className="grid grid-cols-1 gap-8">
+            {items.map((s) => (
+                <figure key={s.src}>
+                    <Image
+                        src={s.src}
+                        alt={s.alt}
+                        width={1600}
+                        height={1000}
+                        sizes="(min-width: 1280px) 760px, (min-width: 768px) 75vw, 100vw"
+                        className="w-full h-auto border-2 border-ink"
+                    />
+                    <figcaption className="mt-3 text-[15px] text-ink-3">{s.caption}</figcaption>
+                </figure>
+            ))}
+        </div>
     );
 }
 
