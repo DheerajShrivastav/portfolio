@@ -12,12 +12,12 @@ const grotesk = Schibsted_Grotesk({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://dheerajshrivastav.me"),
-  title: "Dheeraj Shrivastav | Software Engineer: Product, Backend, AI & Web3",
-  description: "Software engineer who takes features from spec to production and owns them after launch: a real-time voice agent for patients and doctors, automated pipelines, internal AI agents, and the DappDrop protocol. TypeScript, Node.js, PostgreSQL, Solidity.",
-  keywords: ["Software Engineer", "Product Engineer", "Full-Stack Engineer", "AI Agents", "Voice AI", "Backend Engineer", "Node.js", "NestJS", "PostgreSQL", "Solidity", "Web3", "Dheeraj Shrivastav"],
+  title: "Dheeraj Shrivastav | Software Engineer: Product & Backend",
+  description: "Software engineer who takes features from spec to production and owns them after launch. On the team behind a real-time voice agent for patients and doctors; built an automated pipeline and internal AI agents; founder of DappDrop. TypeScript, Node.js, PostgreSQL, Solidity.",
+  keywords: ["Software Engineer", "Product Engineer", "Backend Engineer", "Full-Stack Engineer", "AI Agents", "Voice AI", "Node.js", "NestJS", "PostgreSQL", "Solidity", "Web3", "Dheeraj Shrivastav"],
   openGraph: {
-    title: "Dheeraj Shrivastav | Software Engineer: Product, Backend, AI & Web3",
-    description: "I ship software real people use every day, from first spec to production.",
+    title: "Dheeraj Shrivastav | Software Engineer: Product & Backend",
+    description: "I ship software people use, and I own it: from first spec to production, and after launch.",
     url: "https://dheerajshrivastav.me",
     siteName: "Dheeraj Shrivastav",
     locale: "en_US",

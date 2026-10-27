@@ -8,8 +8,8 @@ const indexed = work.slice(0, 3).map((item) => ({
     href: item.caseStudy ?? `/#work-${item.no}`,
     meta: {
         "01": "In production · 65% less physician work",
-        "02": "Founder · 240 unit + 26 invariant tests · case study",
-        "03": "5 merged open-source contributions",
+        "02": "Founder · testnet · 240 unit + 26 invariant tests",
+        "03": "5 contributions merged upstream",
     }[item.no],
 }));
 
@@ -20,21 +20,22 @@ export default function Hero() {
                 {/* The cobalt field: the claim and the two actions */}
                 <div className="on-cobalt lg:col-span-7 xl:col-span-8 bg-cobalt text-white px-6 py-10 md:px-12 md:py-14 lg:py-10 flex flex-col justify-between gap-12 lg:gap-8">
                     <h1 className="text-display-xl font-extrabold max-w-[14ch]">
-                        I ship software real people use every day.
+                        I ship software people use, and I own it.
                     </h1>
 
                     <div>
                         <div className="max-w-[60ch] space-y-4 text-lg leading-relaxed text-cobalt-soft">
                             <p className="text-white font-semibold text-xl lg:[@media(min-height:860px)]:text-[1.625rem] leading-snug tracking-[-0.01em] [text-wrap:balance]">
-                                I own features from spec to production, and stay on them after launch.
+                                From first spec to production, and after launch.
                             </p>
                             <p>
-                                In my current role I&apos;ve shipped a{" "}
+                                At work I&apos;m on the team that shipped a{" "}
                                 <Link href="/projects/voice-agent" className="text-white font-medium underline decoration-white/50 hover:decoration-white">
                                     real-time voice agent
                                 </Link>{" "}
-                                for patients and doctors that cut manual physician intervention by 65%, one automated pipeline in place
-                                of a team&apos;s separate tools, and internal agents staff use instead of waiting on a senior. I also founded{" "}
+                                for patients and doctors, which cut manual physician intervention by 65%. I built the automated pipeline
+                                that replaced a team&apos;s separate tools, and internal agents staff use instead of waiting on a senior.
+                                I also founded{" "}
                                 <Link href="/projects/dappdrop" className="text-white font-medium underline decoration-white/50 hover:decoration-white">
                                     DappDrop
                                 </Link>

@@ -2,18 +2,22 @@ import Link from "next/link";
 import { work } from "@/content/site";
 import { ArrowRight, ArrowUpRight } from "@/components/icons";
 
+// The first three are the evidence (work, own product, open source); hackathon and solo builds sit below, compact.
+const featured = work.slice(0, 3);
+const earlier = work.slice(3);
+
 export default function Work() {
     return (
         <section id="work" className="max-w-page mx-auto px-5 md:px-12 pt-16 md:pt-24 pb-16 md:pb-20">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-x-6 gap-y-4 border-t-2 border-ink pt-6 mb-6">
                 <h2 className="md:col-span-4 text-display-lg font-extrabold">Work</h2>
                 <p className="md:col-span-6 md:col-start-6 text-lg text-ink-2 leading-relaxed max-w-[52ch] md:pt-3">
-                    What I&apos;ve built. Work projects are private; everything else links to code you can read.
+                    Shipped at work first, then what I build on my own. Work code is private; everything else links to code you can read.
                 </p>
             </div>
 
             <ol>
-                {work.map((item) => (
+                {featured.map((item) => (
                     <li
                         key={item.no}
                         id={`work-${item.no}`}
@@ -97,6 +101,46 @@ export default function Work() {
                     </li>
                 ))}
             </ol>
+
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-x-6 gap-y-4 border-t-2 border-ink pt-6 mt-6">
+                <h3 className="md:col-span-3 text-xl font-extrabold tracking-[-0.02em]">Earlier builds</h3>
+                <ol className="md:col-span-9 lg:col-span-8">
+                    {earlier.map((item) => (
+                        <li
+                            key={item.no}
+                            id={`work-${item.no}`}
+                            className="scroll-mt-24 grid grid-cols-[2.75rem_1fr] gap-x-4 border-b border-ink/20 py-5 first:pt-0"
+                        >
+                            <span className="tabular text-xl font-black text-ink leading-tight">{item.no}</span>
+                            <div>
+                                <p className="text-lg font-bold leading-tight text-ink">
+                                    {item.name}
+                                    <span className="ml-3 text-[15px] font-medium text-ink-3">{item.context}</span>
+                                </p>
+                                <p className="mt-1.5 max-w-[65ch] text-[15px] leading-relaxed text-ink-2">{item.description}</p>
+                                <p className="mt-2 flex flex-wrap items-center gap-x-5 gap-y-1 text-[15px]">
+                                    <span className="text-ink-3">
+                                        <span className="sr-only">Stack: </span>
+                                        {item.tech.join(" · ")}
+                                    </span>
+                                    {item.links.map((l) => (
+                                        <a
+                                            key={l.href}
+                                            href={l.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center gap-1 font-medium text-ink underline decoration-ink/30 hover:decoration-ink"
+                                        >
+                                            {l.label}
+                                            <ArrowUpRight />
+                                        </a>
+                                    ))}
+                                </p>
+                            </div>
+                        </li>
+                    ))}
+                </ol>
+            </div>
         </section>
     );
 }

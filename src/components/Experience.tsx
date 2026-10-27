@@ -6,7 +6,7 @@ export default function Experience() {
             <div className="grid grid-cols-1 md:grid-cols-12 gap-x-6 gap-y-4 border-t-2 border-ink pt-6 mb-6">
                 <h2 className="md:col-span-4 text-display-lg font-extrabold">Experience</h2>
                 <p className="md:col-span-6 md:col-start-6 text-lg text-ink-2 leading-relaxed md:pt-3">
-                    Where I&apos;ve worked and what I shipped.
+                    Shipping since 2023: client apps, a backend internship, now production features.
                 </p>
             </div>
 

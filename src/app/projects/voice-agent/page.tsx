@@ -3,7 +3,7 @@ import { Bullets, CaseHeader, CaseStudyShell, Decision, Facts, Flow, Section, Ta
 
 const title = "Real-time voice AI agent case study | Dheeraj Shrivastav";
 const description =
-  "How I built a real-time voice AI agent for patients and doctors on Gemini Live: native speech-to-speech with no separate STT/TTS hops, strict guardrails over a curated dataset, live language switching, and a token-efficient harness.";
+  "How we built a real-time voice AI agent for patients and doctors on Gemini Live: native speech-to-speech with no separate STT/TTS hops, strict guardrails over a curated dataset, live language switching, and a token-efficient harness.";
 
 // Page-level openGraph replaces the inherited one, so the site share card is named explicitly.
 const shareImage = { url: "/opengraph-image", width: 1200, height: 630, alt: "Dheeraj Shrivastav, Software Engineer" };
@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 
 const facts = [
   { label: "Where", value: "At work, in a healthcare company. In production; the code is private." },
+  { label: "Role", value: "Engineer on the team that built it" },
   { label: "Users", value: "Patients and doctors, in their daily workflow" },
   { label: "Model", value: "Gemini Live (native audio, speech in and speech out)" },
   { label: "Stack", value: "Node.js, TypeScript, WebSockets, Azure" },
@@ -74,7 +75,7 @@ export default function VoiceAgentCaseStudy() {
         <div className="space-y-10">
           <Decision
             title="Native speech-to-speech instead of an STT → LLM → TTS chain"
-            why="Every hop in a chained pipeline adds waiting before the patient hears anything. One native-audio model removes two of those hops, so replies start with minimal delay and the conversation stays live. The voice also keeps a natural tone instead of sounding like text being read aloud."
+            why="Every hop in a chained pipeline adds waiting before the patient hears anything. One native-audio model removes two of those hops, so replies start sooner and the conversation stays live. The voice also keeps a natural tone instead of sounding like text being read aloud."
           >
             Gemini Live handles listening, reasoning, and speaking in a single real-time session.
           </Decision>
@@ -95,7 +96,7 @@ export default function VoiceAgentCaseStudy() {
             title="A harness tuned for token efficiency"
             why="Live voice sessions use tokens continuously, for audio and for the context the model carries. At daily production volume, wasted tokens are a direct cost."
           >
-            I optimized the harness to spend fewer tokens per conversation, which brings the running cost down.
+            I optimized the harness to spend fewer tokens per conversation, to keep the running cost down.
           </Decision>
           <Decision
             title="Any supported language, switchable mid-conversation"
@@ -112,7 +113,7 @@ export default function VoiceAgentCaseStudy() {
           items={[
             "In production, used by patients and doctors as part of their daily workflow.",
             "Manual physician intervention on patient self-assessments down 65%.",
-            "Live conversation with minimal delay and a natural-sounding voice, in any language the model supports.",
+            "Live conversation without separate speech-to-text and text-to-speech hops, with a natural-sounding voice, in any language the model supports.",
           ]}
         />
       </Section>

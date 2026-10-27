@@ -34,7 +34,7 @@ export default function DappDropCaseStudy() {
     <CaseStudyShell>
       <CaseHeader
         no="02"
-        title="DappDrop: a rewards protocol where hosts can't rug and bots can't farm"
+        title="DappDrop: on-chain rewards held in escrow and settled by Merkle proof"
         intro="Projects run reward campaigns, participants complete verified tasks, and escrowed ERC-20, ERC-721 and ERC-1155 rewards settle on-chain after the campaign ends. This page covers the decisions that shaped it and the bugs the test suite caught."
         links={[
           { label: "Live app (testnet)", href: LIVE },
@@ -151,8 +151,8 @@ export default function DappDropCaseStudy() {
 
       <Section title="How I verify work">
         <p>
-          I build DappDrop with AI coding agents, so the verification gate matters more than who typed the code. I set
-          the architecture and security decisions, and nothing ships without passing the gate:
+          AI coding agents write much of DappDrop&apos;s code to my specs. I own the architecture, the security model, and
+          the gate nothing merges without:
         </p>
         <Bullets
           items={[

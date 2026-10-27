@@ -7,7 +7,7 @@ export default function Contact() {
         <section id="contact" className="max-w-page mx-auto px-5 md:px-12 pb-16">
             <div className="on-cobalt bg-cobalt text-white px-6 py-12 md:px-12 md:py-16 grid grid-cols-1 lg:grid-cols-12 gap-x-6 gap-y-10">
                 <h2 className="lg:col-span-7 text-display-lg font-extrabold max-w-[16ch]">
-                    Hiring for an AI agent or backend role? Let&apos;s talk.
+                    Hiring someone to own features end to end? Let&apos;s talk.
                 </h2>
 
                 <div className="lg:col-span-5 flex flex-col justify-end">

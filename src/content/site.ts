@@ -36,8 +36,8 @@ export const work: WorkItem[] = [
         no: "01",
         slug: "voice-agent",
         name: "Real-time voice agent",
-        headline: "Voice AI for patients and doctors, on Gemini Live",
-        context: "At work · in production · private code",
+        headline: "In production for patients and doctors; 65% less manual physician work",
+        context: "At work · team project · in production · private code",
         description:
             "Holds live voice conversations with patients and doctors and helps with their daily workflow: self-assessments, answers from a curated dataset, and personalized reports that doctors approve. Works in any language Gemini Live supports, switching mid-conversation.",
         challenge: "A voice agent feels broken if it pauses, and in healthcare a fluent made-up answer is worse than none.",
@@ -120,10 +120,10 @@ export const work: WorkItem[] = [
         headline: "AI-assisted grant platform",
         context: "Hackathon · team of 3",
         description:
-            "Base hackathon project, team of 3; I wrote 32 of ~50 commits. Uses AI to score grant proposals and pays approved ones on-chain.",
+            "Base hackathon project; I wrote 32 of ~50 commits. Uses AI to score grant proposals and pays approved ones on-chain.",
         challenge: "Reviewing many grant proposals consistently and paying the approved ones without manual back-and-forth.",
         solution:
-            "A Groq-hosted LLM scores proposals; a GrantDistribution contract with Foundry unit tests running in CI pays the approved ones.",
+            "A Groq-hosted LLM scores proposals; a GrantDistribution contract with Foundry unit tests pays the approved ones.",
         tech: ["Solidity", "Foundry", "Base", "Groq", "TypeScript", "PostgreSQL"],
         links: [{ label: "Code", href: "https://github.com/DheerajShrivastav/decentralized-grant-program-dapp" }],
     },
@@ -144,12 +144,12 @@ export const experience: Role[] = [
         role: "Product Developer",
         company: "Seragen Biotherapeutics",
         period: "Jun 2026 – Present",
-        summary: "Building AI-powered products for patient care and internal operations.",
+        summary: "Shipping features for patient care and internal operations, from spec to production.",
         highlights: [
-            "Built a real-time voice AI agent on Gemini Live that talks with patients and doctors in any supported language, with strict guardrails over a curated dataset; it reduced manual physician intervention by 65%.",
+            "Part of the team that shipped a real-time voice agent patients and doctors use daily, in any language Gemini Live supports; strict guardrails over a curated dataset cut manual physician intervention by 65%.",
             "Designed a doctor-in-the-loop flow: AI drafts personalized patient reports and doctors approve them before delivery.",
             "Consolidated the team's separate tools into a single automated pipeline, removing manual hand-offs between steps.",
-            "Built internal AI agents that give staff on-demand recommendations, cutting routine escalations to seniors.",
+            "Built internal AI agents that give staff on-demand recommendations, so routine questions don't have to wait for a senior.",
         ],
         stack: ["Gemini Live", "Claude", "Node.js", "TypeScript", "WebSockets", "Azure"],
         current: true,
@@ -172,7 +172,7 @@ export const experience: Role[] = [
         period: "Oct 2023 – Sep 2025",
         summary: "Web apps and APIs for clients, end to end from build to deploy.",
         highlights: [
-            "Built and deployed 10+ web applications for clients, actively used by 500+ users.",
+            "Built and deployed ~10 web applications for clients, used by an estimated ~500 people.",
             "Roughly halved API response times with Redis caching and query optimization in Express/Prisma services.",
             "Set up Docker-based CI/CD with GitHub Actions, replacing manual deploys.",
         ],
@@ -194,9 +194,9 @@ export const education = [
 ];
 
 export const skills: { label: string; items: string[] }[] = [
-    { label: "AI", items: ["Gemini Live (native audio)", "Claude", "AWS Bedrock", "Groq", "Voice agents", "AI agents", "Guardrails", "MCP"] },
     { label: "Backend", items: ["TypeScript", "Node.js", "NestJS", "Express", "Bun", "REST", "Socket.io", "Prisma", "PostgreSQL", "Redis", "OAuth", "SIWE"] },
-    { label: "Web3", items: ["Solidity", "Foundry", "ethers.js", "viem", "EIP-712", "Merkle proofs", "The Graph"] },
+    { label: "AI", items: ["Gemini Live (native audio)", "Claude", "AWS Bedrock", "Groq", "MCP", "Voice agents", "Guardrails"] },
     { label: "Frontend", items: ["React", "Next.js", "Tailwind CSS", "Phaser"] },
     { label: "Infra", items: ["Docker", "GitHub Actions", "AWS (S3, CloudFront, Lambda, Bedrock)", "Azure", "Linux", "Vercel"] },
+    { label: "Web3", items: ["Solidity", "Foundry", "ethers.js", "viem", "EIP-712", "Merkle proofs", "The Graph"] },
 ];
