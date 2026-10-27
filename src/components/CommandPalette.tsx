@@ -67,6 +67,7 @@ export default function CommandPalette({ children }: { children: ReactNode }) {
                     <KBarAnimator className="w-full max-w-lg mx-auto mt-[18vh] bg-paper border-2 border-ink">
                         <KBarSearch
                             defaultPlaceholder="Jump to a section or case study"
+                            aria-label="Jump to a section or case study"
                             className="w-full px-5 py-4 bg-transparent border-b-2 border-ink text-ink outline-none placeholder:text-ink-3"
                         />
                         <div className="py-2">

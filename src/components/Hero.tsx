@@ -18,14 +18,14 @@ export default function Hero() {
         <section id="about" className="max-w-page mx-auto px-5 md:px-12 pt-6 md:pt-8 pb-16 lg:pb-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-6 gap-y-10 lg:min-h-[calc(100svh-72px-5rem)]">
                 {/* The cobalt field: the claim and the two actions */}
-                <div className="on-cobalt lg:col-span-8 bg-cobalt text-white px-6 py-10 md:px-12 md:py-14 lg:py-10 flex flex-col justify-between gap-12 lg:gap-8">
+                <div className="on-cobalt lg:col-span-7 xl:col-span-8 bg-cobalt text-white px-6 py-10 md:px-12 md:py-14 lg:py-10 flex flex-col justify-between gap-12 lg:gap-8">
                     <h1 className="text-display-xl font-extrabold max-w-[14ch]">
                         I ship software real people use every day.
                     </h1>
 
                     <div>
-                        <div className="max-w-[60ch] space-y-4 text-lg md:[@media(min-height:860px)]:text-xl leading-relaxed text-cobalt-soft">
-                            <p className="text-white font-medium">
+                        <div className="max-w-[60ch] space-y-4 text-lg leading-relaxed text-cobalt-soft">
+                            <p className="text-white font-semibold text-xl lg:[@media(min-height:860px)]:text-[1.625rem] leading-snug tracking-[-0.01em] [text-wrap:balance]">
                                 I own features from spec to production, and stay on them after launch.
                             </p>
                             <p>
@@ -80,19 +80,19 @@ export default function Hero() {
                 </div>
 
                 {/* The index: work beside the claim, each row a link to its evidence */}
-                <div className="lg:col-span-4 flex flex-col">
+                <div className="lg:col-span-5 xl:col-span-4 flex flex-col">
                     <h2 className="text-[15px] font-bold pb-3 border-b-2 border-ink">Selected work</h2>
                     <ol>
                         {indexed.map((item) => (
                             <li key={item.no} className="border-b border-ink">
                                 <Link
                                     href={item.href}
-                                    className="group grid grid-cols-[3.5rem_1fr_auto] items-start gap-x-3 py-5 px-2 -mx-2 text-ink no-underline transition-colors hover:bg-cobalt hover:text-white focus-visible:bg-cobalt focus-visible:text-white"
+                                    className="group grid grid-cols-[3.5rem_1fr_auto] items-start gap-x-3 py-5 -ml-2 pl-2 pr-2 text-ink no-underline transition-colors hover:bg-cobalt hover:text-white focus-visible:bg-cobalt focus-visible:text-white focus-visible:outline-white focus-visible:-outline-offset-4"
                                 >
                                     <span className="tabular text-[2.5rem] font-black leading-none tracking-[-0.05em]">{item.no}</span>
                                     <span>
                                         <span className="block text-[1.4rem] font-bold leading-tight tracking-[-0.02em]">{item.name}</span>
-                                        <span className="block mt-1 text-[15px] text-ink-2 group-hover:text-cobalt-soft group-focus-visible:text-cobalt-soft">
+                                        <span className="block mt-1 text-[15px] text-ink-2 [text-wrap:balance] group-hover:text-cobalt-soft group-focus-visible:text-cobalt-soft">
                                             {item.meta}
                                         </span>
                                     </span>
@@ -108,7 +108,7 @@ export default function Hero() {
                         <dt className="text-ink-3">Based in</dt>
                         <dd>Maharashtra, India</dd>
                         <dt className="text-ink-3">Looking for</dt>
-                        <dd className="font-bold">Roles where I own features end to end</dd>
+                        <dd className="font-bold [text-wrap:balance]">Roles where I own features end to end</dd>
                     </dl>
                 </div>
             </div>

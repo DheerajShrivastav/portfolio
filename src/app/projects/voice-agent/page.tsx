@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
 import { Bullets, CaseHeader, CaseStudyShell, Decision, Facts, Flow, Section, TalkCta } from "@/components/CaseStudy";
 
+const title = "Real-time voice AI agent case study | Dheeraj Shrivastav";
+const description =
+  "How I built a real-time voice AI agent for patients and doctors on Gemini Live: native speech-to-speech with no separate STT/TTS hops, strict guardrails over a curated dataset, live language switching, and a token-efficient harness.";
+
+// Page-level openGraph replaces the inherited one, so the site share card is named explicitly.
+const shareImage = { url: "/opengraph-image", width: 1200, height: 630, alt: "Dheeraj Shrivastav, Software Engineer" };
+
 export const metadata: Metadata = {
-  title: "Real-time voice AI agent case study | Dheeraj Shrivastav",
-  description:
-    "How I built a real-time voice AI agent for patients and doctors on Gemini Live: native speech-to-speech with no separate STT/TTS hops, strict guardrails over a curated dataset, live language switching, and a token-efficient harness.",
+  title,
+  description,
   alternates: { canonical: "/projects/voice-agent" },
+  openGraph: { title, description, url: "/projects/voice-agent", type: "article", siteName: "Dheeraj Shrivastav", images: [shareImage] },
+  twitter: { card: "summary_large_image", title, description, creator: "@Dheeraj_08_", images: [shareImage] },
 };
 
 const facts = [

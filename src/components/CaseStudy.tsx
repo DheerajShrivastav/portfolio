@@ -15,7 +15,7 @@ export function CaseStudyShell({ children }: { children: ReactNode }) {
     return (
         <>
             <Header />
-            <main className={`${pagePad} pt-8 md:pt-12`}>
+            <main id="main" className={`${pagePad} pt-8 md:pt-12`}>
                 <Link href="/#work" className="inline-flex items-center gap-2 text-[15px] font-medium text-ink no-underline hover:underline">
                     <ArrowLeft className="w-4 h-4" />
                     Back to work

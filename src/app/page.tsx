@@ -34,7 +34,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
       />
       <Header />
-      <main>
+      <main id="main">
         <Hero />
         <Work />
         <Experience />

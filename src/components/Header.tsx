@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useKBar } from "kbar";
 import { RESUME_URL } from "@/content/site";
@@ -16,6 +16,19 @@ const navLinks = [
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { query } = useKBar();
+    const menuButton = useRef<HTMLButtonElement>(null);
+
+    // Escape closes the mobile menu and returns focus to its toggle.
+    useEffect(() => {
+        if (!isMenuOpen) return;
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key !== "Escape") return;
+            setIsMenuOpen(false);
+            menuButton.current?.focus();
+        };
+        document.addEventListener("keydown", onKey);
+        return () => document.removeEventListener("keydown", onKey);
+    }, [isMenuOpen]);
 
     return (
         <header className="sticky top-0 z-40 bg-paper border-b-2 border-ink">
@@ -28,10 +41,10 @@ export default function Header() {
                     Dheeraj Shrivastav
                 </Link>
 
-                <ul className="hidden md:flex md:col-span-6 items-center gap-8">
+                <ul className="hidden md:flex md:col-span-6 items-center gap-5 lg:gap-8">
                     {navLinks.map((link) => (
                         <li key={link.name}>
-                            <Link href={link.href} className="text-[15px] text-ink no-underline hover:underline">
+                            <Link href={link.href} className="whitespace-nowrap text-[15px] text-ink no-underline hover:underline">
                                 {link.name}
                             </Link>
                         </li>
@@ -60,8 +73,9 @@ export default function Header() {
                     </a>
 
                     <button
+                        ref={menuButton}
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className="md:hidden -mr-1 p-1 text-ink"
+                        className="md:hidden -mr-2.5 p-2.5 text-ink"
                         aria-label="Menu"
                         aria-expanded={isMenuOpen}
                         aria-controls="mobile-nav"

@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
 import { Bullets, CaseHeader, CaseStudyShell, Decision, Facts, Finding, Flow, Section, TalkCta } from "@/components/CaseStudy";
 
+const title = "DappDrop case study | Dheeraj Shrivastav";
+const description =
+  "How I designed a Sybil-resistant on-chain rewards protocol: escrow and Merkle settlement, EIP-712 attestations, fitting under EIP-170, and the fund-drain bug an invariant test caught before launch.";
+
+// Page-level openGraph replaces the inherited one, so the site share card is named explicitly.
+const shareImage = { url: "/opengraph-image", width: 1200, height: 630, alt: "Dheeraj Shrivastav, Software Engineer" };
+
 export const metadata: Metadata = {
-  title: "DappDrop case study | Dheeraj Shrivastav",
-  description:
-    "How I designed a Sybil-resistant on-chain rewards protocol: escrow and Merkle settlement, EIP-712 attestations, fitting under EIP-170, and the fund-drain bug an invariant test caught before launch.",
+  title,
+  description,
   alternates: { canonical: "/projects/dappdrop" },
+  openGraph: { title, description, url: "/projects/dappdrop", type: "article", siteName: "Dheeraj Shrivastav", images: [shareImage] },
+  twitter: { card: "summary_large_image", title, description, creator: "@Dheeraj_08_", images: [shareImage] },
 };
 
 const CONTRACTS = "https://github.com/DheerajShrivastav/Dapp-Drop-Smart-Contract";

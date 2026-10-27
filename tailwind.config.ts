@@ -26,7 +26,7 @@ const config: Config = {
       },
       fontSize: {
         // display steps for the poster scale; body stays at the 1rem / 1.125rem defaults
-        "display-xl": ["clamp(2.75rem, min(1.4rem + 4.6vw, 9.5vh), 5.25rem)", { lineHeight: "0.96", letterSpacing: "-0.04em" }],
+        "display-xl": ["clamp(2.75rem, min(1.4rem + 4.6vw, 9.5vh), 6rem)", { lineHeight: "0.96", letterSpacing: "-0.04em" }],
         "display-lg": ["clamp(2.25rem, 1.5rem + 2.8vw, 3.75rem)", { lineHeight: "1", letterSpacing: "-0.035em" }],
         "display-md": ["clamp(1.75rem, 1.35rem + 1.4vw, 2.5rem)", { lineHeight: "1.05", letterSpacing: "-0.03em" }],
       },

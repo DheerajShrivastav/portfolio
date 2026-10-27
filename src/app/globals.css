@@ -19,6 +19,9 @@
     text-rendering: optimizeLegibility;
     scrollbar-color: var(--ink) var(--paper);
     scrollbar-width: thin;
+    color-scheme: light;
+    /* anchors land below the sticky header */
+    scroll-padding-top: 5rem;
   }
 
   body {
