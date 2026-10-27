@@ -46,3 +46,6 @@ next-env.d.ts
 /.impeccable/hook.cache.json
 /.impeccable/config.local.json
 /.impeccable/questions/
+
+# Personal brand kit (private notes, not part of the site)
+/brand/
