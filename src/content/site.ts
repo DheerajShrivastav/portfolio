@@ -184,19 +184,17 @@ export const education = [
     {
         degree: "B.Tech, Computer Science and Engineering (AI & ML)",
         school: "Deogiri Institute of Engineering and Management Studies (DIEMS), Maharashtra",
-        period: "2023 – 2026",
     },
     {
         degree: "Diploma, Computer Science and Engineering",
         school: "MGM Polytechnic, Maharashtra",
-        period: "2020 – 2023",
     },
 ];
 
 export const skills: { label: string; items: string[] }[] = [
     { label: "Backend", items: ["TypeScript", "Node.js", "NestJS", "Express", "Bun", "REST", "Socket.io", "Prisma", "PostgreSQL", "Redis", "OAuth", "SIWE"] },
     { label: "AI", items: ["Gemini Live (native audio)", "Claude", "AWS Bedrock", "Groq", "MCP", "Voice agents", "Guardrails"] },
-    { label: "Frontend", items: ["React", "Next.js", "Tailwind CSS", "Phaser"] },
+    { label: "Frontend", items: ["React", "Next.js", "Tailwind CSS"] },
     { label: "Infra", items: ["Docker", "GitHub Actions", "AWS (S3, CloudFront, Lambda, Bedrock)", "Azure", "Linux", "Vercel"] },
     { label: "Web3", items: ["Solidity", "Foundry", "ethers.js", "viem", "EIP-712", "Merkle proofs", "The Graph"] },
 ];

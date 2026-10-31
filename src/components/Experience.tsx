@@ -47,7 +47,6 @@ export default function Experience() {
                                 <span className="font-medium text-ink">{e.degree}</span>
                                 <span className="block text-[15px] text-ink-2">{e.school}</span>
                             </span>
-                            <span className="tabular text-[15px] text-ink-3 shrink-0">{e.period}</span>
                         </li>
                     ))}
                 </ul>
