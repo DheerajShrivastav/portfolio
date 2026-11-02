@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-// How I work, and what I want from Devcon. Same facts as the hero and the case studies; no new claims.
+// How I work. Same facts as the hero and the case studies; no new claims.
 export default function About() {
     return (
         <section id="how-i-work" className="max-w-page mx-auto px-5 md:px-12 pb-20 md:pb-28">
@@ -22,12 +22,7 @@ export default function About() {
                         </Link>
                         , my on-chain rewards protocol, agents write much of the code to my specs, and nothing merges without 240
                         unit and 26 invariant Foundry tests plus Slither and Aderyn. One invariant caught a cross-campaign
-                        fund-drain bug before launch. It&apos;s on Sepolia testnet: not audited, no users yet.
-                    </p>
-                    <p>
-                        At Devcon 8 in Mumbai I want to meet Ethereum builders and teams hiring backend, product or AI engineers,
-                        and learn how people test DeFi protocols and use applied cryptography in production. If that&apos;s you,
-                        say hi.
+                        fund-drain bug before launch.
                     </p>
                 </div>
             </div>
