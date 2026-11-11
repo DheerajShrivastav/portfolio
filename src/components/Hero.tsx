@@ -29,13 +29,12 @@ export default function Hero() {
                                 From first spec to production, and after launch.
                             </p>
                             <p>
-                                At work I&apos;m on the team that shipped a{" "}
+                                At work I turn a non-tech company&apos;s daily operations into automated workflows and AI tools, including a{" "}
                                 <Link href="/projects/voice-agent" className="text-white font-medium underline decoration-white/50 hover:decoration-white">
                                     real-time voice agent
                                 </Link>{" "}
-                                for patients and doctors, which cut manual physician intervention by 65%. I built the automated pipeline
-                                that replaced a team&apos;s separate tools, and internal agents staff use instead of waiting on a senior.
-                                I also founded{" "}
+                                patients and doctors use that cut manual physician intervention by 65%. I own each feature end to end, with
+                                technical and non-technical teams. I also founded{" "}
                                 <Link href="/projects/dappdrop" className="text-white font-medium underline decoration-white/50 hover:decoration-white">
                                     DappDrop
                                 </Link>

@@ -11,9 +11,12 @@ export default function About() {
                         I take a feature from first spec to production and stay with it after launch.
                     </p>
                     <p>
-                        At work I&apos;m on the team that shipped a real-time voice agent patients and doctors use every day; it
-                        cut manual physician intervention by 65%. I also built the automated pipeline that replaced a team&apos;s
-                        separate tools, and internal AI agents staff use instead of waiting on a senior.
+                        At work I turn a non-tech company&apos;s day-to-day operations into software. I map how each team actually
+                        works, then design and ship the automated workflows and AI tools that run each step, so work stays organized
+                        and mistakes and delays are caught before they cost the business. That includes a real-time voice agent I
+                        co-built, which patients and doctors use every day and which cut manual physician intervention by 65%; the
+                        automated pipeline that replaced a team&apos;s separate tools; and internal AI agents staff use instead of
+                        waiting on a senior. I own each feature end to end and work closely with technical and non-technical teams.
                     </p>
                     <p>
                         I use AI coding agents heavily, behind a gate I set up. On{" "}

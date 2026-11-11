@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 const facts = [
   { label: "Where", value: "At work, in a healthcare company. In production; the code is private." },
-  { label: "Role", value: "Engineer on the team that built it" },
+  { label: "Role", value: "Co-built it with the product team" },
   { label: "Users", value: "Patients and doctors, in their daily workflow" },
   { label: "Model", value: "Gemini Live (native audio, speech in and speech out)" },
   { label: "Stack", value: "Node.js, TypeScript, WebSockets, Azure" },

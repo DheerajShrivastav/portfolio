@@ -13,7 +13,7 @@ const grotesk = Schibsted_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL("https://dheerajshrivastav.me"),
   title: "Dheeraj Shrivastav | Software Engineer: Product & Backend",
-  description: "Software engineer who takes features from spec to production and owns them after launch. On the team behind a real-time voice agent for patients and doctors; built an automated pipeline and internal AI agents; founder of DappDrop. TypeScript, Node.js, PostgreSQL, Solidity.",
+  description: "Software engineer who takes features from spec to production and owns them after launch. Turns a non-tech company's daily operations into automated workflows and AI tools, including a co-built real-time voice agent for patients and doctors; founder of DappDrop. TypeScript, Node.js, PostgreSQL, Solidity.",
   keywords: ["Software Engineer", "Product Engineer", "Backend Engineer", "Full-Stack Engineer", "AI Agents", "Voice AI", "Node.js", "NestJS", "PostgreSQL", "Solidity", "Web3", "Dheeraj Shrivastav"],
   openGraph: {
     title: "Dheeraj Shrivastav | Software Engineer: Product & Backend",
