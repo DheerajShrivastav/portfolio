@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
-export const alt = "Dheeraj Shrivastav, Software Engineer: I ship software people use, and I own it.";
+export const alt = "Dheeraj Shrivastav, Software Engineer: I take the manual work out of how businesses run.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -17,9 +17,9 @@ export default async function OpengraphImage() {
   ]);
 
   const rows = [
-    ["01", "Real-time voice agent"],
-    ["02", "DappDrop"],
-    ["03", "jam-nodes"],
+    ["01", "Lab operations platform"],
+    ["02", "Real-time voice agent"],
+    ["03", "DappDrop"],
   ];
 
   return new ImageResponse(
@@ -38,7 +38,7 @@ export default async function OpengraphImage() {
         >
           <div style={{ display: "flex", fontSize: 26, fontWeight: 500 }}>Dheeraj Shrivastav</div>
           <div style={{ display: "flex", fontSize: 76, fontWeight: 800, lineHeight: 0.98, letterSpacing: "-0.04em" }}>
-            I ship software people use, and I own it.
+            I take the manual work out of how businesses run.
           </div>
         </div>
         <div style={{ flex: 1, display: "flex", flexDirection: "column", paddingLeft: 32, color: "#0d0d0d" }}>
@@ -52,7 +52,7 @@ export default async function OpengraphImage() {
             </div>
           ))}
           <div style={{ display: "flex", marginTop: "auto", fontSize: 22, fontWeight: 500, color: "#3d3d3a" }}>
-            Software Engineer · product and backend
+            Software Engineer · workflow automation and backend
           </div>
         </div>
       </div>

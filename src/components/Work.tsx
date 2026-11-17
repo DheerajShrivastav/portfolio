@@ -2,9 +2,9 @@ import Link from "next/link";
 import { work } from "@/content/site";
 import { ArrowRight, ArrowUpRight } from "@/components/icons";
 
-// The first three are the evidence (work, own product, open source); hackathon and solo builds sit below, compact.
-const featured = work.slice(0, 3);
-const earlier = work.slice(3);
+// The first four are the evidence (two at work, own product, open source); hackathon and solo builds sit below, compact.
+const featured = work.slice(0, 4);
+const earlier = work.slice(4);
 
 export default function Work() {
     return (

@@ -33,7 +33,7 @@ export default function DappDropCaseStudy() {
   return (
     <CaseStudyShell>
       <CaseHeader
-        no="02"
+        no="03"
         title="DappDrop: on-chain rewards held in escrow and settled by Merkle proof"
         intro="Projects run reward campaigns, participants complete verified tasks, and escrowed ERC-20, ERC-721 and ERC-1155 rewards settle on-chain after the campaign ends. This page covers the decisions that shaped it and the bugs the test suite caught."
         links={[

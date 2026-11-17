@@ -34,6 +34,22 @@ export interface WorkItem {
 export const work: WorkItem[] = [
     {
         no: "01",
+        slug: "lab-operations",
+        name: "Lab operations platform",
+        headline: "One flow from a hospital's order to a clinician-approved report",
+        context: "At work · team platform · in production · private code",
+        description:
+            "The internal platform a diagnostics company runs on, tracking every case from test request to released report. I led the report pipeline, the clinician's review workspace and the partner-lab portal, and built the notification system and the order parser on my own.",
+        challenge:
+            "Reports moved between two applications through about three manual hand-offs, updates to doctors went out by hand, and hospital orders arrived as messy WhatsApp text that staff retyped field by field.",
+        solution:
+            "One pipeline from lab upload to approved report, automatic and logged updates, and AI in one bounded place: a model copies fields out of the order, and code checks every value before a person saves it.",
+        tech: ["TypeScript", "Next.js", "PostgreSQL", "Prisma", "Jest", "Azure", "LLMs"],
+        caseStudy: "/projects/lab-operations",
+        links: [],
+    },
+    {
+        no: "02",
         slug: "voice-agent",
         name: "Real-time voice agent",
         headline: "In production for patients and doctors; 65% less manual physician work",
@@ -48,7 +64,7 @@ export const work: WorkItem[] = [
         links: [],
     },
     {
-        no: "02",
+        no: "03",
         slug: "dappdrop",
         name: "DappDrop",
         headline: "Sybil-resistant on-chain rewards protocol",
@@ -67,7 +83,7 @@ export const work: WorkItem[] = [
         ],
     },
     {
-        no: "03",
+        no: "04",
         slug: "jam-nodes",
         name: "jam-nodes",
         headline: "Open-source workflow-automation framework (wespreadjam, 200+ stars)",
@@ -84,7 +100,7 @@ export const work: WorkItem[] = [
         links: [{ label: "Repository", href: "https://github.com/wespreadjam/jam-nodes" }],
     },
     {
-        no: "04",
+        no: "05",
         slug: "aws-deploy-ai",
         name: "AWS Deploy AI",
         headline: "Natural-language AWS deployments",
@@ -98,7 +114,7 @@ export const work: WorkItem[] = [
         links: [{ label: "Code", href: "https://github.com/DheerajShrivastav/aws-deploy-ai" }],
     },
     {
-        no: "05",
+        no: "06",
         slug: "latch",
         name: "Latch",
         headline: "Real-time multiplayer browser game",
@@ -114,7 +130,7 @@ export const work: WorkItem[] = [
         ],
     },
     {
-        no: "06",
+        no: "07",
         slug: "event-horizon",
         name: "Event Horizon",
         headline: "AI-assisted grant platform",
@@ -144,15 +160,15 @@ export const experience: Role[] = [
         role: "Product Developer",
         company: "Seragen Biotherapeutics",
         period: "Jun 2026 – Present",
-        summary: "I turn a non-tech company's day-to-day operations into software: I map how each team actually works, then design and ship the automated workflows and AI tools that run each step, so work stays organized and mistakes and delays are caught before they cost the business.",
+        summary: "I build core parts of the lab-operations platform a diagnostics company runs on, from a hospital's test order to a clinician-approved report. I learn how each team actually works, replace manual hand-offs with tested automation, and use AI only where a step needs language understanding.",
         highlights: [
-            "Own features end to end, from scoping with operations and clinical staff to production, working closely with both technical and non-technical teams.",
-            "Co-built a real-time voice agent patients and doctors use daily, in any language Gemini Live supports; strict guardrails over a curated dataset cut manual physician intervention by 65%.",
-            "Designed a doctor-in-the-loop flow: AI drafts personalized patient reports and doctors approve them before delivery.",
-            "Replaced the team's separate tools with one automated pipeline, removing manual hand-offs and the errors that came with them.",
-            "Built internal AI agents that give staff on-demand guidance at each step, instead of waiting on a senior.",
+            "Led the report pipeline that folded a second application into the platform: lab uploads go to the report engine and back automatically, removing about three manual hand-offs per report.",
+            "Built the notification system on my own: event-driven email and WhatsApp updates to doctors, hospitals and field staff, with signed delivery webhooks, retries with backoff and no duplicate sends (87 tests).",
+            "Built an LLM-assisted order parser that turns hospitals' free-text WhatsApp orders into a pre-filled case form; the model only copies text, and code verifies every value and never guesses.",
+            "Led the clinician's review workspace and the partner-lab portal: every report needs clinician approval, and labs acknowledge samples and upload reports themselves.",
+            "Co-built a real-time voice agent patients and doctors use daily; strict guardrails over a curated dataset cut manual physician intervention by 65%.",
         ],
-        stack: ["Gemini Live", "Claude", "Node.js", "TypeScript", "WebSockets", "Azure"],
+        stack: ["TypeScript", "Next.js", "PostgreSQL", "Prisma", "Jest", "Azure", "Gemini Live"],
         current: true,
     },
     {

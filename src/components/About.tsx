@@ -8,18 +8,28 @@ export default function About() {
                 <h2 className="md:col-span-3 text-display-lg font-extrabold">About</h2>
                 <div className="md:col-span-9 lg:col-span-7 space-y-5 text-[17px] md:text-lg leading-relaxed text-ink-2 max-w-[68ch]">
                     <p className="text-ink font-medium">
-                        I take a feature from first spec to production and stay with it after launch.
+                        I start with how the work actually happens, not with the tool.
                     </p>
                     <p>
-                        At work I turn a non-tech company&apos;s day-to-day operations into software. I map how each team actually
-                        works, then design and ship the automated workflows and AI tools that run each step, so work stays organized
-                        and mistakes and delays are caught before they cost the business. That includes a real-time voice agent I
-                        co-built, which patients and doctors use every day and which cut manual physician intervention by 65%; the
-                        automated pipeline that replaced a team&apos;s separate tools; and internal AI agents staff use instead of
-                        waiting on a senior. I own each feature end to end and work closely with technical and non-technical teams.
+                        At work I build core parts of the{" "}
+                        <Link href="/projects/lab-operations" className="text-ink underline decoration-ink/30 hover:decoration-ink">
+                            platform a diagnostics company runs on
+                        </Link>
+                        . Before writing code I watch where the work stalls: staff retyping hospital orders from WhatsApp, reports
+                        passed between two applications by hand, updates to doctors sent one message at a time. Then I remove those
+                        steps with plain, tested code: one pipeline from a lab&apos;s upload to an approved report, and notifications
+                        that go out on their own, retry when they fail and leave a record of every message.
                     </p>
                     <p>
-                        I use AI coding agents heavily, behind a gate I set up. On{" "}
+                        I use AI only where a step needs language understanding, and I don&apos;t let it guess. Hospital orders arrive
+                        as messy free text, so a model copies the fields out word for word, and code checks every value against the
+                        message before a person saves it. Where a mistake is expensive, a person decides: no report leaves without a
+                        clinician&apos;s approval. The same rule shaped a voice agent I co-built, which answers only from a curated dataset
+                        and cut manual physician work by 65%.
+                    </p>
+                    <p>
+                        I own each feature end to end, from the first conversation with the people who use it to production, and I use
+                        AI coding agents heavily, behind a gate I set up. On{" "}
                         <Link href="/projects/dappdrop" className="text-ink underline decoration-ink/30 hover:decoration-ink">
                             DappDrop
                         </Link>

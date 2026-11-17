@@ -7,9 +7,9 @@ const indexed = work.slice(0, 3).map((item) => ({
     ...item,
     href: item.caseStudy ?? `/#work-${item.no}`,
     meta: {
-        "01": "In production · 65% less physician work",
-        "02": "Founder · testnet · 240 unit + 26 invariant tests",
-        "03": "5 contributions merged upstream",
+        "01": "In production · order to approved report",
+        "02": "Co-built · 65% less physician work",
+        "03": "Founder · testnet · 240 unit + 26 invariant tests",
     }[item.no],
 }));
 
@@ -20,25 +20,29 @@ export default function Hero() {
                 {/* The cobalt field: the claim and the two actions */}
                 <div className="on-cobalt lg:col-span-7 xl:col-span-8 bg-cobalt text-white px-6 py-10 md:px-12 md:py-14 lg:py-10 flex flex-col justify-between gap-12 lg:gap-8">
                     <h1 className="text-display-xl font-extrabold max-w-[14ch]">
-                        I ship software people use, and I own it.
+                        I take the manual work out of how businesses run.
                     </h1>
 
                     <div>
                         <div className="max-w-[60ch] space-y-4 text-lg leading-relaxed text-cobalt-soft">
                             <p className="text-white font-semibold text-xl lg:[@media(min-height:860px)]:text-[1.625rem] leading-snug tracking-[-0.01em] [text-wrap:balance]">
-                                From first spec to production, and after launch.
+                                Understand the work first. Automate the rest. Use AI only where it earns its place.
                             </p>
                             <p>
-                                At work I turn a non-tech company&apos;s daily operations into automated workflows and AI tools, including a{" "}
-                                <Link href="/projects/voice-agent" className="text-white font-medium underline decoration-white/50 hover:decoration-white">
-                                    real-time voice agent
+                                At work I build core parts of the{" "}
+                                <Link href="/projects/lab-operations" className="text-white font-medium underline decoration-white/50 hover:decoration-white">
+                                    lab-operations platform
                                 </Link>{" "}
-                                patients and doctors use that cut manual physician intervention by 65%. I own each feature end to end, with
-                                technical and non-technical teams. I also founded{" "}
+                                a diagnostics company runs on: one flow from a hospital&apos;s order to an approved report, in place of a second app
+                                and three manual hand-offs. I also co-built a{" "}
+                                <Link href="/projects/voice-agent" className="text-white font-medium underline decoration-white/50 hover:decoration-white">
+                                    voice agent
+                                </Link>{" "}
+                                that cut manual physician work by 65%, and founded{" "}
                                 <Link href="/projects/dappdrop" className="text-white font-medium underline decoration-white/50 hover:decoration-white">
                                     DappDrop
                                 </Link>
-                                , an on-chain rewards protocol whose tests caught a fund-drain bug before launch.
+                                .
                             </p>
                         </div>
 
@@ -108,7 +112,7 @@ export default function Hero() {
                         <dt className="text-ink-3">Based in</dt>
                         <dd>Maharashtra, India</dd>
                         <dt className="text-ink-3">Looking for</dt>
-                        <dd className="font-bold [text-wrap:balance]">Roles where I own features end to end</dd>
+                        <dd className="font-bold [text-wrap:balance]">Roles where I own the fix, end to end</dd>
                     </dl>
                 </div>
             </div>

@@ -16,11 +16,12 @@ const go = (href: string) => () => (window.location.href = href);
 const actions = [
     { id: "about", name: "Go to the top", shortcut: ["g", "a"], keywords: "about home intro", perform: go("/#about") },
     { id: "work", name: "Go to Work", shortcut: ["g", "w"], keywords: "projects work portfolio", perform: go("/#work") },
+    { id: "labops", name: "Case study: lab operations platform", shortcut: ["g", "l"], keywords: "lab operations platform pipeline automation notifications case study", perform: go("/projects/lab-operations") },
     { id: "voice", name: "Case study: real-time voice agent", shortcut: ["g", "v"], keywords: "voice agent gemini case study", perform: go("/projects/voice-agent") },
     { id: "dappdrop", name: "Case study: DappDrop", shortcut: ["g", "d"], keywords: "dappdrop protocol solidity case study", perform: go("/projects/dappdrop") },
     { id: "how", name: "Go to About", shortcut: ["g", "b"], keywords: "about how i work devcon", perform: go("/#how-i-work") },
     { id: "experience", name: "Go to Experience", shortcut: ["g", "e"], keywords: "experience history jobs", perform: go("/#experience") },
-    { id: "opensource", name: "Go to Open source", shortcut: ["g", "o"], keywords: "open source contributions pull requests", perform: go("/#work-03") },
+    { id: "opensource", name: "Go to Open source", shortcut: ["g", "o"], keywords: "open source contributions pull requests", perform: go("/#work-04") },
     { id: "skills", name: "Go to Skills", shortcut: ["g", "s"], keywords: "skills stack tech", perform: go("/#skills") },
     { id: "contact", name: "Go to Contact", shortcut: ["g", "c"], keywords: "contact email reach call", perform: go("/#contact") },
     { id: "github", name: "Open GitHub", shortcut: ["o", "g"], keywords: "github code source", perform: () => window.open("https://github.com/DheerajShrivastav", "_blank") },
