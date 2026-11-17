@@ -50,21 +50,6 @@ export const work: WorkItem[] = [
     },
     {
         no: "02",
-        slug: "voice-agent",
-        name: "Real-time voice agent",
-        headline: "In production for patients and doctors; 65% less manual physician work",
-        context: "At work · co-built · in production · private code",
-        description:
-            "Holds live voice conversations with patients and doctors and helps with their daily workflow: self-assessments, answers from a curated dataset, and personalized reports that doctors approve. Works in any language Gemini Live supports, switching mid-conversation.",
-        challenge: "A voice agent feels broken if it pauses, and in healthcare a fluent made-up answer is worse than none.",
-        solution:
-            "Native speech-to-speech on Gemini Live (no separate STT/TTS hops) for live conversation, strict rules that keep answers inside a curated dataset, and a token-efficient harness. Manual physician intervention dropped 65%.",
-        tech: ["Gemini Live", "Node.js", "TypeScript", "WebSockets", "Azure"],
-        caseStudy: "/projects/voice-agent",
-        links: [],
-    },
-    {
-        no: "03",
         slug: "dappdrop",
         name: "DappDrop",
         headline: "Sybil-resistant on-chain rewards protocol",
@@ -83,7 +68,7 @@ export const work: WorkItem[] = [
         ],
     },
     {
-        no: "04",
+        no: "03",
         slug: "jam-nodes",
         name: "jam-nodes",
         headline: "Open-source workflow-automation framework (wespreadjam, 200+ stars)",
@@ -98,6 +83,21 @@ export const work: WorkItem[] = [
         ],
         tech: ["TypeScript", "Zod"],
         links: [{ label: "Repository", href: "https://github.com/wespreadjam/jam-nodes" }],
+    },
+    {
+        no: "04",
+        slug: "voice-agent",
+        name: "Real-time voice agent",
+        headline: "In production for patients and doctors; 65% less manual physician work",
+        context: "At work · co-built · in production · private code",
+        description:
+            "Holds live voice conversations with patients and doctors and helps with their daily workflow: self-assessments, answers from a curated dataset, and personalized reports that doctors approve. Works in any language Gemini Live supports, switching mid-conversation.",
+        challenge: "A voice agent feels broken if it pauses, and in healthcare a fluent made-up answer is worse than none.",
+        solution:
+            "Native speech-to-speech on Gemini Live (no separate STT/TTS hops) for live conversation, strict rules that keep answers inside a curated dataset, and a token-efficient harness. Manual physician intervention dropped 65%.",
+        tech: ["Gemini Live", "Node.js", "TypeScript", "WebSockets", "Azure"],
+        caseStudy: "/projects/voice-agent",
+        links: [],
     },
     {
         no: "05",
@@ -171,6 +171,19 @@ export const experience: Role[] = [
         ],
         stack: ["TypeScript", "Next.js", "PostgreSQL", "Prisma", "Jest", "Azure", "Gemini Live"],
         current: true,
+    },
+    {
+        role: "Founder",
+        company: "DappDrop",
+        period: "Jul 2025 – Present",
+        summary: "My own product: a Sybil-resistant on-chain rewards protocol, pre-launch on Sepolia testnet and backed by a developer grant from Humanity Protocol.",
+        highlights: [
+            "Received a developer grant from Humanity Protocol to build DappDrop.",
+            "Designed the protocol and security model: escrowed ERC-20/721/1155 rewards that settle by Merkle proof after participants complete verified tasks.",
+            "AI coding agents write much of the code to my specs, behind a gate I set up: 240 unit + 26 invariant Foundry tests plus Slither and Aderyn. An invariant caught a cross-campaign fund-drain bug before launch.",
+            "Built the off-chain path: EIP-712 signer, SIWE auth, a The Graph subgraph with RPC fallback, a keeper and a gasless relayer.",
+        ],
+        stack: ["Solidity", "Foundry", "EIP-712", "Merkle proofs", "Next.js", "PostgreSQL", "The Graph"],
     },
     {
         role: "Software Engineer Intern",

@@ -18,8 +18,8 @@ export default async function OpengraphImage() {
 
   const rows = [
     ["01", "Lab operations platform"],
-    ["02", "Real-time voice agent"],
-    ["03", "DappDrop"],
+    ["02", "DappDrop"],
+    ["03", "jam-nodes"],
   ];
 
   return new ImageResponse(

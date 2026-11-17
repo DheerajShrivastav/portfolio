@@ -8,8 +8,8 @@ const indexed = work.slice(0, 3).map((item) => ({
     href: item.caseStudy ?? `/#work-${item.no}`,
     meta: {
         "01": "In production · order to approved report",
-        "02": "Co-built · 65% less physician work",
-        "03": "Founder · testnet · 240 unit + 26 invariant tests",
+        "02": "Founder · testnet · 240 unit + 26 invariant tests",
+        "03": "5 contributions merged upstream",
     }[item.no],
 }));
 
