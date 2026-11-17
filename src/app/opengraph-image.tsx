@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
-export const alt = "Dheeraj Shrivastav, Software Engineer: I take the manual work out of how businesses run.";
+export const alt = "Dheeraj Shrivastav, Software Engineer: I ship software people use, and I own it.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -38,7 +38,7 @@ export default async function OpengraphImage() {
         >
           <div style={{ display: "flex", fontSize: 26, fontWeight: 500 }}>Dheeraj Shrivastav</div>
           <div style={{ display: "flex", fontSize: 76, fontWeight: 800, lineHeight: 0.98, letterSpacing: "-0.04em" }}>
-            I take the manual work out of how businesses run.
+            I ship software people use, and I own it.
           </div>
         </div>
         <div style={{ flex: 1, display: "flex", flexDirection: "column", paddingLeft: 32, color: "#0d0d0d" }}>

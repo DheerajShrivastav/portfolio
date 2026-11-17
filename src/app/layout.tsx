@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   keywords: ["Software Engineer", "Backend Engineer", "Full-Stack Engineer", "Workflow Automation", "Process Automation", "Forward Deployed Engineer", "Internal Tools", "LLM", "Next.js", "Node.js", "PostgreSQL", "Dheeraj Shrivastav"],
   openGraph: {
     title: "Dheeraj Shrivastav | Software Engineer: Workflow Automation & Backend",
-    description: "I take the manual work out of how businesses run. Understand the work first, automate the rest, use AI only where it earns its place.",
+    description: "I ship software people use, and I own it: from first spec to production, and after launch.",
     url: "https://dheerajshrivastav.me",
     siteName: "Dheeraj Shrivastav",
     locale: "en_US",

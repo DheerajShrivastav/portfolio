@@ -20,29 +20,26 @@ export default function Hero() {
                 {/* The cobalt field: the claim and the two actions */}
                 <div className="on-cobalt lg:col-span-7 xl:col-span-8 bg-cobalt text-white px-6 py-10 md:px-12 md:py-14 lg:py-10 flex flex-col justify-between gap-12 lg:gap-8">
                     <h1 className="text-display-xl font-extrabold max-w-[14ch]">
-                        I take the manual work out of how businesses run.
+                        I ship software people use, and I own it.
                     </h1>
 
                     <div>
                         <div className="max-w-[60ch] space-y-4 text-lg leading-relaxed text-cobalt-soft">
                             <p className="text-white font-semibold text-xl lg:[@media(min-height:860px)]:text-[1.625rem] leading-snug tracking-[-0.01em] [text-wrap:balance]">
-                                Understand the work first. Automate the rest. Use AI only where it earns its place.
+                                From first spec to production, and after launch.
                             </p>
                             <p>
                                 At work I build core parts of the{" "}
                                 <Link href="/projects/lab-operations" className="text-white font-medium underline decoration-white/50 hover:decoration-white">
                                     lab-operations platform
                                 </Link>{" "}
-                                a diagnostics company runs on: one flow from a hospital&apos;s order to an approved report, in place of a second app
-                                and three manual hand-offs. I also co-built a{" "}
-                                <Link href="/projects/voice-agent" className="text-white font-medium underline decoration-white/50 hover:decoration-white">
-                                    voice agent
-                                </Link>{" "}
-                                that cut manual physician work by 65%, and founded{" "}
+                                a diagnostics company runs on: one flow from a hospital&apos;s order to an approved report, replacing a second app
+                                and three manual hand-offs. AI reads free-text orders into the case form, and code checks every value. I also
+                                founded{" "}
                                 <Link href="/projects/dappdrop" className="text-white font-medium underline decoration-white/50 hover:decoration-white">
                                     DappDrop
                                 </Link>
-                                .
+                                , an on-chain rewards protocol whose tests caught a fund-drain bug before launch.
                             </p>
                         </div>
 
@@ -112,7 +109,7 @@ export default function Hero() {
                         <dt className="text-ink-3">Based in</dt>
                         <dd>Maharashtra, India</dd>
                         <dt className="text-ink-3">Looking for</dt>
-                        <dd className="font-bold [text-wrap:balance]">Roles where I own the fix, end to end</dd>
+                        <dd className="font-bold [text-wrap:balance]">Roles where I own features end to end</dd>
                     </dl>
                 </div>
             </div>
