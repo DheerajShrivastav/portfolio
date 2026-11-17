@@ -166,6 +166,7 @@ export const experience: Role[] = [
             "Built the notification system on my own: event-driven email and WhatsApp updates to doctors, hospitals and field staff, with signed delivery webhooks, retries with backoff and no duplicate sends (87 tests).",
             "Built an LLM-assisted order parser that turns hospitals' free-text WhatsApp orders into a pre-filled case form; the model only copies text, and code verifies every value and never guesses.",
             "Led the clinician's review workspace and the partner-lab portal: every report needs clinician approval, and labs acknowledge samples and upload reports themselves.",
+            "Built internal AI agents that give staff on-demand guidance at each step, instead of waiting on a senior.",
             "Co-built a real-time voice agent patients and doctors use daily; strict guardrails over a curated dataset cut manual physician intervention by 65%.",
         ],
         stack: ["TypeScript", "Next.js", "PostgreSQL", "Prisma", "Jest", "Azure", "Gemini Live"],
