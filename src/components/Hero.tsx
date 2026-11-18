@@ -7,7 +7,7 @@ const indexed = work.slice(0, 3).map((item) => ({
     ...item,
     href: item.caseStudy ?? `/#work-${item.no}`,
     meta: {
-        "01": "In production · 65% less physician work",
+        "01": "In production · order to approved report",
         "02": "Founder · testnet · 240 unit + 26 invariant tests",
         "03": "5 contributions merged upstream",
     }[item.no],
@@ -29,12 +29,13 @@ export default function Hero() {
                                 From first spec to production, and after launch.
                             </p>
                             <p>
-                                At work I turn a non-tech company&apos;s daily operations into automated workflows and AI tools, including a{" "}
-                                <Link href="/projects/voice-agent" className="text-white font-medium underline decoration-white/50 hover:decoration-white">
-                                    real-time voice agent
+                                At work I build core parts of the{" "}
+                                <Link href="/projects/lab-operations" className="text-white font-medium underline decoration-white/50 hover:decoration-white">
+                                    lab-operations platform
                                 </Link>{" "}
-                                patients and doctors use that cut manual physician intervention by 65%. I own each feature end to end, with
-                                technical and non-technical teams. I also founded{" "}
+                                a diagnostics company runs on: one flow from a hospital&apos;s order to an approved report, replacing a second app
+                                and three manual hand-offs. AI reads free-text orders into the case form, and code checks every value. I also
+                                founded{" "}
                                 <Link href="/projects/dappdrop" className="text-white font-medium underline decoration-white/50 hover:decoration-white">
                                     DappDrop
                                 </Link>

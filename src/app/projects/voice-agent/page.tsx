@@ -30,7 +30,7 @@ export default function VoiceAgentCaseStudy() {
   return (
     <CaseStudyShell>
       <CaseHeader
-        no="01"
+        no="04"
         title="A voice AI agent that patients and doctors can talk to in real time"
         intro="A voice agent that holds live conversations with patients and doctors and helps with their daily workflow: it runs patient self-assessments, answers questions from a curated dataset, and drafts personalized reports that doctors approve. The code is private, so this page explains the design decisions instead."
       />

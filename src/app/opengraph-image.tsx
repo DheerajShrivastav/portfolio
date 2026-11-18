@@ -17,7 +17,7 @@ export default async function OpengraphImage() {
   ]);
 
   const rows = [
-    ["01", "Real-time voice agent"],
+    ["01", "Lab operations platform"],
     ["02", "DappDrop"],
     ["03", "jam-nodes"],
   ];
@@ -52,7 +52,7 @@ export default async function OpengraphImage() {
             </div>
           ))}
           <div style={{ display: "flex", marginTop: "auto", fontSize: 22, fontWeight: 500, color: "#3d3d3a" }}>
-            Software Engineer · product and backend
+            Software Engineer · workflow automation and backend
           </div>
         </div>
       </div>
