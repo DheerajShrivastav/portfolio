@@ -45,7 +45,6 @@ export const work: WorkItem[] = [
         solution:
             "One pipeline from lab upload to approved report, automatic and logged updates, and AI in one bounded place: a model copies fields out of the order, and code checks every value before a person saves it.",
         tech: ["TypeScript", "Next.js", "PostgreSQL", "Prisma", "Jest", "Azure", "LLMs"],
-        caseStudy: "/projects/lab-operations",
         links: [],
     },
     {

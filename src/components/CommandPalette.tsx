@@ -16,7 +16,6 @@ const go = (href: string) => () => (window.location.href = href);
 const actions = [
     { id: "about", name: "Go to the top", shortcut: ["g", "a"], keywords: "about home intro", perform: go("/#about") },
     { id: "work", name: "Go to Work", shortcut: ["g", "w"], keywords: "projects work portfolio", perform: go("/#work") },
-    { id: "labops", name: "Case study: lab operations platform", shortcut: ["g", "l"], keywords: "lab operations platform pipeline automation notifications case study", perform: go("/projects/lab-operations") },
     { id: "voice", name: "Case study: real-time voice agent", shortcut: ["g", "v"], keywords: "voice agent gemini case study", perform: go("/projects/voice-agent") },
     { id: "dappdrop", name: "Case study: DappDrop", shortcut: ["g", "d"], keywords: "dappdrop protocol solidity case study", perform: go("/projects/dappdrop") },
     { id: "how", name: "Go to About", shortcut: ["g", "b"], keywords: "about how i work devcon", perform: go("/#how-i-work") },
