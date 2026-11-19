@@ -30,7 +30,7 @@ export default function Hero() {
                             </p>
                             <p>
                                 At work I build core parts of the{" "}
-                                <Link href="/projects/lab-operations" className="text-white font-medium underline decoration-white/50 hover:decoration-white">
+                                <Link href="/#work-01" className="text-white font-medium underline decoration-white/50 hover:decoration-white">
                                     lab-operations platform
                                 </Link>{" "}
                                 a diagnostics company runs on: one flow from a hospital&apos;s order to an approved report, replacing a second app
